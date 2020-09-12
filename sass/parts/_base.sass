@@ -7,26 +7,26 @@
 /* common styles content */
 html
     font-size: 100%
-    font-size: $baseFontSize
+    font-size: $base-font-size
     @media (max-width: 1199px)
-        font-size: $baseFontSize * 0.95
+        font-size: $base-font-size * 0.95
     @media (max-width: 991px)
-        font-size: $baseFontSize * 0.90
+        font-size: $base-font-size * 0.90
     @media (max-width: 767px)
-        font-size: $baseFontSize * 0.85
+        font-size: $base-font-size * 0.85
     @media (max-width: 575px)
-        font-size: $baseFontSize * 0.80
+        font-size: $base-font-size * 0.80
 
 body
     line-height: 1.2
-    font-family: $baseFontFamily
-    background-color: map-get($colors, grey-light)
+    font-family: $base-font-family
+    background-color: color(grey-light)
 
 // главный контейнер для контента на странице
 .container
     width: 100%
-    max-width: $containerMaxWidth
-    padding: 0 $containerPadding
+    max-width: $container-max-width
+    padding: 0 $container-padding
     margin: 0 auto
     @media (max-width: 767px)
         padding: 0 1em

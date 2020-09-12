@@ -4,13 +4,15 @@
 @function em($pixels, $context: 16)
     @return #{$pixels/$context}em
 
-
-@mixin font($fontWeight, $fontSize, $fontStyle: normal)
-    font-weight: $fontWeight
-    font-style: $fontStyle
-    font-size: $fontSize
+@function color($color)
+    @return map-get($colors, $color)
 
 
-@mixin bgGradient($color1, $color2, $deg: 180deg)
+@mixin font($font-weight, $font-size, $font-style: normal)
+    font-weight: $font-weight
+    font-style: $font-style
+    font-size: $font-size
+
+@mixin bg-gradient($color1, $color2, $deg: 180deg)
     background-color: mix($color1, $color1) // fallback
     background: linear-gradient($deg, $color1 0%, $color2 100%)

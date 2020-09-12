@@ -21,17 +21,16 @@ $colors: (
 );
 
 
-
 /* radius */
-$baseFontSize: 16px;
+$base-font-size: 16px;
 
 // for border-radius
-$radiusCard: em(11);
-$radiusButton: em(40);
-$radiusBanner: em(15);
+$radius-card: em(11);
+$radius-button: em(40);
+$radius-banner: em(15);
 
 // containet for content
-$containerMaxWidth: 1180px;
-$containerPadding: em(50);
+$container-max-width: 1180px;
+$container-padding: em(50);
 
-$baseFontFamily: 'Museo Sans Cyrl';
+$base-font-family: 'Museo Sans Cyrl';

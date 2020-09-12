@@ -12,8 +12,14 @@
         margin-right: 10px
     &__item
         transition: color 0.3s
+        &._open-search,
+        &._search,
+        &._bookmark
+            color: color(grey)
+        &._create
+            color: color(blue)
         &:hover
-            color: map-get($colors, blue)
+            color: color(blue)
         a
             display: block
         &._logo
@@ -28,6 +34,8 @@
             padding: 15px 7px
         &._search
             margin: auto
+            input
+                color: color(black)
         &._bookmark
             margin: 0 10px
             font-size: 1.2em
@@ -46,12 +54,12 @@
             align-items: center
             overflow-x: auto
             white-space: nowrap
-        &.mobile &__item._link a
+        // &.mobile &__item._link a
 
 @media (max-width: 991px)
     .menu-bar
         &:not(._mobile)
-            // border-bottom: 1px solid map-get($colors, grey)
+            // border-bottom: 1px solid color(grey)
         &__item._desktop
             display: none
 

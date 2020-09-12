@@ -1,22 +1,21 @@
 @import '../service/service'
 
-@each $colorName, $colorValue in $colors
-    .bg-#{$colorName}
-        background-color: $colorValue
+@each $color-name, $color-value in $colors
+    .bg-#{$color-name}
+        background-color: $color-value
         &.ui-button:hover
-            background-color: darken($colorValue, 8%)
-    .font-#{$colorName} 
-        color: $colorValue
+            background-color: darken($color-value, 8%)
+
     
 // градиенты
 .bg-gradient-blue-cyan
-    @include bgGradient(map-get($colors, blue), map-get($colors, cyan))
+    @include bg-gradient(color(blue), color(cyan))
 
 .bg-gradient-peach-beige
-    @include bgGradient(map-get($colors, peach), map-get($colors, beige))
+    @include bg-gradient(color(peach), color(beige))
 
 .bg-gradient-yellow-light-beige
-    @include bgGradient(map-get($colors, yellow-light), map-get($colors, beige))
+    @include bg-gradient(color(yellow-light), color(beige))
 
 .bg
     &-yellow,
@@ -26,7 +25,7 @@
     &-cyan,
     &-gradient-peach-beige,
     &-gradient-yellow-light-yellow
-        color: map-get($colors, black)
+        color: color(black)
     &-blue,
     &-gradient-blue-cyan
-        color: map-get($colors, white)
+        color: color(white)

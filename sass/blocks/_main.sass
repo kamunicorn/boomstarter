@@ -6,22 +6,21 @@
     grid-template-rows: minmax(400px, auto)
     grid-gap: 1.1em
     margin: 13px 0 20px
+    @media (max-width: 1199px)
+        grid-template-columns: 100%
+        grid-template-rows: minmax(380px, auto)
+        margin-top: 0
 
 .main-banner
     display: flex
     flex-wrap: nowrap
-    // min-height: 340px
-    // padding-right: 50px
-    border-radius: $radiusBanner
+    border-radius: $radius-banner
     &__info
         display: flex
         flex-direction: column
         justify-content: center
-        // margin: 115px 0 85px
-        margin: 45px 0 15px
-        padding-left: 40px
-        width: 50%
-        // min-width: 45%
+        padding: 45px 20px 15px 40px
+        width: 52%
         max-width: 52%
     &__title
         @include font(900, 30px)
@@ -33,16 +32,15 @@
         display: flex
         align-items: center
     .ui-icon-button._bookmark
-        font-size: 25px
+        font-size: 1.5em
         margin-left: 15px
-        color: map-get($colors, black)
+        color: color(black)
         &:hover
-            color: map-get($colors, white)
+            color: color(white)
     &__img // div container
         display: inline-flex
         flex: 1 1 auto
-        width: 48%
-        padding-left: 20px
+        width: 47%
         &-bg
             width: 87%
             height: 87%
@@ -51,32 +49,45 @@
             background-size: contain
             margin: auto auto 0
 
-@media (max-width: 1199px)
-    .main
-        grid-template-columns: 100%
-        grid-template-rows: minmax(380px, auto)
+
 
 @media (max-width: 991px)
     .main-banner
         &__info
             padding-left: 30px
             width: 55%
-        &__img
-            padding-left: 15px
 
 @media (max-width: 767px)
     .main-banner
-        display: block
+        display: flex
+        flex-direction: column
         &__info
             width: 100%
             max-width: 100%
-            
+            padding-top: 25px
+            padding-left: 20px
         &__title
-            // font-size: 20px
+            font-size: 25px
+            margin-bottom: 15px
         &__desc
-            // font-size: 16px
+            font-size: 15px
         &__button
-            // margin-top: 27px
+            font-size: 15px
+            margin-top: 25px
         &__img
-            // display: none
+            width: 100%
+            &-bg
+                max-width: 90%
+                max-height: 90%
+                width: 200px
+                height: 200px
 
+@media (max-width: 575px)
+    .main-banner
+        &__title
+            font-size: 20px
+        &__desc
+            font-size: 14px
+        &__button
+            font-size: 14px
+        
