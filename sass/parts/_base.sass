@@ -17,6 +17,11 @@ html
     @media (max-width: 575px)
         font-size: $baseFontSize * 0.80
 
+body
+    line-height: 1.2
+    font-family: $baseFontFamily
+    background-color: map-get($colors, grey-light)
+
 // главный контейнер для контента на странице
 .container
     width: 100%
@@ -26,7 +31,7 @@ html
     @media (max-width: 767px)
         padding: 0 1em
 
-body
-    line-height: 1.2
-    font-family: $baseFontFamily
-    background-color: map-get($colors, grey-light)
+ul
+    list-style: none
+    margin: 0
+    padding: 0

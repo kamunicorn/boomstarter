@@ -16,9 +16,74 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
+        <!-- меню полная версия -->
+        <section class="bg-white">
+            <div class="container">
+                <ul class="menu-bar">
+                    <li class="menu-bar__item _logo">
+                        <a href="/" title="На главную">
+                            <img src="img/logo.png" alt="BoomStarter">
+                        </a>
+                    </li>
+                    <!-- 3 ссылки из меню -->
+                    <li class="menu-bar__item _link _desktop">
+                        <a href="#">Как это работает</a>
+                    </li>
+                    <li class="menu-bar__item _link _desktop">
+                        <a href="#">Все проекты</a>
+                    </li>
+                    <li class="menu-bar__item _link _desktop">
+                        <a href="#">Рекордсмены</a>
+                    </li>
+
+                    <!-- кнопка перехода к поиску на маленьких экранах -->
+                    <li class="menu-bar__item _open-search font-grey">
+                        <button class="ui-icon-button" aria-label="Открыть поиск">
+                            <span class="icon icon-search"></span>
+                        </button>
+                    </li>
+                    <li class="menu-bar__item _search">
+                        <form class="ui-search bg-grey-light">
+                            <span class="icon icon-search font-grey"></span>
+                            <input class="font-black" type="search" name="search" id="">
+                        </form>
+                    </li>
+                    <li class="menu-bar__item _create font-blue _link">
+                        <a href="#">Создать проект</a>
+                    </li>
+                    <!-- FIXME: bookmark or heart -->
+                    <li class="menu-bar__item _icon">
+                        <button class="ui-icon-button _bookmark" aria-label="Добавить в закладки">
+                            <span class="icon icon-bookmark"></span>
+                        </button>
+                    </li>
+                    <li class="menu-bar__item _login _link">
+                        <a href="#">Войти</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- вторая строка меню со ссылками (для ширины < 1200px) -->
         <section>
             <div class="container">
-                <div class="banner bg-gradient-blue-cyan font-white">
+                <ul class="menu-bar _mobile">
+                    <li class="menu-bar__item _link">
+                        <a href="#">Как это работает</a>
+                    </li>
+                    <li class="menu-bar__item _link">
+                        <a href="#">Все проекты</a>
+                    </li>
+                    <li class="menu-bar__item _link">
+                        <a href="#">Рекордсмены</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- баннер создайте свой проект -->
+        <section>
+            <div class="container">
+                <div class="banner bg-gradient-blue-cyan">
                     <div class="banner__info">
                         <h3 class="banner__title">Создайте свой проект!</h3>
                         <div class="banner__desc">Настольная игра, бизнес, книга, фильм, социальный проект</div>
@@ -41,7 +106,7 @@
                     <div class="banner__info">
                         <h3 class="banner__title">Если ты молодая мама — <br>размести проект бесплатно!</h3>
                         <div class="banner__button">
-                            <a class="ui-button bg-blue font-white">Создать проект</a>
+                            <a class="ui-button bg-blue">Создать проект</a>
                         </div>
                     </div>
                     <div class="banner__img">

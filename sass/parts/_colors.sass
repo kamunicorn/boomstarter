@@ -8,6 +8,7 @@
     .font-#{$colorName} 
         color: $colorValue
     
+// градиенты
 .bg-gradient-blue-cyan
     @include bgGradient(map-get($colors, blue), map-get($colors, cyan))
 
@@ -17,3 +18,15 @@
 .bg-gradient-yellow-light-yellow
     @include bgGradient(map-get($colors, yellow-light), map-get($colors, yellow))
 
+.bg
+    &-yellow,
+    &-yellow-light,
+    &-peach,
+    &-beige,
+    &-cyan,
+    &-gradient-peach-beige,
+    &-gradient-yellow-light-yellow
+        color: map-get($colors, black)
+    &-blue,
+    &-gradient-blue-cyan
+        color: map-get($colors, white)

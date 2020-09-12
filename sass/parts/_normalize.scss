@@ -17,6 +17,13 @@ body {
 *:before {
     speak: none;
 }
+input,
+button,
+a,
+select,
+textarea {
+    outline: none;
+}
 a {
     color: inherit;
     cursor: pointer;

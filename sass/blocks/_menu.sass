@@ -1,0 +1,72 @@
+@import '../service/service'
+
+.menu-bar
+    display: flex
+    flex-wrap: nowrap
+    justify-content: space-between
+    align-items: center
+    // padding: 5px 0
+    &._mobile,
+    &__item._open-search
+        display: none
+        margin-right: 10px
+    &__item
+        transition: color 0.3s
+        &:hover
+            color: map-get($colors, blue)
+        a
+            display: block
+        &._logo
+            margin-right: 35px
+            margin-right: auto
+            a
+                padding: 15px 5px 15px 0
+            img
+                max-width: 157px
+                max-height: 16px
+        &._link a
+            padding: 15px 7px
+        &._search
+            margin: auto
+        &._icon
+            margin: 0 10px
+            font-size: 1.2em
+    
+
+@media (max-width: 1199px)
+    .menu-bar
+        &__item._search
+            margin-right: 15px
+        &__item._desktop
+            display: none
+        &._mobile
+            display: flex
+            flex-wrap: nowrap
+            justify-content: flex-start
+            align-items: center
+            overflow-x: auto
+            white-space: nowrap
+        &.mobile &__item._link a
+
+@media (max-width: 991px)
+    .menu-bar
+        &:not(._mobile)
+            // border-bottom: 1px solid map-get($colors, grey)
+        &__item._desktop
+            display: none
+
+@media (max-width: 767px)
+    .menu-bar
+        &__item._search
+            display: none
+        &__item._open-search
+            display: block
+        
+@media (max-width: 479px)
+    .menu-bar__item
+        &._create
+            display: none
+        &._open-search
+            margin-right: 0
+        &._icon
+            margin: 0 5px
