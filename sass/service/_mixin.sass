@@ -1,0 +1,16 @@
+// исключения только здесь
+// $baseFontSize: 16
+
+@function em($pixels, $context: 16)
+    @return #{$pixels/$context}em
+
+
+@mixin font($fontWeight, $fontSize, $fontStyle: normal)
+    font-weight: $fontWeight
+    font-style: $fontStyle
+    font-size: $fontSize
+
+
+@mixin bgGradient($color1, $color2, $deg: 0deg)
+    background-color: mix($color1, $color1) // fallback
+    background: linear-gradient($deg, $color1 0%, $color2 100%)

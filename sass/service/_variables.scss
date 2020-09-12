@@ -1,0 +1,37 @@
+
+/* COLORS */
+
+$colors: (
+    white: #fff,
+    black: #000,
+    grey: #C4C4C4,
+    grey-light: #F6F6F6,
+
+    blue: #0087F7,
+
+    yellow: #FFC83A,
+    yellow-light: #FCD770,
+
+    cyan: #21DDB9,
+    cyan-light: #7DDEDE,
+
+    peach: #FFC5B3,
+    beige: #FFBE83,
+    pink: #FE7D90
+);
+
+
+
+/* radius */
+$baseFontSize: 16px;
+
+// for border-radius
+$radiusCard: em(11);
+$radiusButton: em(40);
+$radiusBanner: em(15);
+
+// containet for content
+$containerMaxWidth: 1180px;
+$containerPadding: em(50);
+
+$baseFontFamily: 'Museo Sans Cyrl';

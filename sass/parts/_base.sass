@@ -1,0 +1,32 @@
+@import '../service/service'
+
+@import 'normalize'
+@import 'font-face'
+
+
+/* common styles content */
+html
+    font-size: 100%
+    font-size: $baseFontSize
+    @media (max-width: 1199px)
+        font-size: $baseFontSize * 0.95
+    @media (max-width: 991px)
+        font-size: $baseFontSize * 0.90
+    @media (max-width: 767px)
+        font-size: $baseFontSize * 0.85
+    @media (max-width: 575px)
+        font-size: $baseFontSize * 0.80
+
+// главный контейнер для контента на странице
+.container
+    width: 100%
+    max-width: $containerMaxWidth
+    padding: 0 $containerPadding
+    margin: 0 auto
+    @media (max-width: 767px)
+        padding: 0 1em
+
+body
+    line-height: 1.2
+    font-family: $baseFontFamily
+    background-color: map-get($colors, grey-light)
