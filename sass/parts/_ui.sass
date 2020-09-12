@@ -12,8 +12,8 @@
         // @include font(500, 18px)
         font-weight: 500
         border-radius: $radiusButton
-        color: map-get($colors, white)
-        transition: background-color 0.5s
+        // color: map-get($colors, white)
+        transition: background-color 0.5s, color 0.5s
         @media (max-width: 767px)
             padding: 15px 24px
         @media (max-width: 575px)
@@ -36,7 +36,4 @@
         padding: 5px 8px
         line-height: 1
         transition: background-color 0.5s, color 0.5s
-        &._bookmark
-            color: map-get($colors, grey)
-            &:hover
-                color: map-get($colors, blue)
+        

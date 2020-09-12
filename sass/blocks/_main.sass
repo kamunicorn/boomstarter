@@ -1,0 +1,82 @@
+@import '../service/service'
+
+.main
+    display: grid
+    grid-template-columns: 72% 30%
+    grid-template-rows: minmax(400px, auto)
+    grid-gap: 1.1em
+    margin: 13px 0 20px
+
+.main-banner
+    display: flex
+    flex-wrap: nowrap
+    // min-height: 340px
+    // padding-right: 50px
+    border-radius: $radiusBanner
+    &__info
+        display: flex
+        flex-direction: column
+        justify-content: center
+        // margin: 115px 0 85px
+        margin: 45px 0 15px
+        padding-left: 40px
+        width: 50%
+        // min-width: 45%
+        max-width: 52%
+    &__title
+        @include font(900, 30px)
+        margin-bottom: 20px
+    &__desc
+        @include font(300, 20px)
+    &__button
+        margin-top: 60px
+        display: flex
+        align-items: center
+    .ui-icon-button._bookmark
+        font-size: 25px
+        margin-left: 15px
+        color: map-get($colors, black)
+        &:hover
+            color: map-get($colors, white)
+    &__img // div container
+        display: inline-flex
+        flex: 1 1 auto
+        width: 48%
+        padding-left: 20px
+        &-bg
+            width: 87%
+            height: 87%
+            background-repeat: no-repeat
+            background-position: bottom center
+            background-size: contain
+            margin: auto auto 0
+
+@media (max-width: 1199px)
+    .main
+        grid-template-columns: 100%
+        grid-template-rows: minmax(380px, auto)
+
+@media (max-width: 991px)
+    .main-banner
+        &__info
+            padding-left: 30px
+            width: 55%
+        &__img
+            padding-left: 15px
+
+@media (max-width: 767px)
+    .main-banner
+        display: block
+        &__info
+            width: 100%
+            max-width: 100%
+            
+        &__title
+            // font-size: 20px
+        &__desc
+            // font-size: 16px
+        &__button
+            // margin-top: 27px
+        &__img
+            // display: none
+
