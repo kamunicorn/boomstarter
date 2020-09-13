@@ -1,0 +1,59 @@
+.reward
+    border-radius: $radius-card
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: 175px auto
+    background-color: color(white)
+    &._big
+        grid-column-start: 2
+        grid-column-end: 4
+    &._img-on-bg // horizontal on default
+        .reward__img
+            justify-content: center;
+            align-items: baseline;
+        img
+            max-width: 85%;
+            height: 200%;
+            min-height: auto;
+            min-width: auto;
+            transform: translateY(10px);
+
+
+    &__img
+        overflow: hidden
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 11px 11px 0 0
+        img
+            min-width: 100%
+            min-height: 100%
+            object-fit: cover
+    &__info
+        padding: 15px 15px 24px 15px
+        display: flex
+        flex-direction: column
+        > *
+            margin-bottom: 8px
+
+    &__title
+        @include font(700, 20px)
+    &__desc,
+    &__author,
+    &__timing
+        @include font(300, 14px)
+
+    &__price
+        @include font(700, 30px)
+        margin-top: auto
+        &-old
+            @include font(300, 14px)
+            color: color(grey)
+            margin-left: 5px
+            text-decoration: line-through
+    
+    &__buy
+        font-size: 20px
+        margin: 23px 0 0
+        text-transform: uppercase
+        color: color(blue)

@@ -5,7 +5,6 @@
     flex-wrap: nowrap
     justify-content: space-between
     align-items: center
-    // padding: 5px 0
     &._mobile,
     &__item._open-search
         display: none
@@ -30,7 +29,7 @@
             img
                 max-width: 157px
                 max-height: 16px
-        &._link a
+        &:not(._logo) a
             padding: 15px 7px
         &._search
             margin: auto
@@ -42,6 +41,8 @@
     
 
 @media (max-width: 1199px)
+    nav:first-child
+        border-bottom: 1px solid color(grey)
     .menu-bar
         &__item._search
             margin-right: 15px
@@ -54,12 +55,9 @@
             align-items: center
             overflow-x: auto
             white-space: nowrap
-        // &.mobile &__item._link a
 
 @media (max-width: 991px)
     .menu-bar
-        &:not(._mobile)
-            // border-bottom: 1px solid color(grey)
         &__item._desktop
             display: none
 
