@@ -40,3 +40,15 @@
         line-height: 1
         transition: background-color 0.5s, color 0.5s
         
+    &-icon-button._turn-sound
+        &.is-sound-off
+            .icon-sound-on
+                display: none
+            .icon-sound-off
+                display: block
+        &.is-sound-on
+            .icon-sound-on
+                display: block
+            .icon-sound-off
+                display: none
+        

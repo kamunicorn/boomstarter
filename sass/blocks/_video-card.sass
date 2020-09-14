@@ -1,0 +1,28 @@
+.video-card
+    overflow: hidden;
+    position: relative;
+    // height: 400px;
+    // width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(230, 179, 113);
+    border-radius: $radius-banner
+
+    video
+        width: 100%;
+        height: 100%;
+        object-fit: cover
+    .ui-icon-button._turn-sound
+        position: absolute
+        bottom: 23px
+        left: 20px
+        background-color: transparentize(color(black), 0.6)
+        color: color(white)
+        border-radius: $radius-button
+    .ui-button
+        position: absolute
+        bottom: 23px
+        right: 20px
+        width: auto
+

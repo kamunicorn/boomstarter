@@ -141,7 +141,8 @@
                     </div>
                 <!-- </div> -->
             </section>
-
+            
+            <!-- Блок с вознаграждениями -->
             <section class="container">
                 <ul class="grid-rewards">
                     <li class="reward">
@@ -184,9 +185,34 @@
                     
                 </ul>
             </section>
+
+            <section class="container">
+                <div class="grid-square-banners">
+                    <div class="video-card">
+                        <video id="video-123-fox" muted="" autoplay="" poster="img/poster/video-1.jpg">
+                            <source src="video/arctic-foxes.mp4" type="video/mp4">
+                        </video>
+                        <button class="ui-icon-button _turn-sound is-sound-off js-switch-sound" data-video="video-123-fox">
+                            <span title="звук включен" class="icon icon-sound-on"></span>
+                            <span title="звук выключен" class="icon icon-sound-off"></span>
+                        </button>
+                    </div>
+                    <div class="video-card">
+                        <video id="video-123-tik" muted="" autoplay="" poster="img/poster/video-2.jpg">
+                            <source src="video/tik-tok-book.mp4" type="video/mp4">
+                        </video>
+                        <button class="ui-icon-button _turn-sound is-sound-off js-switch-sound" data-video="video-123-tik">
+                            <span title="звук включен" class="icon icon-sound-on"></span>
+                            <span title="звук выключен" class="icon icon-sound-off"></span>
+                        </button>
+                        <a href="#" class="ui-button bg-blue">Смотреть проект</a>
+                    </div>
+                </div>
+            </section>
+            
             <!-- баннеры с историями -->
             <section class="container">
-                <div class="grid-banners">
+                <div class="grid-square-banners">
                     <div class="story bg-yellow">
                         <div class="story__bg">
                             <img src="img/story/story-1.png" alt="">
@@ -260,5 +286,9 @@
         </main>
         
         <!-- <script src="" async defer></script> -->
+        <script>
+            // включить звук
+            // $('video').muted = false;
+        </script>
     </body>
 </html>
