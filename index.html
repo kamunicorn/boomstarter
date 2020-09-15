@@ -142,18 +142,21 @@
                 <!-- </div> -->
             </section>
             
+            <!-- TODO -->
             <!-- Блок с вознаграждениями -->
             <section class="container">
                 <ul class="grid-rewards">
                     <li class="reward">
                         <div class="reward__img"><img src="img/rewards/reward-1-pizza.png" alt=""></div>
-                        <div class="reward__info">
+                        <div class="reward__middle">
                             <h4 class="reward__title">Кусок пиццы 100 грамм</h4>
                             <p class="reward__desc">Приготовлен лучшим поваром на&nbsp;планете земля и реализован как проект НАСА в рамках захвата вселенной разными формами существования</p>
                             <p class="reward__author">Константин Константинопольский</p>
+                        </div>
+                        <div class="reward__bottom">
                             <div class="reward__price">
                                 <span>10 000 ₽</span>
-                                <span class="reward__price-old">13800</span>
+                                <small class="reward__price-old">13800</small>
                             </div>
                             <div class="reward__timing">получение до 15 июля</div>
                             <div class="reward__buy"><a href="#">Купить</a></div>
@@ -161,10 +164,12 @@
                     </li>
                     <li class="reward _big _img-on-bg">
                         <div class="reward__img bg-cyan-light"><img src="img/rewards/reward-3.png" alt=""></div>
-                        <div class="reward__info">
+                        <div class="reward__middle">
                             <h4 class="reward__title">Половина пиццы, которую ел Рикки Мартин, попивая сок у себя в квартале</h4>
                             <p class="reward__desc">Приготовлен лучшим поваром на&nbsp;планете земля и реализован как проект НАСА в рамках захвата вселенной разными формами существования</p>
                             <p class="reward__author">Ян Бильтз</p>
+                        </div>
+                        <div class="reward__bottom">
                             <div class="reward__price"><span>101 001 ₽</span></div>
                             <div class="reward__timing">получение до 15 июля</div>
                             <div class="reward__buy"><a href="#">Купить</a></div>
@@ -172,24 +177,26 @@
                     </li>
                     <li class="reward">
                         <div class="reward__img"><img src="img/rewards/reward-2.png" alt=""></div>
-                        <div class="reward__info">
+                        <div class="reward__middle">
                             <h4 class="reward__title">Кусок пиццы 100 грамм</h4>
                             <p class="reward__desc">Приготовлен лучшим поваром на&nbsp;планете земля и реализован как проект НАСА в рамках захвата вселенной разными формами существования</p>
                             <p class="reward__author">Сергей Пименов Групп</p>
+                        </div>
+                        <div class="reward__bottom">
                             <div class="reward__price"><span>10 000 ₽</span></div>
                             <div class="reward__timing">получение до 15 июля</div>
                             <div class="reward__buy"><a href="#">Купить</a></div>
                         </div>
                     </li>
-                    <!-- <li class="reward"></li> -->
-                    
                 </ul>
             </section>
 
+            <!-- блоки с видео -->
             <section class="container">
                 <div class="grid-square-banners">
                     <div class="video-card">
-                        <video id="video-123-fox" muted="true" preload="auto" loop="true" autoplay="true" poster="img/poster/video-1.png">
+                        <!-- preload="auto" loop="true" autoplay="true" -->
+                        <video id="video-123-fox" muted="true" poster="img/poster/video-1.png">
                             <source src="video/arctic-foxes.mp4" type="video/mp4">
                         </video>
                         <button class="ui-icon-button _turn-sound is-sound-off js-switch-sound" data-video="video-123-fox">
@@ -198,7 +205,7 @@
                         </button>
                     </div>
                     <div class="video-card">
-                        <video id="video-123-tik" muted="true" preload="auto" loop="true" autoplay="true" poster="img/poster/video-2.png">
+                        <video id="video-123-tik" muted="true" poster="img/poster/video-2.png">
                             <source src="video/tik-tok-book.mp4" type="video/mp4">
                         </video>
                         <button class="ui-icon-button _turn-sound is-sound-off js-switch-sound" data-video="video-123-tik">
@@ -210,6 +217,108 @@
                 </div>
             </section>
             
+            <!-- Блок с карточками -->
+            <section class="container">
+                <ul class="grid-cards">
+                    <li class="card">
+                        <div class="card__img">
+                            <img src="img/cards/coffee.png" alt="">
+                        </div>
+                        <div class="card__progress"></div>
+                        <div class="card__middle">
+                            <h4 class="card__title">
+                                <a href="#">Мудрость сквозь века до наших дней. Академия Capoeira Angola</a>
+                                <button class="ui-icon-button js-bookmark" data-card="project-id-to-bookmark"><span class="icon icon__bookmark"></span></button>
+                            </h4>
+                            <p class="card__desc">Сергея Порфирьева</p>
+                        </div>
+                        <div class="card__bottom">
+                            <div class="card__money">
+                                <div>12 100 935 ₽</div>
+                                <small class="card__money-total">из 10 0000 (1%)</small>
+                            </div>
+                            <div class="card__timing">осталось 16 дней</div>
+                            <div class="card__ps">
+                                <span>Москва</span>
+                                <span><img src="img/logo/mastercard.svg" alt=""></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="card__img">
+                            <img src="img/cards/choco.png" alt="">
+                        </div>
+                        <div class="card__progress"></div>
+                        <div class="card__middle">
+                            <h4 class="card__title">
+                                <a href="#">Живой шоколад из какао-бобов по рецептам ацтеков</a>
+                                <button class="ui-icon-button js-bookmark" data-card="project-id-to-bookmark"><span class="icon icon__bookmark"></span></button>
+                            </h4>
+                            <p class="card__desc">Константин Константинопольский и Мария Докшина</p>
+                        </div>
+                        <div class="card__bottom">
+                            <div class="card__money">
+                                <div>100 935 ₽</div>
+                                <small class="card__money-total"> из 10 0000</small>
+                            </div>
+                            <div class="card__timing">осталось 16 дней</div>
+                            <div class="card__ps">
+                                <span>Москва</span>
+                                <span><img src="img/logo/mastercard.svg" alt=""></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="card__img">
+                            <img src="img/cards/card-ceramics.png" alt="">
+                        </div>
+                        <div class="card__progress"></div>
+                        <div class="card__middle">
+                            <h4 class="card__title">
+                                <a href="#">Учебник по теории керамики «Криптопрошный кукурузник»</a>
+                                <button class="ui-icon-button js-bookmark" data-card="project-id-to-bookmark"><span class="icon icon__bookmark"></span></button>
+                            </h4>
+                            <p class="card__desc">Сергея Порфирьева</p>
+                        </div>
+                        <div class="card__bottom">
+                            <div class="card__money">
+                                <div>123 456</div>
+                                <small class="card__money-total">150 000</small>
+                            </div>
+                            <div class="card__timing">Собирает до цели</div>
+                            <div class="card__ps">
+                                <span>Иркутск</span>
+                                <span><img src="img/logo/mastercard.svg" alt=""></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="card">
+                        <div class="card__img">
+                            <img src="img/cards/project-4.png" alt="">
+                        </div>
+                        <div class="card__progress"></div>
+                        <div class="card__middle">
+                            <h4 class="card__title">
+                                <a href="#">Живой шоколад из какао-бобов по рецептам ацтеков</a>
+                                <button class="ui-icon-button js-bookmark" data-card="project-id-to-bookmark"><span class="icon icon__bookmark"></span></button>
+                            </h4>
+                            <p class="card__desc">Приготовлен лучшим поваром на планете земля и реализован как проект НАСА в рамках захвата вселенной разными формами существования Забот об окружающей природе. Картон из переработанного пластика.</p>
+                        </div>
+                        <div class="card__bottom">
+                            <div class="card__money">
+                                <div>1935 ₽</div>
+                                <small class="card__money-total">из 10 000 (20%)</small>
+                            </div>
+                            <div class="card__timing">Собирает до цели</div>
+                            <div class="card__ps">
+                                <span>Москва</span>
+                                <span><img src="img/logo/mastercard.svg" alt=""></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
             <!-- баннеры с историями -->
             <section class="container">
                 <div class="grid-square-banners">

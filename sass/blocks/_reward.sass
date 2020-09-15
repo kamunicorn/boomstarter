@@ -2,7 +2,7 @@
     border-radius: $radius-card
     display: grid
     grid-template-columns: 1fr
-    grid-template-rows: 175px auto
+    grid-template-rows: 173px auto minmax(115px, auto)
     background-color: color(white)
     &._big
         grid-column-start: 2
@@ -17,29 +17,40 @@
             min-height: auto;
             min-width: auto;
             transform: translateY(10px);
-
-
+            object-fit: contain;
     &__img
         overflow: hidden
         display: flex
         justify-content: center
         align-items: center
-        border-radius: 11px 11px 0 0
+        border-radius: $radius-card $radius-card 0 0
         img
             min-width: 100%
             min-height: 100%
             object-fit: cover
-    &__info
-        padding: 15px 15px 24px 15px
-        display: flex
-        flex-direction: column
-        > *
-            margin-bottom: 8px
+    
+    &__middle
+        padding: 15px 15px 5px 15px
+        // @include line-limit(3)
+        
+        // display: flex
+        // flex-direction: column
+        
+    &__middle > *,
+    &__bottom > *
+        margin-bottom: 8px
 
+    &__bottom
+        margin-top: auto
+        padding: 5px 15px 24px 15px
     &__title
         @include font(700, 20px)
+        // @include line-limit(3)
+    &__desc
+        // @include line-limit(5)
+    &__author
+        @include font(100, 14px)
     &__desc,
-    &__author,
     &__timing
         @include font(300, 14px)
 

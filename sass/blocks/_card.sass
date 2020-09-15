@@ -1,1 +1,55 @@
 @import '../service/service'
+
+.card
+    border-radius: $radius-card
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: 173px 5px auto minmax(125px, auto)
+    background-color: color(white)
+    &__img
+        overflow: hidden
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: $radius-card $radius-card 0 0
+        img
+            min-width: 100%
+            min-height: 100%
+            object-fit: cover
+    &__middle
+        padding: 15px 10px 5px 15px
+    &__bottom
+        margin-top: auto
+        padding: 5px 15px 24px 15px
+    
+    &__middle > *,
+    &__bottom > *
+        margin-bottom: 8px
+    &__progress
+        background-color: color(cyan)
+    
+    &__title
+        @include font(700, 16px)
+    &__author
+        @include font(100, 14px)
+    &__desc
+        @include font(300, 14px)
+        
+    &__money
+        @include font(400, 18px)
+        
+    &__money-total
+        @include font(100, 12px)
+        color: color(grey)
+    &__timing
+        margin-top: 15px
+        @include font(300, 16px)
+    
+    &__ps
+        margin: 20px 0 0
+        display: flex
+        @include font(100, 14px)
+        img
+            max-width: 76px
+            max-height: 14px
+            margin-left: 16px

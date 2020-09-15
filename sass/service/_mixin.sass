@@ -16,3 +16,10 @@
 @mixin bg-gradient($color1, $color2, $deg: 180deg)
     background-color: mix($color1, $color1) // fallback
     background: linear-gradient($deg, $color1 0%, $color2 100%)
+
+@mixin line-limit($lines)
+    overflow: hidden
+    text-overflow: ellipsis
+    display: -webkit-box
+    -webkit-line-clamp: $lines
+    -webkit-box-orient: vertical

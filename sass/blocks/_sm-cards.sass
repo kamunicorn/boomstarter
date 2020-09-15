@@ -29,12 +29,7 @@
         font-weight: 700
         margin-bottom: 7px
         // для проставления ... если название слишком длинное
-        // max-height: 50px
-        overflow: hidden
-        text-overflow: ellipsis
-        display: -webkit-box
-        -webkit-line-clamp: 2
-        -webkit-box-orient: vertical
+        @include line-limit(2)
     &__title + div
         font-weight: 100
 
