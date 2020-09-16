@@ -9,7 +9,7 @@
         display: grid
         grid-template-columns: 78px auto
         grid-gap: 14px
-        &:hover a
+        a:hover
             color: color(blue)
         a::after
             position: absolute
@@ -30,7 +30,7 @@
         margin-bottom: 7px
         // для проставления ... если название слишком длинное
         @include line-limit(2)
-    &__title + div
+    &__author
         font-weight: 100
 
 @media (max-width: 1199px)
