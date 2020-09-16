@@ -4,8 +4,12 @@
     border-radius: $radius-card
     display: grid
     grid-template-columns: 1fr
-    grid-template-rows: 173px 5px auto minmax(125px, auto)
+    // grid-template-rows: 173px 5px auto minmax(125px, auto)
+    grid-template-rows: 173px 5px auto
     background-color: color(white)
+    transition: box-shadow 0.4s
+    &:hover
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25)
     &__img
         overflow: hidden
         display: flex
@@ -16,20 +20,27 @@
             min-width: 100%
             min-height: 100%
             object-fit: cover
-    &__middle
-        padding: 15px 10px 5px 15px
-    &__bottom
-        margin-top: auto
-        padding: 5px 15px 24px 15px
-    
-    &__middle > *,
-    &__bottom > *
-        margin-bottom: 8px
-    &__progress
+    &__info
+        display: flex
+        flex-direction: column
+        padding: 15px 15px 23px 15px
+        > *:not(:last-child)
+            margin-bottom: 8px
+    // TODO
+    &__progress // для примера
         background-color: color(cyan)
     
     &__title
         @include font(700, 16px)
+        display: flex
+        flex-wrap: nowrap
+        .ui-icon-button._bookmark
+            align-self: flex-start
+            margin-right: -8px
+            color: color(grey)
+        a:hover,
+        .ui-icon-button._bookmark:hover
+            color: color(blue)
     &__author
         @include font(100, 14px)
     &__desc
@@ -37,10 +48,11 @@
         
     &__money
         @include font(400, 18px)
-        
-    &__money-total
-        @include font(100, 12px)
-        color: color(grey)
+        margin-top: auto
+        padding-top: 40px
+        &-total
+            @include font(100, 12px)
+            color: color(grey)
     &__timing
         margin-top: 15px
         @include font(300, 16px)

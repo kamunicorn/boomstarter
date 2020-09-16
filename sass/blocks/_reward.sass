@@ -2,8 +2,12 @@
     border-radius: $radius-card
     display: grid
     grid-template-columns: 1fr
-    grid-template-rows: 173px auto minmax(115px, auto)
+    // grid-template-rows: 173px auto minmax(115px, auto)
+    grid-template-rows: 173px auto
     background-color: color(white)
+    transition: box-shadow 0.4s
+    &:hover
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25)
     &._big
         grid-column-start: 2
         grid-column-end: 4
@@ -28,24 +32,17 @@
             min-width: 100%
             min-height: 100%
             object-fit: cover
-    
-    &__middle
-        padding: 15px 15px 5px 15px
-        // @include line-limit(3)
-        
-        // display: flex
-        // flex-direction: column
-        
-    &__middle > *,
-    &__bottom > *
-        margin-bottom: 8px
-
-    &__bottom
-        margin-top: auto
-        padding: 5px 15px 24px 15px
+    &__info
+        display: flex
+        flex-direction: column
+        padding: 15px 15px 23px 15px
+        > *:not(:last-child)
+            margin-bottom: 8px
     &__title
         @include font(700, 20px)
         // @include line-limit(3)
+        a:hover
+            color: color(blue)
     &__desc
         // @include line-limit(5)
     &__author
@@ -57,6 +54,7 @@
     &__price
         @include font(700, 30px)
         margin-top: auto
+        padding-top: 30px
         &-old
             @include font(300, 14px)
             color: color(grey)
