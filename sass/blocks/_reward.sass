@@ -2,28 +2,9 @@
     border-radius: $radius-card
     display: grid
     grid-template-columns: 1fr
-    // grid-template-rows: 173px auto minmax(115px, auto)
     grid-template-rows: 173px auto
     background-color: color(white)
     @include card-box-shadow
-
-    // transition: box-shadow 0.4s
-    // &:hover
-    //     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25)
-    &._big
-        grid-column-start: 2
-        grid-column-end: 4
-    &._img-on-bg // horizontal on default
-        .reward__img
-            justify-content: center;
-            align-items: baseline;
-        img
-            max-width: 85%;
-            height: 200%;
-            min-height: auto;
-            min-width: auto;
-            transform: translateY(10px);
-            object-fit: contain;
     &__img
         overflow: hidden
         display: flex
@@ -52,7 +33,6 @@
     &__desc,
     &__timing
         @include font(300, 14px)
-
     &__price
         @include font(700, 30px)
         margin-top: auto
@@ -61,10 +41,41 @@
             @include font(300, 14px)
             color: color(grey)
             margin-left: 5px
-            text-decoration: line-through
-    
+            text-decoration: line-through    
     &__buy
         font-size: 20px
         margin: 23px 0 0
         text-transform: uppercase
         color: color(blue)
+
+// подразделение на типы карточек
+.reward
+    &._big
+        grid-column: span 2
+    &._vertical-img
+        grid-template-columns: 1fr 1fr
+        grid-template-rows: 1fr
+    &._vertical-img &__img
+        border-radius: $radius-card 0 0 $radius-card
+
+    // с заданным фоном на заднем плане
+    &._img-on-bg // horizontal on default
+        .reward__img
+            justify-content: center;
+            align-items: baseline;
+        img
+            max-width: 85%;
+            height: 200%;
+            min-height: auto;
+            min-width: auto;
+            transform: translateY(10px);
+            object-fit: contain
+    
+    &._img-on-bg._vertical-img
+        .reward__img
+            justify-content: flex-start;
+            align-items: center;
+        img
+            max-width: 200%;
+            height: 85%;
+            transform: translateX(10px);

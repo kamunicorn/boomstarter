@@ -7,11 +7,6 @@
     grid-template-rows: 173px 5px auto
     background-color: color(white)
     @include card-box-shadow
-    &._big 
-        grid-column: span 2
-    &._vertical-img
-        grid-template-columns: 1fr 1fr
-        grid-template-rows: 1fr
     &__img
         overflow: hidden
         display: flex
@@ -22,11 +17,7 @@
             min-width: 100%
             min-height: 100%
             object-fit: cover
-    &._vertical-img &__img
-        border-radius: $radius-card 0 0 $radius-card
-    &._vertical-img &__progress
-            display: none
-
+    
     &__info
         display: flex
         flex-direction: column
@@ -72,3 +63,14 @@
             max-width: 76px
             max-height: 14px
             margin-left: 16px
+
+.card
+    &._big 
+        grid-column: span 2
+    &._vertical-img
+        grid-template-columns: 1fr 1fr
+        grid-template-rows: 1fr
+    &._vertical-img &__img
+        border-radius: $radius-card 0 0 $radius-card
+    &._vertical-img &__progress
+        display: none
