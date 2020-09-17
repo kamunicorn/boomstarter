@@ -5,10 +5,15 @@
     flex-wrap: nowrap
     justify-content: space-between
     align-items: center
-    &._mobile,
     &__item._open-search
-        display: none
         margin-right: 10px
+    &._mobile
+        display: flex
+        flex-wrap: nowrap
+        justify-content: flex-start
+        align-items: center
+        overflow-x: auto
+        white-space: nowrap
     &__item
         transition: color 0.3s
         &._open-search,
@@ -39,40 +44,17 @@
         &._bookmark
             margin: 0 10px
             font-size: 1.2em
-    
 
+nav:nth-child(2)
+    border-top: 1px solid color(grey)
+    
 @media (max-width: 1199px)
-    nav:first-child
-        border-bottom: 1px solid color(grey)
     .menu-bar
         &__item._search
             margin-right: 15px
-        &__item._desktop
-            display: none
-        &._mobile
-            display: flex
-            flex-wrap: nowrap
-            justify-content: flex-start
-            align-items: center
-            overflow-x: auto
-            white-space: nowrap
 
-@media (max-width: 991px)
-    .menu-bar
-        &__item._desktop
-            display: none
-
-@media (max-width: 767px)
-    .menu-bar
-        &__item._search
-            display: none
-        &__item._open-search
-            display: block
-        
 @media (max-width: 479px)
     .menu-bar__item
-        &._create
-            display: none
         &._open-search
             margin-right: 0
         &._bookmark

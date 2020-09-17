@@ -27,29 +27,29 @@
                         </a>
                     </li>
                     <!-- 3 ссылки из меню -->
-                    <li class="menu-bar__item _desktop">
+                    <li class="menu-bar__item lg-hidden">
                         <a href="#">Как это работает</a>
                     </li>
-                    <li class="menu-bar__item _desktop">
+                    <li class="menu-bar__item lg-hidden">
                         <a href="#">Все проекты</a>
                     </li>
-                    <li class="menu-bar__item _desktop">
+                    <li class="menu-bar__item lg-hidden">
                         <a href="#">Рекордсмены</a>
                     </li>
 
                     <!-- кнопка перехода к поиску на маленьких экранах -->
-                    <li class="menu-bar__item _open-search">
+                    <li class="menu-bar__item _open-search hidden sm-block">
                         <button class="ui-icon-button" aria-label="Открыть поиск">
                             <span class="icon icon-search"></span>
                         </button>
                     </li>
-                    <li class="menu-bar__item _search">
+                    <li class="menu-bar__item _search sm-hidden">
                         <form class="ui-search bg-grey-light">
                             <span class="icon icon-search"></span>
                             <input type="search" name="search" id="">
                         </form>
                     </li>
-                    <li class="menu-bar__item _create">
+                    <li class="menu-bar__item _create xs-hidden">
                         <a href="#">Создать проект</a>
                     </li>
                     <li class="menu-bar__item _bookmark">
@@ -57,23 +57,23 @@
                             <span class="icon icon-bookmark"></span>
                         </a>
                     </li>
-                    <li class="menu-bar__item _login _link">
+                    <li class="menu-bar__item _login">
                         <a href="#">Войти</a>
                     </li>
                 </ul>
             </div>
         <!-- вторая строка меню со ссылками (для ширины < 1200px) -->
         </nav>
-        <nav>
+        <nav class="hidden lg-block">
             <div class="container">
                 <ul class="menu-bar _mobile">
-                    <li class="menu-bar__item _link">
+                    <li class="menu-bar__item">
                         <a href="#">Как это работает</a>
                     </li>
-                    <li class="menu-bar__item _link">
+                    <li class="menu-bar__item">
                         <a href="#">Все проекты</a>
                     </li>
-                    <li class="menu-bar__item _link">
+                    <li class="menu-bar__item">
                         <a href="#">Рекордсмены</a>
                     </li>
                 </ul>
@@ -142,19 +142,29 @@
                 <!-- </div> -->
             </section>
             
+            <!-- Раздел Спецпроект - слайдер с карточками -->
+            <!-- <section class="special bg-gradient-yellow-light-beige">
+                <div class="container">
+                    <div class="special__heading">
+                        <h2 class="special__title">Спецпроект #ПоддержиБизнес с Мастеркард</h2>
+                        <a class="special__look-all" href="#">Смотреть все</a>
+                    </div>
+                </div>
+            </section> -->
+
             <!-- TODO -->
             <!-- Блок с вознаграждениями -->
             <section class="container">
-                <ul class="grid-rewards">
+                <ul class="grid grid-rewards">
                     <li class="reward">
                         <div class="reward__img"><img src="img/rewards/reward-1-pizza.png" alt=""></div>
                         <div class="reward__info">
                             <h4 class="reward__title"><a href="#">Кусок пиццы 100 грамм</a></h4>
                             <p class="reward__desc">Приготовлен лучшим поваром на&nbsp;планете земля и реализован как проект НАСА в рамках захвата вселенной разными формами существования</p>
                             <p class="reward__author">Константин Константинопольский</p>
-                            <div class="reward__price">
+                            <div class="reward__money">
                                 <span>10 000 ₽</span>
-                                <small class="reward__price-old">13800</small>
+                                <small class="reward__money-old">13800</small>
                             </div>
                             <div class="reward__timing">получение до 15 июля</div>
                             <div class="reward__buy"><a href="#">Купить</a></div>
@@ -167,7 +177,7 @@
                             <h4 class="reward__title"><a href="#">Половина пиццы, которую ел Рикки Мартин, попивая сок у себя в квартале</a></h4>
                             <p class="reward__desc">Приготовлен лучшим поваром на&nbsp;планете земля и реализован как проект НАСА в рамках захвата вселенной разными формами существования</p>
                             <p class="reward__author">Ян Бильтз</p>
-                            <div class="reward__price"><span>101 001 ₽</span></div>
+                            <div class="reward__money"><span>101 001 ₽</span></div>
                             <div class="reward__timing">получение до 15 июля</div>
                             <div class="reward__buy"><a href="#">Купить</a></div>
                         </div>
@@ -179,7 +189,7 @@
                             <h4 class="reward__title"><a href="#">Кусок пиццы 100 грамм</a></h4>
                             <p class="reward__desc">Приготовлен лучшим поваром на&nbsp;планете земля и реализован как проект НАСА в рамках захвата вселенной разными формами существования</p>
                             <p class="reward__author">Сергей Пименов Групп</p>
-                            <div class="reward__price"><span>10 000 ₽</span></div>
+                            <div class="reward__money"><span>10 000 ₽</span></div>
                             <div class="reward__timing">получение до 15 июля</div>
                             <div class="reward__buy"><a href="#">Купить</a></div>
                         </div>
@@ -191,7 +201,7 @@
                             <h4 class="reward__title"><a href="#">Половина пиццы, которую ел Рикки Мартин, попивая сок у себя в квартале</a></h4>
                             <p class="reward__desc">Приготовлен лучшим поваром на&nbsp;планете земля и реализован как проект НАСА в рамках захвата вселенной разными формами существования</p>
                             <p class="reward__author">Ян Бильтз</p>
-                            <div class="reward__price"><span>101 001 ₽</span></div>
+                            <div class="reward__money"><span>101 001 ₽</span></div>
                             <div class="reward__timing">получение до 15 июля</div>
                             <div class="reward__buy"><a href="#">Купить</a></div>
                         </div>
@@ -203,7 +213,7 @@
                             <h4 class="reward__title"><a href="#">Половина пиццы, которую ел Рикки Мартин, попивая сок у себя в квартале</a></h4>
                             <p class="reward__desc">Приготовлен лучшим поваром на&nbsp;планете земля и реализован как проект НАСА в рамках захвата вселенной разными формами существования</p>
                             <p class="reward__author">Ян Бильтз</p>
-                            <div class="reward__price"><span>101 001 ₽</span></div>
+                            <div class="reward__money"><span>101 001 ₽</span></div>
                             <div class="reward__timing">получение до 15 июля</div>
                             <div class="reward__buy"><a href="#">Купить</a></div>
                         </div>
@@ -215,7 +225,7 @@
                             <h4 class="reward__title"><a href="#">Половина пиццы, которую ел Рикки Мартин, попивая сок у себя в квартале</a></h4>
                             <p class="reward__desc">Приготовлен лучшим поваром на&nbsp;планете земля и реализован как проект НАСА в рамках захвата вселенной разными формами существования</p>
                             <p class="reward__author">Ян Бильтз</p>
-                            <div class="reward__price"><span>101 001 ₽</span></div>
+                            <div class="reward__money"><span>101 001 ₽</span></div>
                             <div class="reward__timing">получение до 15 июля</div>
                             <div class="reward__buy"><a href="#">Купить</a></div>
                         </div>
@@ -226,7 +236,7 @@
                             <h4 class="reward__title"><a href="#">Кусок пиццы 100 грамм</a></h4>
                             <p class="reward__desc">Приготовлен лучшим поваром на&nbsp;планете земля и реализован как проект НАСА в рамках захвата вселенной разными формами существования</p>
                             <p class="reward__author">Сергей Пименов Групп</p>
-                            <div class="reward__price"><span>10 000 ₽</span></div>
+                            <div class="reward__money"><span>10 000 ₽</span></div>
                             <div class="reward__timing">получение до 15 июля</div>
                             <div class="reward__buy"><a href="#">Купить</a></div>
                         </div>
@@ -236,7 +246,7 @@
 
             <!-- Блок с карточками -->
             <section class="container">
-                <ul class="grid-cards">
+                <ul class="grid grid-cards">
                     <li class="card">
                         <div class="card__img">
                             <img src="img/cards/coffee.png" alt="">
@@ -330,11 +340,10 @@
 
             <!-- TODO -->
             <!-- блоки с видео -->
-            <section class="container">
-                <div class="grid-square-banners">
+            <!-- <section class="container">
+                <div class="grid grid-square-banners">
                     <div class="video-card">
-                        <!-- preload="auto" loop="true" autoplay="true" -->
-                        <video id="video-123-fox" muted="true" poster="img/poster/video-1.png">
+                        <video id="video-123-fox" preload="auto" loop="true" autoplay="true" muted="true" poster="img/poster/video-1.png">
                             <source src="video/arctic-foxes.mp4" type="video/mp4">
                         </video>
                         <button class="ui-icon-button _turn-sound is-sound-off js-switch-sound" data-video="video-123-fox">
@@ -353,11 +362,11 @@
                         <a href="#" class="ui-button bg-blue">Смотреть проект</a>
                     </div>
                 </div>
-            </section>
+            </section> -->
             
             <!-- Второй Блок с карточками - с большой карточкой на 2 колонки -->
             <section class="container">
-                <ul class="grid-cards">
+                <ul class="grid grid-cards">
                     <li class="card _big _vertical-img">
                         <div class="card__img">
                             <img src="img/cards/middle-ages.png" alt="">
@@ -499,7 +508,7 @@
             
             <!-- баннеры с историями -->
             <section class="container">
-                <div class="grid-square-banners">
+                <div class="grid grid-square-banners">
                     <div class="story bg-yellow">
                         <div class="story__bg">
                             <img src="img/story/story-1.png" alt="">

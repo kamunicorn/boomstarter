@@ -20,17 +20,27 @@ $colors: (
     pink: #FE7D90
 );
 
-
-/* radius */
+// font settings
 $base-font-size: 16px;
+$base-font-family: 'Museo Sans Cyrl';
 
 // for border-radius
 $radius-card: em(11);
 $radius-button: em(40);
 $radius-banner: em(15);
 
-// containet for content
+
+// grid variables
 $container-max-width: 1280px;
 $container-padding: em(50);
+$grid-gap: em(20);
 
-$base-font-family: 'Museo Sans Cyrl';
+
+// размеры ширины экрана
+$media-sizes: (
+    xl: $container-max-width,
+    lg: 1200px,
+    md: 992px,
+    sm: 768px,
+    xs: 576px
+);

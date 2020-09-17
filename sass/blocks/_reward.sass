@@ -2,7 +2,7 @@
     border-radius: $radius-card
     display: grid
     grid-template-columns: 1fr
-    grid-template-rows: 173px auto
+    grid-template-rows: em(173) auto
     background-color: color(white)
     @include card-box-shadow
     &__img
@@ -33,7 +33,7 @@
     &__desc,
     &__timing
         @include font(300, 14px)
-    &__price
+    &__money
         @include font(700, 30px)
         margin-top: auto
         padding-top: 30px
@@ -47,6 +47,20 @@
         margin: 23px 0 0
         text-transform: uppercase
         color: color(blue)
+
+@media (max-width: 575px)
+    .reward
+        // &__title,
+        // &__author,
+        // &__desc,
+        // &__timing
+        &__info > *
+            font-size: 12px
+        &__money
+            font-size: 20px
+            // padding-top: 20px
+        &__buy
+            font-size: 16px
 
 // подразделение на типы карточек
 .reward

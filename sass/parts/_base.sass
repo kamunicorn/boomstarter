@@ -7,29 +7,24 @@ html
     font-size: 100%
     font-size: $base-font-size
     @media (max-width: 1199px)
-        font-size: $base-font-size * 0.95
+        font-size: $base-font-size * 0.94
     @media (max-width: 991px)
-        font-size: $base-font-size * 0.90
+        font-size: $base-font-size * 0.88
     @media (max-width: 767px)
-        font-size: $base-font-size * 0.85
+        font-size: $base-font-size * 0.82
     @media (max-width: 575px)
-        font-size: $base-font-size * 0.80
+        font-size: $base-font-size * 0.76
 
 body
     line-height: 1
     font-family: $base-font-family, sans-serif
     background-color: color(grey-light)
 
-// главный контейнер для контента на странице
-.container
-    width: 100%
-    max-width: $container-max-width
-    padding: 0 $container-padding
-    margin: 0 auto
-    @media (max-width: 767px)
-        padding: 0 14px
-
 ul
     list-style: none
     margin: 0
     padding: 0
+
+// перенос длинных слов
+*
+    word-break: break-word;

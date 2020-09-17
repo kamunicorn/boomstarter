@@ -1,17 +1,55 @@
-[class*="grid-"]
+@import '../service/service'
+
+.hidden
+    display: none!important
+
+// классы вида .xs-block, xs-hidden
+@each $size-name, $size-value in $media-sizes
+    $max-width: $size-value - 1
+    @media (max-width: $max-width)
+        .#{$size-name}-hidden
+            display: none!important
+        .#{$size-name}-block
+            display: block!important
+
+
+// главный контейнер для контента на странице
+.container
+    width: 100%
+    max-width: $container-max-width
+    padding: 0 $container-padding
+    margin: 0 auto
+    @media (max-width: 575px)
+        padding: 0 14px
+   
+
+// сетки на гридах
+.grid
     display: grid
     grid-template-columns: repeat(4, 1fr)
-    grid-gap: 20px
-    margin: 20px 0
+    grid-gap: $grid-gap
+    margin: em(20) 0
+    grid-auto-flow: dense
+    @media (max-width: 991px)
+        grid-template-columns: repeat(3, 1fr)
+    @media (max-width: 767px)
+        grid-template-columns: repeat(2, 1fr)
+    @media (max-width: 575px)
+        grid-gap: em(15)
+
+.grid.no-gap
+    grid-gap: 0
 
 .grid-rewards
     grid-auto-rows: minmax(480px, auto)
-    
+    @media (max-width: 767px)
+        grid-auto-rows: minmax(430px, auto);
+    @media (max-width: 575px)
+        grid-auto-rows: minmax(380px, auto);
+
+
 .grid-square-banners
-    // display: grid
     grid-template-columns: 1fr 1fr
-    // grid-gap: 20px
-    margin: 20px 0
     grid-auto-rows: 410px
     @media (max-width: 991px)
         grid-template-columns: 1fr
@@ -19,6 +57,4 @@
         grid-auto-rows: minmax(210px, auto)
 
 .grid-cards
-    grid-template-columns: repeat(1fr)
-    
-    
+    // grid-template-columns: repeat(4, 1fr)
