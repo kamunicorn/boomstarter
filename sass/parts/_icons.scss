@@ -24,24 +24,32 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-bookmark:before {
-  content: "\e900";
-}
-.icon-check:before {
-  content: "\e901";
-}
-.icon-heart:before {
-  content: "\e902";
-}
-.icon-search:before {
-  content: "\e903";
-}
-.icon-sound-off:before {
-  content: "\e904";
-}
-.icon-sound-on:before {
-  content: "\e905";
-}
-.icon-bookmark-filled:before {
-  content: "\e906";
+.icon {
+  &-bookmark:before {
+    content: "\e900";
+  }
+  &-check:before {
+    content: "\e901";
+  }
+  &-heart:before {
+    content: "\e902";
+  }
+  &-search:before {
+    content: "\e903";
+  }
+  &-sound-off:before {
+    content: "\e904";
+  }
+  &-sound-on:before {
+    content: "\e905";
+  }
+  &-bookmark-filled:before {
+    content: "\e906";
+  }
+  &-arrow-left:before {
+    content: "\e907";
+  }
+  &-arrow-right:before {
+    content: "\e908";
+  }
 }

@@ -58,3 +58,18 @@
 
 .grid-cards
     // grid-template-columns: repeat(4, 1fr)
+
+.grid-special
+    grid-auto-columns: 280px
+    grid-template-columns: 280px
+    grid-auto-flow: column
+    margin: 0
+    @media (max-width: 991px)
+        grid-auto-columns: 260px
+        grid-template-columns: 260px
+    @media (max-width: 767px)
+        grid-auto-columns: 238px
+        grid-template-columns: 238px
+    @media (max-width: 767px)
+        grid-auto-columns: 185px
+        grid-template-columns: 185px

@@ -1,0 +1,28 @@
+@import '../service/service'
+
+.slider
+    position: relative
+    overflow: hidden
+    &__row
+        grid-auto-flow: column
+        // overflow: auto
+
+    &__controls
+        [class*="ui-arrow-"]
+            position: absolute
+            top: 50%
+            &:disabled
+                display: none
+        .ui-arrow-left
+            left: 0
+            transform: translateY(-50%) translateX(-50%)
+        .ui-arrow-right
+            right: 0
+            transform: translateY(-50%) translateX(50%)
+
+@media (max-width: 991px)
+    .slider
+        &__row
+            overflow: auto
+        &__controls
+            display: none
