@@ -27,7 +27,11 @@
             margin-bottom: 8px
     // TODO
     &__progress // для примера
-        background-color: color(cyan)
+        background-color: color(grey)
+        overflow: hidden
+        hr
+            height: 100%
+            background-color: color(cyan)
     
     &__title
         @include font(700, 16px)
@@ -72,6 +76,9 @@
     &._vertical-img
         grid-template-columns: 1fr 5px 1fr
         grid-template-rows: 1fr
+    &._vertical-img &__progress hr
+        width: 100%
+
     &._vertical-img &__img
         border-radius: $radius-card 0 0 $radius-card
     &._vertical-img &__progress
