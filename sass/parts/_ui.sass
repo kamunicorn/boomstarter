@@ -23,6 +23,7 @@
             .emoji
                 margin-left: 0.7em
 
+    // поле поиска
     &-search
         display: flex
         width: 200px
@@ -35,11 +36,13 @@
         input::-webkit-textfield-decoration-container
             background-color: color(grey-light)
 
+    // кнопки с иконками внутри
     &-icon-button
         padding: 5px 8px
         line-height: 1
         transition: background-color 0.5s, color 0.5s
-        
+
+    // кнопка включения/выключения звука
     &-icon-button._turn-sound
         &.is-sound-off
             .icon-sound-on
@@ -52,6 +55,7 @@
             .icon-sound-off
                 display: none
 
+    // стрелки для слайдера
     &-arrow-left,
     &-arrow-right
         width: em(54)
@@ -63,3 +67,62 @@
         transition: 0.3s
         &:hover
             color: color(cyan)
+
+    &-subjects
+        display: flex
+        // border-bottom: 3.6px solid color(grey)
+        overflow-x: auto
+
+        &__item
+            border-bottom: 3.6px solid color(grey)
+            padding-right: 18px
+            &:last-child
+                flex: 1 1 auto
+                padding-right: 0
+                .ui-subjects__btn
+                    margin: 0 0 0 auto
+    
+        &__btn
+            position: relative
+            padding: 5px 5px 10px 0
+            // @include font(400, 16px)
+            transition: color 0.3s
+            white-space: nowrap
+            transition: color 0.3s
+            
+            &::after
+                position: absolute
+                content: ''
+                left: 0
+                bottom: -3.6px
+                width: 100%
+                height: 3.6px
+                background-color: transparent
+                transition: background-color 0.3s
+
+            &.is-active,
+            &:hover
+                color: color(blue)
+                &::after
+                    background-color: color(blue)
+
+        &__count
+            font-size: em(12)
+            color: color(grey)
+            margin-left: 3px
+    .has-dropdown
+    
+
+    &-dropdown
+        width: max-content
+        max-width: 160px
+        background-color: color(white)
+        border-radius: 0 0 $radius-card $radius-card
+
+        &__item
+            padding: 6px 17px
+            cursor: default
+            &:hover
+                color: color(blue)
+                background-color: color(grey-light)
+
