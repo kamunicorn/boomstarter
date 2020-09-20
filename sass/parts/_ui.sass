@@ -1,16 +1,22 @@
 @import '../service/service'
 
 .ui
+    // может быть кнопкой или ссылкой, выглядящей как кнопка
     &-button
         display: inline-block
         // min-height: 50px
         width: 270px
         max-width: 100%
         padding: 16px 26px
+        color: color(white)
+        background-color: color(primary)
         text-align: center
         font-weight: 500
         border-radius: $radius-button
-        transition: background-color 0.5s, color 0.5s
+        // transition: background-color 0.5s, color 0.5s
+        &:hover
+            background-color: darken(color(primary), 8%)
+
         @media (max-width: 767px)
             padding: 15px 24px
         @media (max-width: 575px)
@@ -22,6 +28,18 @@
             justify-content: center
             .emoji
                 margin-left: 0.7em
+
+    // модификации кнопки
+    &-button
+        &._outlined
+            background-color: transparent
+            color: color(primary)
+            border: 1px solid
+            &:hover
+                background-color: color(white)
+                box-shadow: 0 1px 5px 0px rgba(0,0,0,0.4)
+        &._fit-content
+            width: fit-content
 
     // поле поиска
     &-search
@@ -40,8 +58,7 @@
     &-icon-button
         padding: 5px 8px
         line-height: 1
-        transition: background-color 0.5s, color 0.5s
-
+        
     // кнопка включения/выключения звука
     &-icon-button._turn-sound
         &.is-sound-off
@@ -71,7 +88,10 @@
     // вкладки с темами
     &-subjects
         display: flex
-        overflow-x: auto
+        @media (max-width: 991px)
+            overflow-x: auto
+            &__btn
+                white-space: nowrap
         &__item
             border-bottom: 3.6px solid color(grey)
             padding-right: 20px
@@ -83,9 +103,6 @@
         &__btn
             position: relative
             padding: 10px 0 10px
-            transition: color 0.3s
-            white-space: nowrap
-            transition: color 0.3s
             &::after
                 position: absolute
                 content: ''
@@ -94,31 +111,42 @@
                 width: 100%
                 height: 3.6px
                 background-color: transparent
-                transition: background-color 0.3s
             &.is-active,
             &:hover
-                color: color(blue)
+                color: color(primary)
                 &::after
-                    background-color: color(blue)
+                    background-color: color(primary)
         &__count
             font-size: em(12)
             color: color(grey)
             margin-left: 3px
-    // .has-dropdown
+        &__item
+            &.has-dropdown
+                position: relative
+            .ui-dropdown
+                top: 0
+                left: -17px
+        &__item:hover .ui-dropdown
+            display: block
     
+    // выпадающее окно
     &-dropdown
+        position: absolute
         display: none
+        z-index: 2
         width: max-content
         min-width: 160px
         max-width: 200px
         background-color: color(white)
-        border-radius: 0 0 $radius-card $radius-card
+        border-radius: $radius-card
+        &__head
+            padding: 10px 17px
         &__item
             padding: 6px 17px
             cursor: default
-            &:hover
-                color: color(blue)
-                background-color: color(grey-light)
+        &__item:hover
+            color: color(primary)
+            background-color: color(grey-light)
 
     &-checkbox
         display: flex
@@ -149,18 +177,20 @@
 
     // TODO
     // сортировка по
-    &-sorting__control
-        margin-left: 1em
-        color: color(blue)
+    &-sorting
+        &__control
+            margin-left: 1em
+            color: color(primary)
         .icon-sorting
             margin-left: 0.5em
             font-size: 0.7em
 
     // фильтр с выпадающим списком
     &-filter
+        position: relative
         margin-right: 18px
         &__control
-            color: color(blue)
-            border-bottom: 1px dashed color(blue)
+            color: color(primary)
+            border-bottom: 1px dashed color(primary)
         &__dropdown
 

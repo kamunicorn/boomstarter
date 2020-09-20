@@ -11,7 +11,7 @@
         grid-template-columns: 78px auto
         grid-gap: 14px
         a:hover
-            color: color(blue)
+            color: color(primary)
         a::after
             position: absolute
             content: ''
@@ -39,14 +39,16 @@
         grid-template-columns: 1fr 1fr
         padding-top: 0
 
+@media (max-width: 767px)
+    .sm-cards__title
+        -webkit-line-clamp: 3
 @media (max-width: 575px)
     .sm-cards
         grid-template-columns: 117px
-        // grid-gap: 15px
+        grid-auto-columns: 117px
         padding-top: 0;
         overflow-x: auto;
         grid-auto-flow: column;
-        grid-auto-columns: 117px
         img
             width: 116px
             height: 116px
@@ -55,6 +57,5 @@
             grid-gap: 8px
         &__info
             font-size: 12px
-        &__title
-            -webkit-line-clamp: 3
+        
     
