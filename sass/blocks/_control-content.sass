@@ -1,20 +1,29 @@
 @import '../service/service'
 
 .control-content
-    margin: em(25) 0
+    margin: em(25) 0 em(30)
     &__subjects
         &-all
-            margin: 16px 0 30px
+            font-size: 16px
+            margin: 15px 0 25px
     &__status
+        font-size: 16px
         display: flex
-        margin: 15px 0 29px
+        margin: 30px 0 0
 
     &__sorting
-        display: flex
-        margin-right: 27px
+        font-size: 16px
+        display: inline-flex
+        margin-top: em(30)
+        margin-right: em(30)
+        @media (max-width: 575px)
+            margin-right: 0
 
     &__filter
-        display: flex
-        margin: 20px 0 25px
+        margin-top: em(30)
+        font-size: 16px
+        display: inline-flex
+        @media (max-width: 575px)
+            margin: em(16) 0 em(30)
         
         

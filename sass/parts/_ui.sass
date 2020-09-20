@@ -7,7 +7,7 @@
         // min-height: 50px
         width: 270px
         max-width: 100%
-        padding: 16px 26px
+        padding: em(16) em(26)
         color: color(white)
         background-color: color(primary)
         text-align: center
@@ -16,11 +16,10 @@
         // transition: background-color 0.5s, color 0.5s
         &:hover
             background-color: darken(color(primary), 8%)
-
-        @media (max-width: 767px)
-            padding: 15px 24px
-        @media (max-width: 575px)
-            padding: 14px 22px
+        // @media (max-width: 767px)
+        //     padding: 15px 24px
+        // @media (max-width: 575px)
+        //     padding: 14px 22px
         @media (max-width: 479px)
             width: 100%
         &.has-emoji
@@ -32,6 +31,8 @@
     // модификации кнопки
     &-button
         &._outlined
+            padding: 9px 13px
+            font-weight: 300
             background-color: transparent
             color: color(primary)
             border: 1px solid
@@ -45,10 +46,12 @@
     &-search
         display: flex
         width: 200px
+        background-color: color(grey-light)
         padding: 6px 12px
         border-radius: $radius-button
         .icon-search
             margin-right: 8px
+            color: color(grey)
         input
             border: none
         input::-webkit-textfield-decoration-container
@@ -71,6 +74,18 @@
                 display: block
             .icon-sound-off
                 display: none
+
+    // кнопка добавления в закладки
+    &-icon-button._bookmark
+        .icon-bookmark
+            display: block
+        .icon-bookmark-filled
+            display: none
+        &.is-filled
+            .icon-bookmark
+                display: none
+            .icon-bookmark-filled
+                display: block
 
     // стрелки для слайдера
     &-arrow-left,
@@ -151,7 +166,7 @@
     &-checkbox
         display: flex
         margin-right: 15px
-        padding: 2px 5px
+        padding: 5px 0
         cursor: default
         input
             opacity: 0
@@ -187,6 +202,7 @@
 
     // фильтр с выпадающим списком
     &-filter
+        display: inline-flex
         position: relative
         margin-right: 18px
         &__control
