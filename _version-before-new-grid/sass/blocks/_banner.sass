@@ -29,13 +29,9 @@
         max-width: 55%
         min-width: 35%
         padding-left: 20px
-        // background-repeat: no-repeat
-        // background-position: bottom center
-        // background-size: 90%
-        &-bg
+        &-bg // div container
             width: 90%
             height: 90%
-            // object-fit: contain
             background-repeat: no-repeat
             background-position: bottom center
             background-size: contain
@@ -70,19 +66,23 @@
             display: none
 
 .banner._huggies
-    .banner__img-bg
-        background-position: center
+    .banner__img
+        display: flex
+        &-bg
+            background-position: center
+            margin: auto
     @media (max-width: 767px)
         display: flex
         flex-direction: column
         min-height: 300px
         .banner__info
-            margin-bottom: 5px
+            // margin-bottom: 5px
         .banner__img
-            display: block
+            display: flex
             max-width: 100%
             padding-left: 0
             &-bg
                 height: 125px
+                margin-bottom: 0
                 background-position-y: 20px
 
