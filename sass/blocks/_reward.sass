@@ -2,15 +2,20 @@
     border-radius: $radius-card
     display: grid
     grid-template-columns: 1fr
-    grid-template-rows: 173px auto
+    grid-template-rows: em(173) auto
     background-color: color(white)
     @include card-box-shadow
     &__img
-        overflow: hidden
-        display: flex
-        justify-content: center
-        align-items: center
         border-radius: $radius-card $radius-card 0 0
+        overflow: hidden
+        a
+            // display: block
+            overflow: hidden
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 100%
+            height: 100%
         img
             min-width: 100%
             min-height: 100%
@@ -25,7 +30,7 @@
         @include font(700, 20px)
         // @include line-limit(3)
         a:hover
-            color: color(blue)
+            color: color(primary)
     &__desc
         // @include line-limit(5)
     &__author
@@ -33,7 +38,7 @@
     &__desc,
     &__timing
         @include font(300, 14px)
-    &__price
+    &__money
         @include font(700, 30px)
         margin-top: auto
         padding-top: 30px
@@ -46,7 +51,17 @@
         font-size: 20px
         margin: 23px 0 0
         text-transform: uppercase
-        color: color(blue)
+        color: color(primary)
+
+@media (max-width: 575px)
+    .reward
+        &__info > *
+            font-size: 12px
+        &__money
+            font-size: 20px
+            // padding-top: 20px
+        &__buy
+            font-size: 16px
 
 // подразделение на типы карточек
 .reward
@@ -60,22 +75,27 @@
 
     // с заданным фоном на заднем плане
     &._img-on-bg // horizontal on default
-        .reward__img
-            justify-content: center;
-            align-items: baseline;
+        .reward__img a
+            justify-content: center
+            align-items: baseline
         img
-            max-width: 85%;
-            height: 200%;
-            min-height: auto;
-            min-width: auto;
-            transform: translateY(10px);
+            max-width: 85%
+            height: 200%
+            min-height: auto
+            min-width: auto
+            transform: translateY(10px)
             object-fit: contain
     
     &._img-on-bg._vertical-img
-        .reward__img
-            justify-content: flex-start;
-            align-items: center;
+        .reward__img a
+            justify-content: flex-start
+            align-items: center
         img
-            max-width: 200%;
-            height: 85%;
-            transform: translateX(10px);
+            height: 85%
+            max-height: 450px
+            max-width: 200%
+            transform: translateX(10px)
+            @media (max-width: 767px)
+                max-height: 410px
+            @media (max-width: 575px)
+                max-height: 365px
