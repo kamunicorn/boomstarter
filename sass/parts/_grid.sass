@@ -1,0 +1,96 @@
+@import '../service/service'
+
+.hidden
+    display: none!important
+
+// классы вида .xs-block, xs-hidden
+@each $size-name, $size-value in $media-sizes
+    $max-width: $size-value - 1
+    @media (max-width: $max-width)
+        .#{$size-name}-hidden
+            display: none!important
+        .#{$size-name}-block
+            display: block!important
+
+
+// главный контейнер для контента на странице
+.container
+    width: 100%
+    max-width: $container-max-width
+    padding: 0 $container-padding
+    margin: 0 auto
+    @media (max-width: 575px)
+        padding: 0 14px
+
+
+/* * * * Первый тип сеток - 12-ти колоночная, как у bootstrap, адаптивная в разметке, но на гридах! * * * */
+.grid-row
+    display: grid
+    grid-template-columns: repeat(12, 1fr)
+    grid-gap: $grid-gap
+    grid-auto-flow: row
+
+// размеры колонок типа .span-6 {grid-column: span 6}
+// .span действует в размерах выше 1280px и ниже, если у блока не указаны другие классы
+// если класс вообще не задан, то блок занимает 1fr
+@for $i from 1 to 13
+    .span-#{$i}
+        grid-column: span $i
+
+// адаптивные классы
+@each $size-name, $size-value in $media-sizes
+    $max-width: $size-value - 1
+    @media (max-width: $max-width)
+        @for $i from 1 to 13
+            .#{$size-name}-span-#{$i}
+                grid-column: span $i
+
+
+/* * * * Второй тип сеток - 4-х колоночная, адаптивная в стилях, на гридах! для блоков на странице * * * */
+.grid
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    grid-gap: $grid-gap
+    margin: em(20) 0
+    grid-auto-flow: dense
+    @media (max-width: 991px)
+        grid-template-columns: repeat(3, 1fr)
+    @media (max-width: 767px)
+        grid-template-columns: repeat(2, 1fr)
+    @media (max-width: 575px)
+        grid-gap: em(15)
+
+.no-grid-gap
+    grid-gap: 0
+
+.grid-rewards
+    grid-auto-rows: minmax(480px, auto)
+    @media (max-width: 767px)
+        grid-auto-rows: minmax(430px, auto)
+    @media (max-width: 575px)
+        grid-auto-rows: minmax(380px, auto)
+
+.grid-square-banners
+    grid-template-columns: 1fr 1fr
+    grid-auto-rows: 410px
+    @media (max-width: 991px)
+        grid-template-columns: 1fr
+    @media (max-width: 575px)
+        grid-auto-rows: minmax(210px, auto)
+
+// .grid-cards
+
+.grid-special
+    grid-auto-columns: 280px
+    grid-template-columns: 280px
+    grid-auto-flow: column
+    margin: 0
+    @media (max-width: 991px)
+        grid-auto-columns: 260px
+        grid-template-columns: 260px
+    @media (max-width: 767px)
+        grid-auto-columns: 238px
+        grid-template-columns: 238px
+    @media (max-width: 767px)
+        grid-auto-columns: 185px
+        grid-template-columns: 185px
