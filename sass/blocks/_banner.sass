@@ -1,0 +1,73 @@
+@import '../service/service'
+
+// big long banner
+.banner
+    min-height: 340px
+    margin: 20px 0
+    border-radius: $radius-banner
+    &__info
+        display: flex
+        height: 100%
+        flex-direction: column
+        justify-content: center
+        padding: 20px 20px 20px 95px
+    &__title
+        @include font(700, 30px)
+        margin-bottom: 10px
+    &__desc
+        @include font(500, 18px)
+    &__button
+        margin-top: em(40)
+    &__img // div container
+        display: flex
+        height: 100%
+        // flex: 1 1 auto
+        &-bg // div container
+            width: 90%
+            height: 90%
+            background-repeat: no-repeat
+            background-position: bottom center
+            background-size: contain
+            margin: auto auto 0
+
+@media (max-width: 991px)
+    .banner
+        &__info
+            padding-left: 30px
+
+@media (max-width: 767px)
+    .banner
+        min-height: 290px
+        &__title
+            font-size: 25px
+        &__desc
+            font-size: 16px
+
+@media (max-width: 575px)
+    .banner
+        min-height: 250px
+        &__info
+            padding-left: 20px
+        &__title
+            font-size: 20px
+
+.banner._huggies
+    .banner__img
+        &-bg
+            margin: auto
+            background-position: center
+    @media (max-width: 767px)
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        min-height: 330px
+        .banner__info
+            padding-bottom: 0
+        .banner__img
+            display: flex
+            max-width: 100%
+            &-bg
+                flex: 1 1 auto
+                height: 140px
+                background-position: bottom
+                background-position-y: 20px
