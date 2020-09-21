@@ -3,12 +3,11 @@
     flex-wrap: nowrap
     border-radius: $radius-banner
     &__info
+        height: 100%
         display: flex
         flex-direction: column
         justify-content: center
         padding: 45px 20px 15px 40px
-        width: 52%
-        max-width: 52%
     &__title
         @include font(700, 30px)
         margin-bottom: 20px
@@ -25,30 +24,26 @@
         &:hover
             color: color(white)
     &__img // div container
-        display: inline-flex
-        flex: 1 1 auto
-        width: 47%
+        height: 100%
+        display: flex
         &-bg
-            width: 87%
-            height: 87%
+            width: 90%
+            height: 90%
+            margin: auto auto 0
             background-repeat: no-repeat
             background-position: bottom center
             background-size: contain
-            margin: auto auto 0
 
 @media (max-width: 991px)
     .main-banner
         &__info
             padding-left: 30px
-            width: 55%
 
 @media (max-width: 767px)
     .main-banner
         display: flex
         flex-direction: column
         &__info
-            width: 100%
-            max-width: 100%
             padding-top: 25px
             padding-left: 20px
         &__title
@@ -60,7 +55,6 @@
             font-size: 15px
             margin-top: 25px
         &__img
-            width: 100%
             &-bg
                 max-width: 90%
                 max-height: 90%
