@@ -186,7 +186,7 @@
                                     <small class="ui-subjects__count">16</small>
                                 </button>
                             </li>
-                            <li class="ui-subjects__item has-dropdown md-hidden" role="presentation">
+                            <li class="ui-subjects__item has-dropdown has-dropdown-on-hover md-hidden" role="presentation">
                                 <button class="ui-subjects__btn" role="tab">
                                     Еще...
                                 </button>
@@ -219,9 +219,29 @@
                             </li>
                         </ul>
                         
-                        <!-- ссылка смотреть все категории -->
-                        <div class="hidden md-block control-content__subjects-all">
-                            <a href="#" class="ui-button _outlined _fit-content">Смотреть все категории</a>
+                        <!-- кнопка смотреть все категории -->
+                        <div class="hidden md-block control-content__subjects-all has-dropdown has-dropdown-on-hover -fit-content">
+                            <button href="#" class="ui-button _outlined -fit-content">Смотреть все категории</button>
+                            <div class="ui-dropdown">
+                                <ul>
+                                    <li class="ui-dropdown__item" data-id="">
+                                        Экология
+                                        <small class="ui-subjects__count">5</small>
+                                    </li>
+                                    <li class="ui-dropdown__item" data-id="">
+                                        Информационные технологии
+                                        <small class="ui-subjects__count">12</small>
+                                    </li>
+                                    <li class="ui-dropdown__item" data-id="">
+                                        Кино
+                                        <small class="ui-subjects__count">4</small>
+                                    </li>
+                                    <li class="ui-dropdown__item" data-id="">
+                                        Наука
+                                        <small class="ui-subjects__count">9</small>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
@@ -244,7 +264,7 @@
                         
                     <div class="control-content__sorting">
                         Сортировать по 
-                        <div class="ui-sorting">
+                        <div class="ui-sorting has-dropdown has-dropdown-on-hover">
                             <button class="ui-sorting__control" data-name="sorting" data-selected="popular">
                                 <span class="js-selected">популярности </span>
                                 <span class="icon icon-sorting"></span>
@@ -260,7 +280,7 @@
                     </div>
 
                     <div class="control-content__filter xs-block">
-                        <div class="ui-filter">
+                        <div class="ui-filter has-dropdown has-dropdown-on-hover">
                             <button id="filter-area" class="ui-filter__control" data-name="area" data-selected="russia">
                                 <span class="js-selected">Вся Россия</span>
                             </button>
@@ -274,7 +294,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="ui-filter">
+                        <div class="ui-filter has-dropdown has-dropdown-on-hover">
                             <button id="filter-curator" class="ui-filter__control" data-name="owner" data-selected="default">
                                 <span class="js-selected">Куратор</span>
                             </button>
