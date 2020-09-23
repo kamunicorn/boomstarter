@@ -47,12 +47,14 @@
             color: color(grey)
             .icon-bookmark-filled
                 color: color(grey)
-        .ui-icon-button._bookmark:hover
-            color: color(primary)
+        @media (min-width: 920px)
+            .ui-icon-button._bookmark:hover
+                color: color(primary)
 
-    &__title>a:hover,
-    &__img:hover ~ &__info &__title>a
-        color: color(primary)
+    @media (min-width: 920px)
+        &__title>a:hover,
+        &__img:hover ~ &__info &__title>a
+            color: color(primary)
 
     &__author
         @include font(100, 14px)
@@ -64,21 +66,25 @@
         margin-top: auto
         padding-top: 40px
         &-total
-            @include font(100, 12px)
-            color: color(grey)
+            @include font(300, 12px)
+            color: color(grey-dark)
+            // color: #8d8d8d
     &__timing
         margin-top: 15px
         @include font(300, 16px)
     
     &__ps
-        margin: 20px 0 0
+        margin: 10px 0 0
         display: flex
         flex-wrap: wrap
         @include font(100, 14px)
+        >*
+            margin-top: 10px
+            &:first-child
+                margin-right: 16px
         img
             max-width: 76px
             max-height: 14px
-            margin-left: 16px
 
 .card
     &._big 

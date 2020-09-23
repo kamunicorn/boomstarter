@@ -27,9 +27,9 @@
             margin-bottom: 8px
     &__title
         @include font(700, 20px)
-        // @include line-limit(3)
-        a:hover
-            color: color(primary)
+        @media (min-width: 920px)
+            a:hover
+                color: color(primary)
     &__desc
         // @include line-limit(5)
     &__author
@@ -43,7 +43,7 @@
         padding-top: 30px
         &-old
             @include font(300, 14px)
-            color: color(grey)
+            color: color(grey-dark)
             margin-left: 5px
             text-decoration: line-through    
     &__buy
@@ -58,7 +58,6 @@
             font-size: 12px
         &__money
             font-size: 20px
-            // padding-top: 20px
         &__buy
             font-size: 16px
 

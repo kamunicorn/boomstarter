@@ -10,8 +10,9 @@
         display: grid
         grid-template-columns: 78px auto
         grid-gap: 14px
-        a:hover
-            color: color(primary)
+        @media (min-width: 920px)
+            a:hover
+                color: color(primary)
         a::after
             position: absolute
             content: ''
