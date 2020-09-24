@@ -28,7 +28,7 @@
         padding: em(15) em(15) em(23) em(15)
         // padding: 15px 15px 23px 15px
         > *:not(:last-child)
-            margin-bottom: 8px
+            // margin-bottom: 8px
     // TODO
     &__progress // для примера
         background-color: color(grey)
@@ -38,10 +38,11 @@
             background-color: color(cyan)
     
     &__title
-        @include font(700, 16px)
         display: flex
         flex-wrap: nowrap
+        @include font(700, 16px)
         .ui-icon-button._bookmark
+            font-size: 1.3em
             align-self: flex-start
             margin-right: -8px
             color: color(grey)
@@ -60,21 +61,23 @@
         @include font(100, 14px)
     &__desc
         @include font(300, 14px)
-        
+    &__title,
+    &__author,
+    &__desc
+       margin-bottom: 9px
+
     &__money
         @include font(400, 18px)
         margin-top: auto
-        padding-top: 40px
+        padding-top: 25px
         &-total
             @include font(300, 12px)
             color: color(grey-dark)
-            // color: #8d8d8d
     &__timing
-        margin-top: 15px
+        margin: 12px 0 10px
         @include font(300, 16px)
     
     &__ps
-        margin: 10px 0 0
         display: flex
         flex-wrap: wrap
         @include font(100, 14px)
@@ -83,8 +86,9 @@
             &:first-child
                 margin-right: 16px
         img
-            max-width: 76px
-            max-height: 14px
+            font-size: 10px
+            max-width: 7.6em
+            max-height: 1.4em
 
 .card
     &._big 
@@ -102,21 +106,21 @@
 
 @media (max-width: 575px)
     .card
-        // grid-template-rows: 145px 5px auto
         &__info > *
             font-size: 12px
-        // &__title,
-        // &__author,
-        // &__desc,
-        // &__timing
-            // font-size: 12px
         &__title .ui-icon-button._bookmark
             display: none
+        &__title,
+        &__author,
+        &__desc
+            margin-bottom: 5px
         &__money
             font-size: 16px
             padding-top: 20px
+        &__timing
+            margin-top: 10px
         &__ps
-            display: block
+            >*:first-child
+                margin-right: 12px
             img
-                margin-left: 0
-                margin-top: 10px
+                font-size: 8px
