@@ -27,9 +27,10 @@
             margin-bottom: 8px
     &__title
         @include font(700, 20px)
-        @media (min-width: 920px)
-            a:hover
-                color: color(primary)
+    @media (hover: hover)
+        &__title>a:hover,
+        &__img:hover ~ &__info &__title>a
+            color: color(primary)
     &__desc
         // @include line-limit(5)
     &__author

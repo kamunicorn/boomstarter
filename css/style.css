@@ -502,7 +502,7 @@ ul {
   background-color: #fff;
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .bg-white.ui-button:hover {
     background-color: #ebebeb;
   }
@@ -516,7 +516,7 @@ ul {
   background-color: #000;
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .bg-black.ui-button:hover {
     background-color: black;
   }
@@ -530,7 +530,7 @@ ul {
   background-color: #C4C4C4;
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .bg-grey.ui-button:hover {
     background-color: #b0b0b0;
   }
@@ -544,7 +544,7 @@ ul {
   background-color: #F6F6F6;
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .bg-grey-light.ui-button:hover {
     background-color: #e2e2e2;
   }
@@ -558,7 +558,7 @@ ul {
   background-color: #E6E9ED;
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .bg-grey-light-2.ui-button:hover {
     background-color: #ced4dc;
   }
@@ -572,7 +572,7 @@ ul {
   background-color: #8d8d8d;
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .bg-grey-dark.ui-button:hover {
     background-color: #797979;
   }
@@ -586,7 +586,7 @@ ul {
   background-color: #0087F7;
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .bg-primary.ui-button:hover {
     background-color: #0071ce;
   }
@@ -600,7 +600,7 @@ ul {
   background-color: #FFC83A;
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .bg-yellow.ui-button:hover {
     background-color: #ffbd11;
   }
@@ -614,7 +614,7 @@ ul {
   background-color: #FCD770;
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .bg-yellow-light.ui-button:hover {
     background-color: #fbcc48;
   }
@@ -628,7 +628,7 @@ ul {
   background-color: #21DDB9;
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .bg-cyan.ui-button:hover {
     background-color: #1cba9b;
   }
@@ -642,7 +642,7 @@ ul {
   background-color: #7DDEDE;
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .bg-cyan-light.ui-button:hover {
     background-color: #5cd6d6;
   }
@@ -656,7 +656,7 @@ ul {
   background-color: #FFC5B3;
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .bg-peach.ui-button:hover {
     background-color: #ffa68a;
   }
@@ -670,7 +670,7 @@ ul {
   background-color: #FFBE83;
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .bg-beige.ui-button:hover {
     background-color: #ffa95a;
   }
@@ -684,13 +684,13 @@ ul {
   background-color: #FE7D90;
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .bg-pink.ui-button:hover {
     background-color: #fe556d;
   }
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .bg-primary.ui-button:hover {
     background-color: #219aff;
   }
@@ -842,7 +842,7 @@ ul {
           border-radius: 2.5em;
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .ui-button:hover {
     background-color: #219aff;
   }
@@ -959,7 +959,7 @@ ul {
   transition: 0.3s;
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .ui-arrow-left:hover, .ui-arrow-right:hover {
     color: #21DDB9;
   }
@@ -1024,7 +1024,13 @@ ul {
   z-index: 2;
 }
 
-.ui-subjects__btn.is-active, .ui-subjects__btn:hover {
+@media (hover: hover) {
+  .ui-subjects__btn:hover {
+    color: #0087F7;
+  }
+}
+
+.ui-subjects__btn.is-active {
   color: #0087F7;
 }
 
@@ -1139,16 +1145,19 @@ input:checked ~ .ui-checkbox__custom .icon-check {
   cursor: default;
 }
 
-.ui-dropdown__item:hover {
-  color: #0087F7;
-  background-color: #F6F6F6;
+@media (hover: hover) {
+  .ui-dropdown__item:hover {
+    color: #0087F7;
+    background-color: #F6F6F6;
+  }
 }
 
 .has-dropdown {
   position: relative;
 }
 
-.has-dropdown-on-hover:hover .ui-dropdown {
+.has-dropdown-on-hover:hover .ui-dropdown,
+.has-dropdown-on-hover:active .ui-dropdown {
   display: block;
 }
 
@@ -1622,7 +1631,7 @@ input:checked ~ .ui-checkbox__custom .icon-check {
   color: #0087F7;
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .menu-bar__item:hover {
     color: #0087F7;
   }
@@ -1770,7 +1779,7 @@ nav:nth-child(2) {
   color: #000;
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .main-banner .ui-icon-button._bookmark:hover {
     color: #fff;
   }
@@ -1866,7 +1875,7 @@ nav:nth-child(2) {
   grid-gap: 14px;
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .sm-cards__item a:hover {
     color: #0087F7;
   }
@@ -2355,7 +2364,7 @@ nav:nth-child(2) {
   transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .card:hover {
     -webkit-box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
             box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
@@ -2445,13 +2454,13 @@ nav:nth-child(2) {
   color: #C4C4C4;
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .card__title .ui-icon-button._bookmark:hover {
     color: #0087F7;
   }
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .card__title > a:hover,
   .card__img:hover ~ .card__info .card__title > a {
     color: #0087F7;
@@ -2576,7 +2585,7 @@ nav:nth-child(2) {
   transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
 }
 
-@media (min-width: 920px) {
+@media (hover: hover) {
   .reward:hover {
     -webkit-box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
             box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
@@ -2637,8 +2646,9 @@ nav:nth-child(2) {
   font-size: 20px;
 }
 
-@media (min-width: 920px) {
-  .reward__title a:hover {
+@media (hover: hover) {
+  .reward__title > a:hover,
+  .reward__img:hover ~ .reward__info .reward__title > a {
     color: #0087F7;
   }
 }
