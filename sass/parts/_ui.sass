@@ -1,5 +1,26 @@
 @import '../service/service'
 
+// стилизация скролл-бара
+// webkit-браузеры
+::-webkit-scrollbar // полоса прокрутки (скроллбар)
+    width: 5px
+    height: 5px
+    background-color: color(grey-light-2)
+    @media (max-width: 575px)
+        width: 3.5px
+        height: 3.5px
+::-webkit-scrollbar-thumb // ползунок скроллбара
+    background: color(grey)
+    border-radius: 10px
+::-webkit-scrollbar-track
+    background: color(grey-light-2)
+    border-radius: 10px
+
+// for mozilla
+*
+    scrollbar-color: color(grey) color(grey-light-2) // «цвет ползунка» «цвет полосы скроллбара»
+    scrollbar-width: thin
+
 .ui
     // может быть кнопкой или ссылкой, выглядящей как кнопка
     &-button
@@ -142,14 +163,10 @@
             color: color(grey)
             margin-left: 3px
         &__item
-            &.has-dropdown
-                // position: relative
             .ui-dropdown
-                top: 0
+                top: 35px
                 left: -17px
-        &__item:hover .ui-dropdown
-            // display: block
-    
+        
     &-checkbox
         display: flex
         margin-right: 15px
@@ -181,7 +198,6 @@
     // сортировка по
     &-sorting
         &__control
-            // margin-left: 1em
             color: color(primary)
         .icon-sorting
             margin-left: 0.5em
@@ -206,14 +222,15 @@
     &-dropdown
         position: absolute
         display: none
-        z-index: 2
         width: max-content
         min-width: 160px
         max-width: 200px
+        padding: 5px 0
+        z-index: 2
         background-color: color(white)
         border-radius: $radius-card
         &__head
-            padding: 10px 17px
+            // padding: 10px 17px
         &__item
             padding: 6px 17px
             cursor: default
