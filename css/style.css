@@ -2589,10 +2589,6 @@ nav:nth-child(2) {
   max-height: 1.4em;
 }
 
-.card._big {
-  grid-column: span 2;
-}
-
 .card._vertical-img {
   -ms-grid-columns: 1fr 5px 1fr;
       grid-template-columns: 1fr 5px 1fr;
@@ -2610,6 +2606,26 @@ nav:nth-child(2) {
 }
 
 @media (max-width: 575px) {
+  .card._vertical-img {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 10.8125em auto;
+        grid-template-rows: 10.8125em auto;
+  }
+  .card._vertical-img .card__img {
+    -webkit-border-radius: 0.6875em 0.6875em 0 0;
+            border-radius: 0.6875em 0.6875em 0 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .card {
+    -ms-grid-rows: 10.8125em auto;
+        grid-template-rows: 10.8125em auto;
+  }
+  .card__progress {
+    display: none;
+  }
   .card__info {
     padding: 8px 8px 15px;
   }
@@ -2634,6 +2650,9 @@ nav:nth-child(2) {
   }
   .card__ps img {
     font-size: 8px;
+  }
+  .card.span-2 .card__title {
+    font-size: 15px;
   }
 }
 
@@ -2766,6 +2785,13 @@ nav:nth-child(2) {
   }
   .reward__buy {
     font-size: 16px;
+    text-transform: lowercase;
+  }
+  .reward.span-2 .reward__info {
+    padding: 14px 13px;
+  }
+  .reward.span-2 .reward__title {
+    font-size: 14px;
   }
 }
 

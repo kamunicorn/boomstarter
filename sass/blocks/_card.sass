@@ -84,19 +84,27 @@
             max-width: 7.6em
             max-height: 1.4em
 
-.card
-    &._big 
-        grid-column: span 2
-    &._vertical-img
-        grid-template-columns: 1fr 5px 1fr
-        grid-template-rows: 1fr
-    &._vertical-img &__progress hr
+.card._vertical-img
+    grid-template-columns: 1fr 5px 1fr
+    grid-template-rows: 1fr    
+    .card__progress hr
         width: 100%
-    &._vertical-img &__img
+    .card__img
         border-radius: $radius-card 0 0 $radius-card
 
 @media (max-width: 575px)
+    .card._vertical-img
+        grid-template-columns: 1fr
+        grid-template-rows: em(173) auto
+        .card__img
+            border-radius: $radius-card $radius-card 0 0
+
+
+@media (max-width: 575px)
     .card
+        grid-template-rows: em(173) auto
+        &__progress
+            display: none
         &__info
             padding: 8px 8px 15px
             >*
@@ -117,3 +125,6 @@
                 margin-right: 12px
             img
                 font-size: 8px
+    .card.span-2 .card__title
+        font-size: 15px
+
