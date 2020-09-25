@@ -1076,7 +1076,7 @@ input:checked ~ .ui-checkbox__custom .icon-check {
 }
 
 .ui-sorting .ui-dropdown {
-  top: -11x;
+  top: 100%;
   left: -17px;
 }
 
@@ -1093,7 +1093,7 @@ input:checked ~ .ui-checkbox__custom .icon-check {
 }
 
 .ui-filter .ui-dropdown {
-  top: -11x;
+  top: 100%;
   left: -17px;
 }
 
