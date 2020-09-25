@@ -14,16 +14,21 @@
     &__look-all
         color: color(primary)
 
-    @media (max-width: $container-max-width - 1px)
-        .slider__wrapper
+@media (max-width: $container-max-width - 1px)
+    .special .slider
+        &__wrapper
             margin-left: -$container-padding
             margin-right: -$container-padding
-        .slider__row
+        &__row
+            display: flex
+        .grid-special
             padding: 0 $container-padding
-    @media (max-width: 575px)
-        .slider__wrapper
+
+@media (max-width: 575px)
+    .special .slider
+        &__wrapper
             margin: 0px -14px
-        .slider__row
+        .grid-special
             padding: 0 14px
 
 // не touch-устройства

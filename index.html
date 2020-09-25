@@ -95,7 +95,7 @@
                                     <p class="main-banner__desc">Гузель Галлигуллина</p>
                                     <div class="main-banner__button">
                                         <a class="ui-button">Смотреть проект</a>
-                                        <button class="ui-icon-button _bookmark js-card-bookmark" data-card="project-id-to-bookmark">
+                                        <button class="ui-icon-button _bookmark js-add-bookmark" data-card="project-id-to-bookmark">
                                             <span class="icon icon-bookmark" title="Добавить в закладки"></span>
                                             <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
                                         </button>
@@ -145,40 +145,41 @@
             <!-- элементы фильтрации и сортировки контента -->
             <section class="container">
                 <div class="control-content">
+                    <!-- вкладки с темами -->
                     <div class="control-content__subjects">
                         <ul class="ui-subjects" role="tablist">
                             <li class="ui-subjects__item" role="presentation">
-                                <button class="ui-subjects__btn is-active" role="tab" data-subject="subject-id">
+                                <button class="ui-subjects__btn is-active" role="tab" data-name="subject" data-id="subject-id">
                                     Бизнес
                                     <small class="ui-subjects__count">12</small>
                                 </button>
                             </li>
                             <li class="ui-subjects__item" role="presentation">
-                                <button class="ui-subjects__btn" role="tab" data-subject="subject-id">
+                                <button class="ui-subjects__btn" role="tab" data-name="subject" data-id="subject-id">
                                     Творчество
                                     <small class="ui-subjects__count">23</small>
                                 </button>
                             </li>
                             <li class="ui-subjects__item" role="presentation">
-                                <button class="ui-subjects__btn" role="tab" data-subject="subject-id">
+                                <button class="ui-subjects__btn" role="tab" data-name="subject" data-id="subject-id">
                                     Мода
                                     <small class="ui-subjects__count">15</small>
                                 </button>
                             </li>
                             <li class="ui-subjects__item" role="presentation">
-                                <button class="ui-subjects__btn" role="tab" data-subject="subject-id">
+                                <button class="ui-subjects__btn" role="tab" data-name="subject" data-id="subject-id">
                                     Мероприятия
                                     <small class="ui-subjects__count">28</small>
                                 </button>
                             </li>
                             <li class="ui-subjects__item" role="presentation">
-                                <button class="ui-subjects__btn" role="tab" data-subject="subject-id">
+                                <button class="ui-subjects__btn" role="tab" data-name="subject" data-id="subject-id">
                                     Наука
                                     <small class="ui-subjects__count">7</small>
                                 </button>
                             </li>
                             <li class="ui-subjects__item" role="presentation">
-                                <button class="ui-subjects__btn" role="tab" data-subject="subject-id">
+                                <button class="ui-subjects__btn" role="tab" data-name="subject" data-id="subject-id">
                                     Технологии
                                     <small class="ui-subjects__count">16</small>
                                 </button>
@@ -187,30 +188,27 @@
                                 <button class="ui-subjects__btn" role="tab">
                                     Еще...
                                 </button>
-                                <!-- <div class="ui-dropdown">
-                                    <div class="ui-dropdown__head">Ещё...</div> -->
-                                    <ul class="ui-dropdown">
-                                        <li class="ui-dropdown__item" data-id="">
-                                            Экология
-                                            <small class="ui-subjects__count">5</small>
-                                        </li>
-                                        <li class="ui-dropdown__item" data-id="">
-                                            Информационные технологии
-                                            <small class="ui-subjects__count">12</small>
-                                        </li>
-                                        <li class="ui-dropdown__item" data-id="">
-                                            Кино
-                                            <small class="ui-subjects__count">4</small>
-                                        </li>
-                                        <li class="ui-dropdown__item" data-id="">
-                                            Наука
-                                            <small class="ui-subjects__count">9</small>
-                                        </li>
-                                    </ul>
-                                <!-- </div> -->
+                                <ul class="ui-dropdown">
+                                    <li class="ui-dropdown__item" data-name="subject" data-id="">
+                                        Экология
+                                        <small class="ui-subjects__count">5</small>
+                                    </li>
+                                    <li class="ui-dropdown__item" data-name="subject" data-id="">
+                                        Информационные технологии
+                                        <small class="ui-subjects__count">12</small>
+                                    </li>
+                                    <li class="ui-dropdown__item" data-name="subject" data-id="">
+                                        Кино
+                                        <small class="ui-subjects__count">4</small>
+                                    </li>
+                                    <li class="ui-dropdown__item" data-name="subject" data-id="">
+                                        Наука
+                                        <small class="ui-subjects__count">9</small>
+                                    </li>
+                                </ul>
                             </li>
                             <li class="ui-subjects__item" role="presentation">
-                                <button class="ui-subjects__btn" role="tab" data-subject="subject-id">
+                                <button class="ui-subjects__btn" role="tab" data-name="subject" data-id="subject-id">
                                     Спецпроекты с брендами
                                 </button>
                             </li>
@@ -241,7 +239,7 @@
                             <!-- </div> -->
                         </div>
                     </div>
-
+                    <!-- Собирают / Завершились -->
                     <div class="control-content__status">
                         <label class="ui-checkbox">
                             <input id="checkbox-example" type="checkbox" checked name="status-1">
@@ -266,13 +264,11 @@
                                 <span class="js-selected">популярности </span>
                                 <span class="icon icon-sorting"></span>
                             </button>
-                            <!-- <div class="ui-dropdown"> -->
-                                <ul class="ui-dropdown">
-                                    <li class="ui-dropdown__item" data-id="popular">популярности</li>
-                                    <li class="ui-dropdown__item" data-id="rating">рейтингу</li>
-                                    <li class="ui-dropdown__item" data-id="updates">обновлениям</li>
-                                </ul>
-                            <!-- </div> -->
+                            <ul class="ui-dropdown">
+                                <li class="ui-dropdown__item" data-id="popular">популярности</li>
+                                <li class="ui-dropdown__item" data-id="rating">рейтингу</li>
+                                <li class="ui-dropdown__item" data-id="updates">обновлениям</li>
+                            </ul>
                         </div>
                     </div>
 
@@ -281,29 +277,25 @@
                             <button id="filter-area" class="ui-filter__control" data-name="area" data-selected="russia">
                                 <span class="js-selected">Вся Россия</span>
                             </button>
-                            <!-- <div class="ui-dropdown"> -->
-                                <ul class="ui-dropdown">
-                                    <li class="ui-dropdown__item" data-id="russia">Вся Россия</li>
-                                    <li class="ui-dropdown__item" data-id="mos">Москва</li>
-                                    <li class="ui-dropdown__item" data-id="spb">Санкт-Петербург</li>
-                                    <li class="ui-dropdown__item" data-id="fareast">Дальний Восток</li>
-                                    <li class="ui-dropdown__item" data-id="sibir">Сибирь</li>
-                                </ul>
-                            <!-- </div> -->
+                            <ul class="ui-dropdown">
+                                <li class="ui-dropdown__item" data-id="russia">Вся Россия</li>
+                                <li class="ui-dropdown__item" data-id="mos">Москва</li>
+                                <li class="ui-dropdown__item" data-id="spb">Санкт-Петербург</li>
+                                <li class="ui-dropdown__item" data-id="fareast">Дальний Восток</li>
+                                <li class="ui-dropdown__item" data-id="sibir">Сибирь</li>
+                            </ul>
                         </div>
                         <div class="ui-filter has-dropdown has-dropdown-on-hover">
                             <button id="filter-curator" class="ui-filter__control" data-name="owner" data-selected="default">
                                 <span class="js-selected">Куратор</span>
                             </button>
-                            <!-- <div class="ui-dropdown"> -->
-                                <ul class="ui-dropdown">
-                                    <li class="ui-dropdown__item" data-id="default">Куратор</li>
-                                    <li class="ui-dropdown__item" data-id="1">Значение 1</li>
-                                    <li class="ui-dropdown__item" data-id="2">Значение 2</li>
-                                    <li class="ui-dropdown__item" data-id="3">Еще значение</li>
-                                    <li class="ui-dropdown__item" data-id="4">Другое значение</li>
-                                </ul>
-                            <!-- </div> -->
+                            <ul class="ui-dropdown">
+                                <li class="ui-dropdown__item" data-id="default">Куратор</li>
+                                <li class="ui-dropdown__item" data-id="1">Значение 1</li>
+                                <li class="ui-dropdown__item" data-id="2">Значение 2</li>
+                                <li class="ui-dropdown__item" data-id="3">Еще значение</li>
+                                <li class="ui-dropdown__item" data-id="4">Другое значение</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -320,208 +312,210 @@
 
                         <div class="slider">
                             <div class="slider__wrapper">
-                                <ul class="slider__row grid grid-special">
-                                    <li class="card">
-                                        <div class="card__img">
-                                            <a href="#"><img src="img/cards/coffee.png" alt=""></a>
-                                        </div>
-                                        <div class="card__progress"><hr style="width:4%"></div>
-                                        <div class="card__info">
-                                            <h4 class="card__title">
-                                                <a href="#">Мудрость сквозь века до наших дней. Академия Capoeira Angola</a>
-                                                <button class="ui-icon-button _bookmark js-card-bookmark" data-card="project-id-to-bookmark">
-                                                    <span class="icon icon-bookmark" title="Добавить в закладки"></span>
-                                                    <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
-                                                </button>
-                                            </h4>
-                                            <p class="card__author">Сергея Порфирьева</p>
-                                            <div class="card__money">
-                                                <div>215 ₽</div>
-                                                <small class="card__money-total">из 10 0000 (2%)</small>
+                                <div class="slider__row">
+                                    <ul class="grid grid-special">
+                                        <li class="card">
+                                            <div class="card__img">
+                                                <a href="#"><img src="img/cards/coffee.png" alt=""></a>
                                             </div>
-                                            <div class="card__timing">осталось 16 дней</div>
-                                            <div class="card__ps">
-                                                <span>Москва</span>
-                                                <span><img src="img/logo/mastercard.svg" alt=""></span>
+                                            <div class="card__progress"><hr style="width:4%"></div>
+                                            <div class="card__info">
+                                                <h4 class="card__title">
+                                                    <a href="#">Мудрость сквозь века до наших дней. Академия Capoeira Angola</a>
+                                                    <button class="ui-icon-button _bookmark js-add-bookmark" data-card="project-id-to-bookmark">
+                                                        <span class="icon icon-bookmark" title="Добавить в закладки"></span>
+                                                        <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
+                                                    </button>
+                                                </h4>
+                                                <p class="card__author">Сергея Порфирьева</p>
+                                                <div class="card__money">
+                                                    <div>215 ₽</div>
+                                                    <small class="card__money-total">из 10 0000 (2%)</small>
+                                                </div>
+                                                <div class="card__timing">осталось 16 дней</div>
+                                                <div class="card__ps">
+                                                    <span>Москва</span>
+                                                    <span><img src="img/logo/mastercard.svg" alt=""></span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </li>
-                                    <li class="card">
-                                        <div class="card__img">
-                                            <a href="#"><img src="img/cards/choco.png" alt=""></a>
-                                        </div>
-                                        <div class="card__progress"><hr style="width:400%"></div>
-                                        <div class="card__info">
-                                            <h4 class="card__title">
-                                                <a href="#">Живой шоколад из какао-бобов по рецептам ацтеков</a>
-                                                <button class="ui-icon-button _bookmark js-card-bookmark" data-card="project-id-to-bookmark">
-                                                    <span class="icon icon-bookmark" title="Добавить в закладки"></span>
-                                                    <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
-                                                </button>
-                                            </h4>
-                                            <p class="card__author">Константин Константинопольский и Мария Докшина</p>
-                                            <div class="card__money">
-                                                <div>100 935 ₽</div>
-                                                <small class="card__money-total"> из 10 0000</small>
+                                        </li>
+                                        <li class="card">
+                                            <div class="card__img">
+                                                <a href="#"><img src="img/cards/choco.png" alt=""></a>
                                             </div>
-                                            <div class="card__timing">осталось 16 дней</div>
-                                            <div class="card__ps">
-                                                <span>Москва</span>
-                                                <span><img src="img/logo/mastercard.svg" alt=""></span>
+                                            <div class="card__progress"><hr style="width:400%"></div>
+                                            <div class="card__info">
+                                                <h4 class="card__title">
+                                                    <a href="#">Живой шоколад из какао-бобов по рецептам ацтеков</a>
+                                                    <button class="ui-icon-button _bookmark js-add-bookmark" data-card="project-id-to-bookmark">
+                                                        <span class="icon icon-bookmark" title="Добавить в закладки"></span>
+                                                        <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
+                                                    </button>
+                                                </h4>
+                                                <p class="card__author">Константин Константинопольский и Мария Докшина</p>
+                                                <div class="card__money">
+                                                    <div>100 935 ₽</div>
+                                                    <small class="card__money-total"> из 10 0000</small>
+                                                </div>
+                                                <div class="card__timing">осталось 16 дней</div>
+                                                <div class="card__ps">
+                                                    <span>Москва</span>
+                                                    <span><img src="img/logo/mastercard.svg" alt=""></span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </li>
-                                    <li class="card">
-                                        <div class="card__img">
-                                            <a href="#"><img src="img/cards/card-ceramics.png" alt=""></a>
-                                        </div>
-                                        <div class="card__progress"><hr style="width:86%"></div>
-                                        <div class="card__info">
-                                            <h4 class="card__title">
-                                                <a href="#">Учебник по теории керамики «Криптопрошный кукурузник»</a>
-                                                <button class="ui-icon-button _bookmark js-card-bookmark" data-card="project-id-to-bookmark">
-                                                    <span class="icon icon-bookmark" title="Добавить в закладки"></span>
-                                                    <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
-                                                </button>
-                                            </h4>
-                                            <p class="card__author">Сергея Порфирьева</p>
-                                            <div class="card__money">
-                                                <div>123 456</div>
-                                                <small class="card__money-total">150 000</small>
+                                        </li>
+                                        <li class="card">
+                                            <div class="card__img">
+                                                <a href="#"><img src="img/cards/card-ceramics.png" alt=""></a>
                                             </div>
-                                            <div class="card__timing">Собирает до цели</div>
-                                            <div class="card__ps">
-                                                <span>Иркутск</span>
-                                                <span><img src="img/logo/mastercard.svg" alt=""></span>
+                                            <div class="card__progress"><hr style="width:86%"></div>
+                                            <div class="card__info">
+                                                <h4 class="card__title">
+                                                    <a href="#">Учебник по теории керамики «Криптопрошный кукурузник»</a>
+                                                    <button class="ui-icon-button _bookmark js-add-bookmark" data-card="project-id-to-bookmark">
+                                                        <span class="icon icon-bookmark" title="Добавить в закладки"></span>
+                                                        <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
+                                                    </button>
+                                                </h4>
+                                                <p class="card__author">Сергея Порфирьева</p>
+                                                <div class="card__money">
+                                                    <div>123 456</div>
+                                                    <small class="card__money-total">150 000</small>
+                                                </div>
+                                                <div class="card__timing">Собирает до цели</div>
+                                                <div class="card__ps">
+                                                    <span>Иркутск</span>
+                                                    <span><img src="img/logo/mastercard.svg" alt=""></span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </li>
-                                    <li class="card">
-                                        <div class="card__img">
-                                            <a href="#"><img src="img/cards/project-4.png" alt=""></a>
-                                        </div>
-                                        <div class="card__progress"><hr style="width:20%"></div>
-                                        <div class="card__info">
-                                            <h4 class="card__title">
-                                                <a href="#">Живой шоколад из какао-бобов по рецептам ацтеков</a>
-                                                <button class="ui-icon-button _bookmark js-card-bookmark" data-card="project-id-to-bookmark">
-                                                    <span class="icon icon-bookmark" title="Добавить в закладки"></span>
-                                                    <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
-                                                </button>
-                                            </h4>
-                                            <p class="card__author">Денис Панфилов</p>
-                                            <div class="card__money">
-                                                <div>1935 ₽</div>
-                                                <small class="card__money-total">из 10 000 (20%)</small>
+                                        </li>
+                                        <li class="card">
+                                            <div class="card__img">
+                                                <a href="#"><img src="img/cards/project-4.png" alt=""></a>
                                             </div>
-                                            <div class="card__timing">Собирает до цели</div>
-                                            <div class="card__ps">
-                                                <span>Москва</span>
-                                                <span><img src="img/logo/mastercard.svg" alt=""></span>
+                                            <div class="card__progress"><hr style="width:20%"></div>
+                                            <div class="card__info">
+                                                <h4 class="card__title">
+                                                    <a href="#">Живой шоколад из какао-бобов по рецептам ацтеков</a>
+                                                    <button class="ui-icon-button _bookmark js-add-bookmark" data-card="project-id-to-bookmark">
+                                                        <span class="icon icon-bookmark" title="Добавить в закладки"></span>
+                                                        <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
+                                                    </button>
+                                                </h4>
+                                                <p class="card__author">Денис Панфилов</p>
+                                                <div class="card__money">
+                                                    <div>1935 ₽</div>
+                                                    <small class="card__money-total">из 10 000 (20%)</small>
+                                                </div>
+                                                <div class="card__timing">Собирает до цели</div>
+                                                <div class="card__ps">
+                                                    <span>Москва</span>
+                                                    <span><img src="img/logo/mastercard.svg" alt=""></span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </li>
-                                    <li class="card">
-                                        <div class="card__img">
-                                            <a href="#"><img src="img/cards/card-1-village.png" alt=""></a>
-                                        </div>
-                                        <div class="card__progress"><hr style="width:12%"></div>
-                                        <div class="card__info">
-                                            <h4 class="card__title">
-                                                <a href="#">Создание деревни для путешественников</a>
-                                                <button class="ui-icon-button _bookmark js-card-bookmark" data-card="project-id-to-bookmark">
-                                                    <span class="icon icon-bookmark" title="Добавить в закладки"></span>
-                                                    <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
-                                                </button>
-                                            </h4>
-                                            <p class="card__author">Tirion Lannister Group</p>
-                                            <div class="card__money">
-                                                <div>12 100 935 ₽</div>
-                                                <small class="card__money-total">из 80 0000 (12%)</small>
+                                        </li>
+                                        <li class="card">
+                                            <div class="card__img">
+                                                <a href="#"><img src="img/cards/card-1-village.png" alt=""></a>
                                             </div>
-                                            <div class="card__timing">осталось 6 дней</div>
-                                            <div class="card__ps">
-                                                <span>Москва</span>
-                                                <span><img src="img/logo/mastercard.svg" alt=""></span>
+                                            <div class="card__progress"><hr style="width:12%"></div>
+                                            <div class="card__info">
+                                                <h4 class="card__title">
+                                                    <a href="#">Создание деревни для путешественников</a>
+                                                    <button class="ui-icon-button _bookmark js-add-bookmark" data-card="project-id-to-bookmark">
+                                                        <span class="icon icon-bookmark" title="Добавить в закладки"></span>
+                                                        <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
+                                                    </button>
+                                                </h4>
+                                                <p class="card__author">Tirion Lannister Group</p>
+                                                <div class="card__money">
+                                                    <div>12 100 935 ₽</div>
+                                                    <small class="card__money-total">из 80 0000 (12%)</small>
+                                                </div>
+                                                <div class="card__timing">осталось 6 дней</div>
+                                                <div class="card__ps">
+                                                    <span>Москва</span>
+                                                    <span><img src="img/logo/mastercard.svg" alt=""></span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </li>
-                                    <li class="card">
-                                        <div class="card__img">
-                                            <a href="#"><img src="img/cards/choco.png" alt=""></a>
-                                        </div>
-                                        <div class="card__progress"><hr style="width:30%"></div>
-                                        <div class="card__info">
-                                            <h4 class="card__title">
-                                                <a href="#">Шоколад «Гордость Кенигсберга»</a>
-                                                <button class="ui-icon-button _bookmark js-card-bookmark" data-card="project-id-to-bookmark">
-                                                    <span class="icon icon-bookmark" title="Добавить в закладки"></span>
-                                                    <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
-                                                </button>
-                                            </h4>
-                                            <p class="card__author">GGG group optima Village club</p>
-                                            <div class="card__money">
-                                                <div>1935 ₽</div>
-                                                <small class="card__money-total"> из 10 0000</small>
+                                        </li>
+                                        <li class="card">
+                                            <div class="card__img">
+                                                <a href="#"><img src="img/cards/choco.png" alt=""></a>
                                             </div>
-                                            <div class="card__timing">осталось 16 дней</div>
-                                            <div class="card__ps">
-                                                <span>Москва</span>
-                                                <span><img src="img/logo/mastercard.svg" alt=""></span>
+                                            <div class="card__progress"><hr style="width:30%"></div>
+                                            <div class="card__info">
+                                                <h4 class="card__title">
+                                                    <a href="#">Шоколад «Гордость Кенигсберга»</a>
+                                                    <button class="ui-icon-button _bookmark js-add-bookmark" data-card="project-id-to-bookmark">
+                                                        <span class="icon icon-bookmark" title="Добавить в закладки"></span>
+                                                        <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
+                                                    </button>
+                                                </h4>
+                                                <p class="card__author">GGG group optima Village club</p>
+                                                <div class="card__money">
+                                                    <div>1935 ₽</div>
+                                                    <small class="card__money-total"> из 10 0000</small>
+                                                </div>
+                                                <div class="card__timing">осталось 16 дней</div>
+                                                <div class="card__ps">
+                                                    <span>Москва</span>
+                                                    <span><img src="img/logo/mastercard.svg" alt=""></span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </li>
-                                    <li class="card">
-                                        <div class="card__img">
-                                            <a href="#"><img src="img/cards/ultra-mol-concrete.png" alt=""></a>
-                                        </div>
-                                        <div class="card__progress"><hr style="width:90%"></div>
-                                        <div class="card__info">
-                                            <h4 class="card__title">
-                                                <a href="#">Учебник по теории керамики «Криптопрошный кукурузник»</a>
-                                                <button class="ui-icon-button _bookmark js-card-bookmark" data-card="project-id-to-bookmark">
-                                                    <span class="icon icon-bookmark" title="Добавить в закладки"></span>
-                                                    <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
-                                                </button>
-                                            </h4>
-                                            <p class="card__author">Сергея Порфирьева</p>
-                                            <div class="card__money">
-                                                <div>123 456</div>
-                                                <small class="card__money-total">150 000</small>
+                                        </li>
+                                        <li class="card">
+                                            <div class="card__img">
+                                                <a href="#"><img src="img/cards/ultra-mol-concrete.png" alt=""></a>
                                             </div>
-                                            <div class="card__timing">Собирает до цели</div>
-                                            <div class="card__ps">
-                                                <span>Иркутск</span>
-                                                <span><img src="img/logo/mastercard.svg" alt=""></span>
+                                            <div class="card__progress"><hr style="width:90%"></div>
+                                            <div class="card__info">
+                                                <h4 class="card__title">
+                                                    <a href="#">Учебник по теории керамики «Криптопрошный кукурузник»</a>
+                                                    <button class="ui-icon-button _bookmark js-add-bookmark" data-card="project-id-to-bookmark">
+                                                        <span class="icon icon-bookmark" title="Добавить в закладки"></span>
+                                                        <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
+                                                    </button>
+                                                </h4>
+                                                <p class="card__author">Сергея Порфирьева</p>
+                                                <div class="card__money">
+                                                    <div>123 456</div>
+                                                    <small class="card__money-total">150 000</small>
+                                                </div>
+                                                <div class="card__timing">Собирает до цели</div>
+                                                <div class="card__ps">
+                                                    <span>Иркутск</span>
+                                                    <span><img src="img/logo/mastercard.svg" alt=""></span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </li>
-                                    <li class="card">
-                                        <div class="card__img">
-                                            <a href="#"><img src="img/cards/salt-sweets.png" alt=""></a>
-                                        </div>
-                                        <div class="card__progress"><hr style="width:65%"></div>
-                                        <div class="card__info">
-                                            <h4 class="card__title">
-                                                <a href="#">Живой шоколад из какао-бобов по рецептам ацтеков</a>
-                                                <button class="ui-icon-button _bookmark js-card-bookmark" data-card="project-id-to-bookmark">
-                                                    <span class="icon icon-bookmark" title="Добавить в закладки"></span>
-                                                    <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
-                                                </button>
-                                            </h4>
-                                            <p class="card__author">Денис Панфилов</p>
-                                            <div class="card__money">
-                                                <div>5935 ₽</div>
-                                                <small class="card__money-total">из 10 000 (65%)</small>
+                                        </li>
+                                        <li class="card">
+                                            <div class="card__img">
+                                                <a href="#"><img src="img/cards/salt-sweets.png" alt=""></a>
                                             </div>
-                                            <div class="card__timing">Собирает до цели</div>
-                                            <div class="card__ps">
-                                                <span>Москва</span>
-                                                <span><img src="img/logo/mastercard.svg" alt=""></span>
+                                            <div class="card__progress"><hr style="width:65%"></div>
+                                            <div class="card__info">
+                                                <h4 class="card__title">
+                                                    <a href="#">Живой шоколад из какао-бобов по рецептам ацтеков</a>
+                                                    <button class="ui-icon-button _bookmark js-add-bookmark" data-card="project-id-to-bookmark">
+                                                        <span class="icon icon-bookmark" title="Добавить в закладки"></span>
+                                                        <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
+                                                    </button>
+                                                </h4>
+                                                <p class="card__author">Денис Панфилов</p>
+                                                <div class="card__money">
+                                                    <div>5935 ₽</div>
+                                                    <small class="card__money-total">из 10 000 (65%)</small>
+                                                </div>
+                                                <div class="card__timing">Собирает до цели</div>
+                                                <div class="card__ps">
+                                                    <span>Москва</span>
+                                                    <span><img src="img/logo/mastercard.svg" alt=""></span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </li>
-                                </ul>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
 
                             <div class="slider__controls">
@@ -642,7 +636,7 @@
                             <div class="card__info">
                                 <h4 class="card__title">
                                     <a href="#">Мудрость сквозь века до наших дней. Академия Capoeira Angola</a>
-                                    <button class="ui-icon-button _bookmark js-card-bookmark" data-card="project-id-to-bookmark">
+                                    <button class="ui-icon-button _bookmark js-add-bookmark" data-card="project-id-to-bookmark">
                                         <span class="icon icon-bookmark" title="Добавить в закладки"></span>
                                         <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
                                     </button>
@@ -667,7 +661,7 @@
                             <div class="card__info">
                                 <h4 class="card__title">
                                     <a href="#">Живой шоколад из какао-бобов по рецептам ацтеков</a>
-                                    <button class="ui-icon-button _bookmark js-card-bookmark is-filled" data-card="project-id-to-bookmark">
+                                    <button class="ui-icon-button _bookmark js-add-bookmark is-filled" data-card="project-id-to-bookmark">
                                         <span class="icon icon-bookmark" title="Добавить в закладки"></span>
                                         <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
                                     </button>
@@ -692,7 +686,7 @@
                             <div class="card__info">
                                 <h4 class="card__title">
                                     <a href="#">Живой шоколад из какао-бобов по рецептам ацтеков</a>
-                                    <button class="ui-icon-button _bookmark js-card-bookmark" data-card="project-id-to-bookmark">
+                                    <button class="ui-icon-button _bookmark js-add-bookmark" data-card="project-id-to-bookmark">
                                         <span class="icon icon-bookmark" title="Добавить в закладки"></span>
                                         <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
                                     </button>
@@ -719,7 +713,7 @@
                             <div class="card__info">
                                 <h4 class="card__title">
                                     <a href="#">Учебник по теории керамики «Криптопрошный кукурузник»</a>
-                                    <button class="ui-icon-button _bookmark js-card-bookmark is-filled" data-card="project-id-to-bookmark">
+                                    <button class="ui-icon-button _bookmark js-add-bookmark is-filled" data-card="project-id-to-bookmark">
                                         <span class="icon icon-bookmark" title="Добавить в закладки"></span>
                                         <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
                                     </button>
@@ -744,7 +738,7 @@
                             <div class="card__info">
                                 <h4 class="card__title">
                                     <a href="#">Живой шоколад из какао-бобов по рецептам ацтеков</a>
-                                    <button class="ui-icon-button _bookmark js-card-bookmark" data-card="project-id-to-bookmark">
+                                    <button class="ui-icon-button _bookmark js-add-bookmark" data-card="project-id-to-bookmark">
                                         <span class="icon icon-bookmark" title="Добавить в закладки"></span>
                                         <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
                                     </button>
@@ -771,7 +765,7 @@
                             <div class="card__info">
                                 <h4 class="card__title">
                                     <a href="#">Живой шоколад из какао-бобов по рецептам ацтеков</a>
-                                    <button class="ui-icon-button _bookmark js-card-bookmark" data-card="project-id-to-bookmark">
+                                    <button class="ui-icon-button _bookmark js-add-bookmark" data-card="project-id-to-bookmark">
                                         <span class="icon icon-bookmark" title="Добавить в закладки"></span>
                                         <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
                                     </button>
@@ -796,7 +790,7 @@
                             <div class="card__info">
                                 <h4 class="card__title">
                                     <a href="#">Создание деревни для путешественников</a>
-                                    <button class="ui-icon-button _bookmark js-card-bookmark" data-card="project-id-to-bookmark">
+                                    <button class="ui-icon-button _bookmark js-add-bookmark" data-card="project-id-to-bookmark">
                                         <span class="icon icon-bookmark" title="Добавить в закладки"></span>
                                         <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
                                     </button>
@@ -821,7 +815,7 @@
                             <div class="card__info">
                                 <h4 class="card__title">
                                     <a href="#">Шоколад «Гордость Кенигсберга»</a>
-                                    <button class="ui-icon-button _bookmark js-card-bookmark" data-card="project-id-to-bookmark">
+                                    <button class="ui-icon-button _bookmark js-add-bookmark" data-card="project-id-to-bookmark">
                                         <span class="icon icon-bookmark" title="Добавить в закладки"></span>
                                         <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
                                     </button>
@@ -846,7 +840,7 @@
                             <div class="card__info">
                                 <h4 class="card__title">
                                     <a href="#">Учебник по теории керамики «Криптопрошный кукурузник»</a>
-                                    <button class="ui-icon-button _bookmark js-card-bookmark" data-card="project-id-to-bookmark">
+                                    <button class="ui-icon-button _bookmark js-add-bookmark" data-card="project-id-to-bookmark">
                                         <span class="icon icon-bookmark" title="Добавить в закладки"></span>
                                         <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
                                     </button>
@@ -871,7 +865,7 @@
                             <div class="card__info">
                                 <h4 class="card__title">
                                     <a href="#">Учебник по теории керамики «Криптопрошный кукурузник»</a>
-                                    <button class="ui-icon-button _bookmark js-card-bookmark" data-card="project-id-to-bookmark">
+                                    <button class="ui-icon-button _bookmark js-add-bookmark" data-card="project-id-to-bookmark">
                                         <span class="icon icon-bookmark" title="Добавить в закладки"></span>
                                         <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
                                     </button>
@@ -898,7 +892,7 @@
                             <div class="card__info">
                                 <h4 class="card__title">
                                     <a href="#">Живой шоколад из какао-бобов по рецептам ацтеков</a>
-                                    <button class="ui-icon-button _bookmark js-card-bookmark" data-card="project-id-to-bookmark">
+                                    <button class="ui-icon-button _bookmark js-add-bookmark" data-card="project-id-to-bookmark">
                                         <span class="icon icon-bookmark" title="Добавить в закладки"></span>
                                         <span class="icon icon-bookmark-filled" title="Добавлено в закладки"></span>
                                     </button>
