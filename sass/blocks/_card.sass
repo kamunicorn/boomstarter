@@ -21,26 +21,24 @@
             min-width: 100%
             min-height: 100%
             object-fit: cover
-    
     &__info
         display: flex
         flex-direction: column
-        padding: em(15) em(15) em(23) em(15)
-        // padding: 15px 15px 23px 15px
-        > *:not(:last-child)
-            // margin-bottom: 8px
+        padding: 11px 15px 23px 15px
+
     // TODO
-    &__progress // для примера
+    &__progress
         background-color: color(grey)
         overflow: hidden
         hr
             height: 100%
             background-color: color(cyan)
-    
+
     &__title
         display: flex
         flex-wrap: nowrap
         @include font(700, 16px)
+        margin-bottom: 9px
         .ui-icon-button._bookmark
             font-size: 1.3em
             align-self: flex-start
@@ -57,15 +55,12 @@
         &__img:hover ~ &__info &__title>a
             color: color(primary)
 
-    &__author
-        @include font(100, 14px)
-    &__desc
-        @include font(300, 14px)
-    &__title,
     &__author,
     &__desc
-       margin-bottom: 9px
-
+        @include font(300, 14px)
+        margin-bottom: 9px
+    &__author
+        font-weight: 100
     &__money
         @include font(400, 18px)
         margin-top: auto
@@ -76,11 +71,10 @@
     &__timing
         margin: 12px 0 10px
         @include font(300, 16px)
-    
     &__ps
         display: flex
         flex-wrap: wrap
-        @include font(100, 14px)
+        @include font(300, 14px)
         >*
             margin-top: 10px
             &:first-child
@@ -98,22 +92,21 @@
         grid-template-rows: 1fr
     &._vertical-img &__progress hr
         width: 100%
-
     &._vertical-img &__img
         border-radius: $radius-card 0 0 $radius-card
-    &._vertical-img &__progress
-        // display: none
 
 @media (max-width: 575px)
     .card
-        &__info > *
-            font-size: 12px
+        &__info
+            padding: 8px 8px 15px
+            >*
+                font-size: 12px
         &__title .ui-icon-button._bookmark
             display: none
         &__title,
         &__author,
         &__desc
-            margin-bottom: 5px
+            margin-bottom: 6px
         &__money
             font-size: 16px
             padding-top: 20px

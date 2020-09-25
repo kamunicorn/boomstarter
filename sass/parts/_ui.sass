@@ -177,7 +177,7 @@
             .ui-dropdown
                 top: 35px
                 left: -17px
-        
+
     &-checkbox
         display: flex
         margin-right: 15px
@@ -208,13 +208,14 @@
     // TODO
     // сортировка по
     &-sorting
+        font-weight: 300
         &__control
             color: color(primary)
         .icon-sorting
             margin-left: 0.5em
             font-size: 0.6em
         .ui-dropdown
-            top: -6px
+            top: -11x
             left: -17px
 
     // фильтр с выпадающим списком
@@ -222,11 +223,12 @@
         display: inline-flex
         position: relative
         margin-right: 18px
+        font-weight: 300
         &__control
             color: color(primary)
             border-bottom: 1px dashed color(primary)
         .ui-dropdown
-            top: -6px
+            top: -11x
             left: -17px
 
     // выпадающее окно
@@ -240,8 +242,7 @@
         z-index: 2
         background-color: color(white)
         border-radius: $radius-card
-        &__head
-            // padding: 10px 17px
+        font: inherit
         &__item
             padding: 6px 17px
             cursor: default

@@ -14,13 +14,29 @@
     &__look-all
         color: color(primary)
 
-    .slider__wrapper
-        margin-left: -$container-padding
-        margin-right: -$container-padding
-    .slider__row
-        padding: 0 $container-padding
+    @media (max-width: $container-max-width - 1px)
+        .slider__wrapper
+            margin-left: -$container-padding
+            margin-right: -$container-padding
+        .slider__row
+            padding: 0 $container-padding
     @media (max-width: 575px)
         .slider__wrapper
             margin: 0px -14px
         .slider__row
             padding: 0 14px
+
+// не touch-устройства
+@media (hover: none)
+    .special .slider
+        &__row
+            overflow-x: auto
+        &__controls
+            display: none
+
+@media (max-width: 575px)
+    .special .card
+        &__title
+            font-size: 14px
+        &__ps img
+            font-size: 10px

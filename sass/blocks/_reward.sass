@@ -22,22 +22,21 @@
     &__info
         display: flex
         flex-direction: column
-        padding: 15px 15px 23px 15px
-        > *:not(:last-child)
-            margin-bottom: 8px
+        padding: 17px 15px 23px 15px
     &__title
-        @include font(700, 20px)
+        @include font(600, 20px)
+        margin-bottom: 9px
     @media (hover: hover)
         &__title>a:hover,
         &__img:hover ~ &__info &__title>a
             color: color(primary)
-    &__desc
-        // @include line-limit(5)
-    &__author
-        @include font(100, 14px)
+    &__author,
     &__desc,
     &__timing
         @include font(300, 14px)
+        margin-bottom: 9px
+    &__author
+        font-weight: 100
     &__money
         @include font(700, 30px)
         margin-top: auto
@@ -55,8 +54,10 @@
 
 @media (max-width: 575px)
     .reward
-        &__info > *
-            font-size: 12px
+        &__info
+            padding: 11px 9px 15px
+            > *
+                font-size: 12px
         &__money
             font-size: 20px
         &__buy
@@ -64,8 +65,6 @@
 
 // подразделение на типы карточек
 .reward
-    &._big
-        grid-column: span 2
     &._vertical-img
         grid-template-columns: 1fr 1fr
         grid-template-rows: 1fr
@@ -84,7 +83,6 @@
             min-width: auto
             transform: translateY(10px)
             object-fit: contain
-    
     &._img-on-bg._vertical-img
         .reward__img a
             justify-content: flex-start
