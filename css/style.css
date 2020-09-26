@@ -1757,10 +1757,13 @@ nav:nth-child(2) {
 
 /* COLORS */
 .sm-cards {
+  padding: 25px 0;
+}
+
+.sm-cards__grid {
   display: grid;
   grid-template-rows: minmax(77px, auto);
   grid-gap: 16px;
-  padding: 25px 0;
 }
 
 .sm-cards__item {
@@ -1807,8 +1810,10 @@ nav:nth-child(2) {
 
 @media (max-width: 1199px) {
   .sm-cards {
-    grid-template-columns: 1fr 1fr;
     padding-top: 0;
+  }
+  .sm-cards__grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -1820,13 +1825,19 @@ nav:nth-child(2) {
 
 @media (max-width: 575px) {
   .sm-cards {
+    margin-left: -14px;
+    margin-right: -14px;
+    overflow-x: auto;
+  }
+  .sm-cards__row {
+    display: flex;
+  }
+  .sm-cards__grid {
     grid-template-columns: 117px;
     grid-auto-columns: minmax(117px, auto);
-    padding-top: 0;
-    overflow-x: auto;
     grid-auto-flow: column;
-    margin: 0 -14px;
-    padding: 0 14px;
+    padding-left: 14px;
+    padding-right: 14px;
   }
   .sm-cards img {
     width: 116px;
