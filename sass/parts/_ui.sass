@@ -244,6 +244,8 @@
         &__item
             padding: 6px 17px
             cursor: default
+        &__item.is-active
+            display: none
         @media (hover: hover)
             &__item:hover
                 color: color(primary)
@@ -251,6 +253,7 @@
 
 .has-dropdown
     position: relative
+.has-dropdown.is-open,
 .has-dropdown-on-hover:hover,
 .has-dropdown-on-hover:active
     .ui-dropdown

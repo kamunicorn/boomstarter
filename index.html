@@ -148,30 +148,30 @@
 
             <!-- элементы фильтрации и сортировки контента -->
             <section class="container">
-                <div class="control-content">
+                <div id="control-content" class="control-content">
                     <!-- вкладки с темами -->
                     <div class="control-content__subjects">
                         <ul class="ui-subjects" role="tablist">
                             <li class="ui-subjects__item" role="presentation">
-                                <button class="ui-subjects__btn is-active" role="tab" data-name="subject" data-id="subject-id">
+                                <button class="ui-subjects__btn" role="tab" data-name="subject" data-id="subject-id-0">
                                     Бизнес
                                     <small class="ui-subjects__count">12</small>
                                 </button>
                             </li>
                             <li class="ui-subjects__item" role="presentation">
-                                <button class="ui-subjects__btn" role="tab" data-name="subject" data-id="subject-id">
+                                <button class="ui-subjects__btn is-active" role="tab" data-name="subject" data-id="subject-creative">
                                     Творчество
                                     <small class="ui-subjects__count">23</small>
                                 </button>
                             </li>
                             <li class="ui-subjects__item" role="presentation">
-                                <button class="ui-subjects__btn" role="tab" data-name="subject" data-id="subject-id">
+                                <button class="ui-subjects__btn" role="tab" data-name="subject" data-id="subject-id-4">
                                     Мода
                                     <small class="ui-subjects__count">15</small>
                                 </button>
                             </li>
                             <li class="ui-subjects__item" role="presentation">
-                                <button class="ui-subjects__btn" role="tab" data-name="subject" data-id="subject-id">
+                                <button class="ui-subjects__btn" role="tab" data-name="subject" data-id="subject-id-2">
                                     Мероприятия
                                     <small class="ui-subjects__count">28</small>
                                 </button>
@@ -183,58 +183,58 @@
                                 </button>
                             </li>
                             <li class="ui-subjects__item" role="presentation">
-                                <button class="ui-subjects__btn" role="tab" data-name="subject" data-id="subject-id">
+                                <button class="ui-subjects__btn" role="tab" data-name="subject" data-id="subject-id-3">
                                     Технологии
                                     <small class="ui-subjects__count">16</small>
                                 </button>
                             </li>
-                            <li class="ui-subjects__item has-dropdown has-dropdown-on-hover md-hidden" role="presentation">
-                                <button class="ui-subjects__btn" role="tab">
+                            <li class="ui-subjects__item has-dropdown js-subjects-more has-dropdown-on-hover md-hidden" role="presentation">
+                                <button class="ui-subjects__btn js-subjects-more__control" role="tab" type="button">
                                     Еще...
                                 </button>
                                 <ul class="ui-dropdown">
-                                    <li class="ui-dropdown__item" data-name="subject" data-id="">
+                                    <li class="ui-dropdown__item" data-id="eco">
                                         Экология
                                         <small class="ui-subjects__count">5</small>
                                     </li>
-                                    <li class="ui-dropdown__item" data-name="subject" data-id="">
+                                    <li class="ui-dropdown__item" data-id="it">
                                         Информационные технологии
                                         <small class="ui-subjects__count">12</small>
                                     </li>
-                                    <li class="ui-dropdown__item" data-name="subject" data-id="">
+                                    <li class="ui-dropdown__item" data-id="cinema">
                                         Кино
                                         <small class="ui-subjects__count">4</small>
                                     </li>
-                                    <li class="ui-dropdown__item" data-name="subject" data-id="">
+                                    <li class="ui-dropdown__item" data-id="science">
                                         Наука
                                         <small class="ui-subjects__count">9</small>
                                     </li>
                                 </ul>
                             </li>
                             <li class="ui-subjects__item" role="presentation">
-                                <button class="ui-subjects__btn" role="tab" data-name="subject" data-id="subject-id">
+                                <button class="ui-subjects__btn" role="tab" data-name="subject" data-id="subject-special">
                                     Спецпроекты с брендами
                                 </button>
                             </li>
                         </ul>
                         
                         <!-- кнопка смотреть все категории -->
-                        <div class="hidden md-block control-content__subjects-all has-dropdown has-dropdown-on-hover -fit-content">
-                            <button href="#" class="ui-button _outlined -fit-content">Смотреть все категории</button>
+                        <div class="hidden md-block control-content__subjects-more js-subjects-more has-dropdown has-dropdown-on-hover -fit-content">
+                            <button class="ui-button _outlined -fit-content js-subjects-more__control" type="button">Смотреть все категории</button>
                             <ul class="ui-dropdown">
-                                <li class="ui-dropdown__item" data-id="">
+                                <li class="ui-dropdown__item" data-id="eco">
                                     Экология
                                     <small class="ui-subjects__count">5</small>
                                 </li>
-                                <li class="ui-dropdown__item" data-id="">
+                                <li class="ui-dropdown__item" data-id="it">
                                     Информационные технологии
                                     <small class="ui-subjects__count">12</small>
                                 </li>
-                                <li class="ui-dropdown__item" data-id="">
+                                <li class="ui-dropdown__item" data-id="cinema">
                                     Кино
                                     <small class="ui-subjects__count">4</small>
                                 </li>
-                                <li class="ui-dropdown__item" data-id="">
+                                <li class="ui-dropdown__item" data-id="science">
                                     Наука
                                     <small class="ui-subjects__count">9</small>
                                 </li>
@@ -244,14 +244,14 @@
                     <!-- Собирают / Завершились -->
                     <div class="control-content__status">
                         <label class="ui-checkbox">
-                            <input id="checkbox-example" type="checkbox" checked name="status-1">
+                            <input type="checkbox" checked name="status-collecting">
                             <span class="ui-checkbox__custom">
                                 <span class="icon icon-check"></span>
                             </span>
                             <span class="ui-checkbox__text">Собирают</span>
                         </label>
                         <label class="ui-checkbox">
-                            <input id="checkbox-example" type="checkbox" name="status-2">
+                            <input type="checkbox" name="status-finished">
                             <span class="ui-checkbox__custom">
                                 <span class="icon icon-check"></span>
                             </span>
@@ -262,12 +262,12 @@
                     <div class="control-content__sorting">
                         Сортировать по 
                         <div class="ui-sorting has-dropdown has-dropdown-on-hover">
-                            <button class="ui-sorting__control" data-name="sorting" data-selected="popular">
+                            <button id="sorting-content" class="ui-sorting__control" data-name="sorting" data-selected="popular" aria-haspopup="true" role="combobox" type="button">
                                 <span class="js-selected">популярности </span>
                                 <span class="icon icon-sorting"></span>
                             </button>
                             <ul class="ui-dropdown">
-                                <li class="ui-dropdown__item" data-id="popular">популярности</li>
+                                <li class="ui-dropdown__item is-active" data-id="popular">популярности</li>
                                 <li class="ui-dropdown__item" data-id="rating">рейтингу</li>
                                 <li class="ui-dropdown__item" data-id="updates">обновлениям</li>
                             </ul>
@@ -276,11 +276,12 @@
 
                     <div class="control-content__filter xs-block">
                         <div class="ui-filter has-dropdown has-dropdown-on-hover">
-                            <button id="filter-area" class="ui-filter__control" data-name="area" data-selected="russia">
+                            <button id="filter-area" class="ui-filter__control" data-name="area" data-selected="russia" aria-haspopup="true" role="combobox" type="button">
                                 <span class="js-selected">Вся Россия</span>
                             </button>
                             <ul class="ui-dropdown">
-                                <li class="ui-dropdown__item" data-id="russia">Вся Европа</li>
+                                <li class="ui-dropdown__item is-active" data-id="russia">Вся Россия</li>
+                                <li class="ui-dropdown__item" data-id="europe">Вся Европа</li>
                                 <li class="ui-dropdown__item" data-id="mos">Москва</li>
                                 <li class="ui-dropdown__item" data-id="spb">Санкт-Петербург</li>
                                 <li class="ui-dropdown__item" data-id="fareast">Дальний Восток</li>
@@ -288,15 +289,15 @@
                             </ul>
                         </div>
                         <div class="ui-filter has-dropdown has-dropdown-on-hover">
-                            <button id="filter-curator" class="ui-filter__control" data-name="owner" data-selected="default">
+                            <button id="filter-curator" class="ui-filter__control" data-name="owner" data-selected="default" aria-haspopup="true" role="combobox" type="button">
                                 <span class="js-selected">Куратор</span>
                             </button>
                             <ul class="ui-dropdown">
-                                <li class="ui-dropdown__item" data-id="default">Значение 1</li>
-                                <li class="ui-dropdown__item" data-id="1">Куратор</li>
+                                <li class="ui-dropdown__item is-active" data-id="default">Куратор</li>
+                                <li class="ui-dropdown__item" data-id="1">Значение 1</li>
                                 <li class="ui-dropdown__item" data-id="2">Значение 2</li>
                                 <li class="ui-dropdown__item" data-id="3">Еще значение</li>
-                                <li class="ui-dropdown__item" data-id="4">Другое значение</li>
+                                <li class="ui-dropdown__item" data-id="other-curator">Другое значение</li>
                             </ul>
                         </div>
                     </div>
@@ -1021,7 +1022,7 @@
             </section>
         </main>
         
-        <script src="js/jquery-1.8.1.min.js"></script>
+        <script src="js/jquery-3.5.1.min.js"></script>
         <script src="js/script.js"></script>
         
     </body>

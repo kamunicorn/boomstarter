@@ -1115,6 +1115,10 @@ input:checked ~ .ui-checkbox__custom .icon-check {
   cursor: default;
 }
 
+.ui-dropdown__item.is-active {
+  display: none;
+}
+
 @media (hover: hover) {
   .ui-dropdown__item:hover {
     color: #0087F7;
@@ -1126,6 +1130,7 @@ input:checked ~ .ui-checkbox__custom .icon-check {
   position: relative;
 }
 
+.has-dropdown.is-open .ui-dropdown,
 .has-dropdown-on-hover:hover .ui-dropdown,
 .has-dropdown-on-hover:active .ui-dropdown {
   display: block;
@@ -1857,15 +1862,11 @@ nav:nth-child(2) {
   margin: 1.5625em 0 1.875em;
 }
 
-.control-content__subjects-all {
+.control-content__subjects-more {
   font-weight: 300;
   font-style: normal;
   font-size: 16px;
   margin: 15px 0 25px;
-}
-
-.control-content__subjects-all:hover .ui-dropdown {
-  display: block;
 }
 
 .control-content__status {
