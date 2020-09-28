@@ -124,6 +124,15 @@
             &:hover
                 color: color(cyan)
 
+    &-loading
+        display: flex
+        justify-content: center
+        align-items: center
+        min-height: 100px
+        color: color(primary)
+        font-size: 2em
+        @include animation(rotation, 1.8s, infinite, linear)
+
     // вкладки с темами
     &-subjects
         display: flex
@@ -253,7 +262,7 @@
 
 .has-dropdown
     position: relative
-.has-dropdown.is-open,
+// .has-dropdown.is-open,
 .has-dropdown-on-hover:hover,
 .has-dropdown-on-hover:active
     .ui-dropdown

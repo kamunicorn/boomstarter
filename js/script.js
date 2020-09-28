@@ -31,8 +31,9 @@ function initTablist() {
 function initSubjectsMore() {
     let $subjectsMoreWrappers = $('.js-subjects-more'),
         $options = $subjectsMoreWrappers.find('.ui-dropdown__item');
-    console.log($subjectsMoreWrappers);
-    console.log($options);
+
+    // console.log($subjectsMoreWrappers);
+    // console.log($options);
 
     $subjectsMoreWrappers.each( function(i, elem) {
         let $wrapper = $(elem),
@@ -43,20 +44,23 @@ function initSubjectsMore() {
                 $option = ( $target.hasClass('ui-dropdown__item') ) ? $target : $target.closest('.ui-dropdown__item');
             
             if ($option) {
-                let $currentTab = $('.ui-subjects__btn.is-active'),
-                    old = {
-                        'id': $currentTab.data('id'),
-                        'innerHTML': $currentTab.html()
+                let $activeTab = $('.ui-subjects__btn.is-active'),
+                    $firstTab = $('.ui-subjects__item:first-child .ui-subjects__btn'),
+                    toReplace = {
+                        'id': $firstTab.data('id'),
+                        'innerHTML': $firstTab.html()
                     },
                     selected = {
                         'id': $option.data('id'),
                         'innerHTML': $option.html()
                     };
-                $currentTab.data('id', selected.id);
-                $currentTab.html(selected.innerHTML);
+                $activeTab.removeClass('is-active');
+                $firstTab.data('id', selected.id);
+                $firstTab.html(selected.innerHTML);
+                $firstTab.addClass('is-active');
 
-                $options.filter(`[data-id="${selected.id}"]`).data('id', old.id);
-                $options.filter(`[data-id="${selected.id}"]`).html(old.innerHTML);
+                $options.filter(`[data-id="${selected.id}"]`).data('id', toReplace.id);
+                $options.filter(`[data-id="${selected.id}"]`).html(toReplace.innerHTML);
                 
                 refreshContent();                
             }
@@ -126,9 +130,9 @@ function initComboboxes(comboboxWrapper, comboboxControl) {
             $control = $combobox.find( comboboxControl ),
             $dropdown = $combobox.find('.ui-dropdown');
 
-        $control.click( function() {
+        /* $control.click( function() {
             $combobox.toggleClass('is-open');
-        });
+        }); */
 
         $dropdown.on('click', '.ui-dropdown__item', function(e) {
             let $target = $(e.target),
@@ -144,7 +148,7 @@ function initComboboxes(comboboxWrapper, comboboxControl) {
                 };
                 $control.find('.js-selected').html(selected.innerHTML);
                 $control.data('selected', selected.id);
-                $combobox.removeClass('is-open');
+                // $combobox.removeClass('is-open');
                 
                 refreshContent();
                 // console.log(selected);
@@ -159,19 +163,26 @@ function initComboboxes(comboboxWrapper, comboboxControl) {
 function refreshContent() {
     let formData = collectData();
     console.log(formData);
+    showPreloader('#js-render-container');
 
     $.ajax({
         url: 'api/insert-content.html',
         method: 'GET',
         data: formData,
         success: function(response) {
-            console.log(response);
-            $('#js-render-container').html(response);
+            // console.log(response);
+            // setTimeout(function() {
+                $('#js-render-container').html(response);
 
-            initSoundSwitchers();
-            initBookmarks();
+                initSoundSwitchers();
+                initBookmarks();
+            // }, 1000);
         }
     });
+}
+
+function showPreloader(where) {
+    $(where).html('<section class="container"><div class="ui-loading"><span class="icon icon-loading"></span></div></section>');
 }
 
 function collectData() {

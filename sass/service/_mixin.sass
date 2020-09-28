@@ -29,3 +29,9 @@
     @media (hover: hover)
         &:hover
             box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25)
+
+@mixin animation($name, $duration, $iteration: infinite, $timing: linear)
+    animation-name: $name
+    animation-duration: $duration
+    animation-iteration-count: $iteration
+    animation-timing-function: $timing
