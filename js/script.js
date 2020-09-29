@@ -1,14 +1,15 @@
 
 $(function() {
-    initSoundSwitchers();
-    initBookmarks();
-
     initComboboxes('.ui-filter', '.ui-filter__control');
     initComboboxes('.ui-sorting', '.ui-sorting__control');
 
     initCheckboxes();
     initTablist();
     initSubjectsMore();
+    
+    initSlider('#special-slider');
+    initSoundSwitchers();
+    initBookmarks();
 });
 
 // вкладки с категориями
@@ -194,4 +195,31 @@ function collectData() {
         'filterByArea': $('[data-name="area"]').data('selected'),
         'filterByOwner': $('[data-name="owner"]').data('selected')
     };
+}
+
+// in development
+function initSlider(selector) {
+    $(selector).each(function(i, elem) {
+        let $slider = $(elem),
+            $translatedRow = $slider.find('.js-translate-row'),
+            $items = $translatedRow.children(),
+            $left = $slider.find('.js-left-slide'),
+            $right = $slider.find('.js-right-slide'),
+            
+            itemsCount = $items.length,
+            gap = parseInt($translatedRow.css('column-gap')),
+            // widthWrapper = $sliderRow.width(),
+            widthItem = $items.first().width(),
+            translateUnit = widthItem + gap,
+            translateMax = $sliderRow.width() - (widthUnit * itemsCount - gap),
+            shiftUnit = 1, // на сколько слайдов смещается
+            shiftCounter = 0; // на сколько слайдов смещено сейчас
+
+        $left.click(function() {
+
+        });
+        $right.click(function() {
+
+        });
+    });
 }

@@ -1987,6 +1987,10 @@ nav:nth-child(2) {
   color: #0087F7;
 }
 
+.special .grid-special {
+  transition: transform 0.9s linear;
+}
+
 @media (max-width: 1279px) {
   .special .slider__wrapper {
     margin-left: -3.125em;
