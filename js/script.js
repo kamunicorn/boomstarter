@@ -7,7 +7,7 @@ $(function() {
     initTablist();
     initSubjectsMore();
     
-    initSlider('#special-slider');
+    // initSlider('#special-slider');
     initSoundSwitchers();
     initBookmarks();
 });
@@ -162,9 +162,9 @@ function initComboboxes(comboboxWrapper, comboboxControl) {
 // "рендер" контента (рендер на сервере, я просто вставляю)
 // ajax
 function refreshContent() {
-    let formData = collectData();
+    let formData = _collectData();
     console.log(formData);
-    showPreloader('#js-render-container');
+    _showPreloader('#js-render-container');
 
     $.ajax({
         url: 'api/insert-content.html',
@@ -180,21 +180,20 @@ function refreshContent() {
             // }, 1000);
         }
     });
-}
-
-function showPreloader(where) {
-    $(where).html('<section class="container"><div class="ui-loading"><span class="icon icon-loading"></span></div></section>');
-}
-
-function collectData() {
-    return {
-        'subject': $('[data-name="subject"].is-active').data('id'),
-        'statusCollecting': $('input:checkbox[name="status-collecting"]')[0].checked,
-        'statusFinished': $('input:checkbox[name="status-finished"]')[0].checked,
-        'sortBy': $('[data-name="sorting"]').data('selected'),
-        'filterByArea': $('[data-name="area"]').data('selected'),
-        'filterByOwner': $('[data-name="owner"]').data('selected')
-    };
+    function _showPreloader(where) {
+        $(where).html('<section class="container"><div class="ui-loading"><span class="icon icon-loading"></span></div></section>');
+    }
+    
+    function _collectData() {
+        return {
+            'subject': $('[data-name="subject"].is-active').data('id'),
+            'statusCollecting': $('input:checkbox[name="status-collecting"]')[0].checked,
+            'statusFinished': $('input:checkbox[name="status-finished"]')[0].checked,
+            'sortBy': $('[data-name="sorting"]').data('selected'),
+            'filterByArea': $('[data-name="area"]').data('selected'),
+            'filterByOwner': $('[data-name="owner"]').data('selected')
+        };
+    }
 }
 
 // in development
@@ -206,14 +205,8 @@ function initSlider(selector) {
             $left = $slider.find('.js-left-slide'),
             $right = $slider.find('.js-right-slide'),
             
-            itemsCount = $items.length,
-            gap = parseInt($translatedRow.css('column-gap')),
-            // widthWrapper = $sliderRow.width(),
-            widthItem = $items.first().width(),
-            translateUnit = widthItem + gap,
-            translateMax = $sliderRow.width() - (widthUnit * itemsCount - gap),
-            shiftUnit = 1, // на сколько слайдов смещается
-            shiftCounter = 0; // на сколько слайдов смещено сейчас
+            opts = _calcOpts($slider);
+            
 
         $left.click(function() {
 
@@ -221,5 +214,22 @@ function initSlider(selector) {
         $right.click(function() {
 
         });
+
+        function _calcOpts($slider) {
+            let $translatedRow = $slider.find('.js-translate-row'),
+                $items = $translatedRow.children();
+            
+            return {
+                itemsCount: $items.length, // элементов в слайдере
+                gap: parseInt($translatedRow.css('column-gap')),
+                // widthWrapper = $translatedRow.width(),
+                widthItem: $items.first().width(), // ширина элемента слайдера в px
+                translateUnit: widthItem + gap, // минимальная величина translateX для смещения
+                translateMax: $translatedRow.width() - (widthUnit * itemsCount - gap), // максимальная величина translateX для смещения
+                shiftUnit: 1, // на сколько слайдов смещать за раз
+                shiftMax: itemsCount,
+                shiftCounter: 0 // на сколько слайдов смещено сейчас, счетчик
+            }
+        }
     });
 }
