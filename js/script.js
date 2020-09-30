@@ -7,7 +7,7 @@ $(function() {
     initTablist();
     initSubjectsMore();
     
-    // initSlider('#special-slider');
+    initSlider('#special-slider');
     initSoundSwitchers();
     initBookmarks();
 });
@@ -200,36 +200,66 @@ function refreshContent() {
 function initSlider(selector) {
     $(selector).each(function(i, elem) {
         let $slider = $(elem),
-            $translatedRow = $slider.find('.js-translate-row'),
-            $items = $translatedRow.children(),
+            $row = $slider.find('.js-translate-row'),
+            $items = $row.children(),
             $left = $slider.find('.js-left-slide'),
             $right = $slider.find('.js-right-slide'),
             
+            itemsCount = $items.length, // элементов в слайдере
+            iShift = 0, // смещение сейчас (сколько итемов смещено)
             opts = _calcOpts($slider);
             
-
         $left.click(function() {
-
+            if (iShift > 0) {
+                iShift -= opts.iShiftUnit;
+                iShift = (iShift > 0) ? iShift : 0;
+                _shift(iShift);
+                $right.removeAttr('disabled');
+                if (iShift <= 0) {
+                    $left.attr('disabled', 'disabled');
+                }
+            }
         });
-        $right.click(function() {
 
+        $right.click(function() {
+            if (iShift < opts.iShiftMax) {
+                iShift += opts.iShiftUnit;
+                iShift = (iShift < opts.iShiftMax) ? iShift : opts.iShiftMax;
+                // iShift = (iShift + opts.iShiftUnit < opts.iShiftMax) ? (iShift + opts.iShiftUnit) : opts.iShiftMax;
+                _shift(iShift);
+                $left.removeAttr('disabled');
+                if (iShift >= opts.iShiftMax) {
+                    $right.attr('disabled', 'disabled');
+                }
+            }
         });
 
         function _calcOpts($slider) {
-            let $translatedRow = $slider.find('.js-translate-row'),
-                $items = $translatedRow.children();
+            let $row = $slider.find('.js-translate-row'),
+                $items = $row.children();
             
-            return {
-                itemsCount: $items.length, // элементов в слайдере
-                gap: parseInt($translatedRow.css('column-gap')),
-                // widthWrapper = $translatedRow.width(),
-                widthItem: $items.first().width(), // ширина элемента слайдера в px
-                translateUnit: widthItem + gap, // минимальная величина translateX для смещения
-                translateMax: $translatedRow.width() - (widthUnit * itemsCount - gap), // максимальная величина translateX для смещения
-                shiftUnit: 1, // на сколько слайдов смещать за раз
-                shiftMax: itemsCount,
-                shiftCounter: 0 // на сколько слайдов смещено сейчас, счетчик
+            let opts = {
+                pxGap: parseInt($row.css('column-gap')), // FIXME: to no column-gap
+                pxWidthWrapper: $row.parent().width(), // ширина блока, в котором находятся элементы слайдера
+                pxWidthRow: $row.outerWidth(),
+                pxWidthItem: $items.first().outerWidth(), // ширина элемента слайдера в px
+                iShiftUnit: 1 // на сколько слайдов смещать за раз
+            };
+            opts.pxTranslateUnit = opts.pxWidthItem + opts.pxGap; // минимальная величина translateX для смещения
+            // opts.pxWidthRow = opts.pxTranslateUnit * itemsCount - opts.pxGap; // полная ширина блока с слайдами
+            opts.pxTranslateMax = opts.pxWidthRow - opts.pxWidthWrapper; // максимальная величина translateX для смещения
+            opts.iShiftMax = opts.pxTranslateMax / opts.pxTranslateUnit; // максимальное количество слайдов для смещения
+            // console.log(opts);
+            return opts;
+        }
+
+        function _shift(unit) { // на сколько элементов слайдера сместить
+            let pxTranslateNow = unit * opts.pxTranslateUnit;
+            if (unit >= opts.iShiftMax || pxTranslateNow >= opts.pxTranslateMax) {
+                pxTranslateNow = opts.pxTranslateMax;
             }
+            // pxTranslateNow = (pxTranslateNow < opts.pxTranslateMax) ? pxTranslateNow : opts.pxTranslateMax;
+            $row.css('transform', `translateX(-${pxTranslateNow}px)`);
         }
     });
 }
