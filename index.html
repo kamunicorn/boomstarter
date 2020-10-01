@@ -261,8 +261,8 @@
                         
                     <div class="control-content__sorting">
                         Сортировать по 
-                        <div class="ui-sorting has-dropdown has-dropdown-on-hover">
-                            <button id="sorting-content" class="ui-sorting__control" data-name="sorting" data-selected="popular" aria-haspopup="true" role="combobox" type="button">
+                        <div class="ui-sorting js-combobox has-dropdown has-dropdown-on-hover">
+                            <button id="sorting-content" class="ui-sorting__control js-combobox-control" data-name="sorting" data-selected="popular" aria-haspopup="true" role="combobox" type="button">
                                 <span class="js-selected">популярности </span>
                                 <span class="icon icon-sorting"></span>
                             </button>
@@ -275,8 +275,8 @@
                     </div>
 
                     <div class="control-content__filter xs-block">
-                        <div class="ui-filter has-dropdown has-dropdown-on-hover">
-                            <button id="filter-area" class="ui-filter__control" data-name="area" data-selected="russia" aria-haspopup="true" role="combobox" type="button">
+                        <div class="ui-filter js-combobox has-dropdown has-dropdown-on-hover">
+                            <button id="filter-area" class="ui-filter__control js-combobox-control" data-name="area" data-selected="russia" aria-haspopup="true" role="combobox" type="button">
                                 <span class="js-selected">Вся Россия</span>
                             </button>
                             <ul class="ui-dropdown">
@@ -288,8 +288,8 @@
                                 <li class="ui-dropdown__item" data-id="sibir">Сибирь</li>
                             </ul>
                         </div>
-                        <div class="ui-filter has-dropdown has-dropdown-on-hover">
-                            <button id="filter-curator" class="ui-filter__control" data-name="owner" data-selected="default" aria-haspopup="true" role="combobox" type="button">
+                        <div class="ui-filter js-combobox has-dropdown has-dropdown-on-hover">
+                            <button id="filter-curator" class="ui-filter__control js-combobox-control" data-name="owner" data-selected="default" aria-haspopup="true" role="combobox" type="button">
                                 <span class="js-selected">Куратор</span>
                             </button>
                             <ul class="ui-dropdown">
@@ -313,7 +313,7 @@
                             <a class="special__look-all" href="#">Смотреть все</a>
                         </div>
 
-                        <div id="special-slider" class="slider">
+                        <div class="slider js-slider">
                             <div class="slider__wrapper">
                                 <div class="slider__row">
                                     <ul class="grid grid-special js-translate-row">

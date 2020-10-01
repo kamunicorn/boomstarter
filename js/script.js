@@ -1,13 +1,14 @@
 
 $(function() {
-    initComboboxes('.ui-filter', '.ui-filter__control');
-    initComboboxes('.ui-sorting', '.ui-sorting__control');
-
+    initComboboxes();
     initCheckboxes();
     initTablist();
     initSubjectsMore();
     
-    initSlider('#special-slider');
+    initSlider({steps: 'max'});
+        // step: 1 // сколько слайдов прокручивать за раз
+        // step: 'max' // максимальное количество слайдов (сколько влезает в контейнер, столько и прокручивать)
+    
     initSoundSwitchers();
     initBookmarks();
 });
@@ -69,6 +70,7 @@ function initSubjectsMore() {
     });
 }
 
+// при клике по чекбоксам перезагружать контент
 function initCheckboxes() {
     $('#control-content input:checkbox').change( function() {
         refreshContent();
@@ -78,8 +80,8 @@ function initCheckboxes() {
 // кнопки Добавить в закладки ()
 // ajax
 function initBookmarks() {
-    $('.js-add-bookmark').each( function(i, elem) {
-        let $bookmark = $(elem);
+    $('.js-add-bookmark').each( function() {
+        let $bookmark = $(this);
 
         $bookmark.click(function() {
             let projectId = $bookmark.data('project'),
@@ -125,15 +127,11 @@ function initSoundSwitchers() {
 }
 
 // выпадающие списки для сортировки и фильтрации
-function initComboboxes(comboboxWrapper, comboboxControl) {
-    $(comboboxWrapper).each( function(i, elem) {
-        let $combobox = $(elem),
-            $control = $combobox.find( comboboxControl ),
+function initComboboxes() {
+    $('.js-combobox').each( function() {
+        let $combobox = $(this),
+            $control = $combobox.find('.js-combobox-control'),
             $dropdown = $combobox.find('.ui-dropdown');
-
-        /* $control.click( function() {
-            $combobox.toggleClass('is-open');
-        }); */
 
         $dropdown.on('click', '.ui-dropdown__item', function(e) {
             let $target = $(e.target),
@@ -149,11 +147,8 @@ function initComboboxes(comboboxWrapper, comboboxControl) {
                 };
                 $control.find('.js-selected').html(selected.innerHTML);
                 $control.data('selected', selected.id);
-                // $combobox.removeClass('is-open');
                 
                 refreshContent();
-                // console.log(selected);
-                // console.log($control.data('selected'));
             }
         });
     });
@@ -171,13 +166,9 @@ function refreshContent() {
         method: 'GET',
         data: formData,
         success: function(response) {
-            // console.log(response);
-            // setTimeout(function() {
-                $('#js-render-container').html(response);
-
-                initSoundSwitchers();
-                initBookmarks();
-            // }, 1000);
+            $('#js-render-container').html(response);
+            initSoundSwitchers();
+            initBookmarks();
         }
     });
     function _showPreloader(where) {
@@ -197,21 +188,22 @@ function refreshContent() {
 }
 
 // in development
-function initSlider(selector) {
-    $(selector).each(function(i, elem) {
-        let $slider = $(elem),
+function initSlider(opts) {
+    // step - сколько блоков прокручивать за раз, 
+    $('.js-slider').each(function() {
+        let $slider = $(this),
             $row = $slider.find('.js-translate-row'),
-            $items = $row.children(),
             $left = $slider.find('.js-left-slide'),
             $right = $slider.find('.js-right-slide'),
-            
-            itemsCount = $items.length, // элементов в слайдере
+            // $items = $row.children(),
+            // itemsCount = $items.length, // элементов в слайдере
+
             iShift = 0, // смещение сейчас (сколько итемов смещено)
-            opts = _calcOpts($slider);
+            params = _calcParams($slider, opts.steps);
             
         $left.click(function() {
             if (iShift > 0) {
-                iShift -= opts.iShiftUnit;
+                iShift -= params.iShiftStep;
                 iShift = (iShift > 0) ? iShift : 0;
                 _shift(iShift);
                 $right.removeAttr('disabled');
@@ -222,43 +214,47 @@ function initSlider(selector) {
         });
 
         $right.click(function() {
-            if (iShift < opts.iShiftMax) {
-                iShift += opts.iShiftUnit;
-                iShift = (iShift < opts.iShiftMax) ? iShift : opts.iShiftMax;
-                // iShift = (iShift + opts.iShiftUnit < opts.iShiftMax) ? (iShift + opts.iShiftUnit) : opts.iShiftMax;
+            if (iShift < params.iShiftMax) {
+                iShift += params.iShiftStep;
+                iShift = (iShift < params.iShiftMax) ? iShift : params.iShiftMax;
+                // iShift = (iShift + params.iShiftStep < params.iShiftMax) ? (iShift + params.iShiftStep) : params.iShiftMax;
                 _shift(iShift);
                 $left.removeAttr('disabled');
-                if (iShift >= opts.iShiftMax) {
+                if (iShift >= params.iShiftMax) {
                     $right.attr('disabled', 'disabled');
                 }
             }
         });
 
-        function _calcOpts($slider) {
+        function _calcParams($slider, steps) {
             let $row = $slider.find('.js-translate-row'),
                 $items = $row.children();
             
-            let opts = {
-                pxGap: parseInt($row.css('column-gap')), // FIXME: to no column-gap
+            let params = {
                 pxWidthWrapper: $row.parent().width(), // ширина блока, в котором находятся элементы слайдера
                 pxWidthRow: $row.outerWidth(),
-                pxWidthItem: $items.first().outerWidth(), // ширина элемента слайдера в px
-                iShiftUnit: 1 // на сколько слайдов смещать за раз
+                pxWidthItem: $items.first().outerWidth() // ширина элемента слайдера в px
             };
-            opts.pxTranslateUnit = opts.pxWidthItem + opts.pxGap; // минимальная величина translateX для смещения
-            // opts.pxWidthRow = opts.pxTranslateUnit * itemsCount - opts.pxGap; // полная ширина блока с слайдами
-            opts.pxTranslateMax = opts.pxWidthRow - opts.pxWidthWrapper; // максимальная величина translateX для смещения
-            opts.iShiftMax = opts.pxTranslateMax / opts.pxTranslateUnit; // максимальное количество слайдов для смещения
-            // console.log(opts);
-            return opts;
+            params.pxGap = parseInt($row.css('column-gap'));
+            params.pxGap = ( isNaN(params.pxGap) ) ? 0 : params.pxGap;
+            params.pxTranslateStep = params.pxWidthItem + params.pxGap; // минимальная величина translateX для смещения
+            params.pxTranslateMax = params.pxWidthRow - params.pxWidthWrapper; // максимальная величина translateX для смещения
+
+            params.iShiftStep = 1; // на сколько слайдов смещать за раз
+            if (steps == 'max') { // сколько слайдов влезает в окно просмотре, столько и мотать
+                params.iShiftStep = Math.floor ( (params.pxWidthWrapper + params.pxGap) / params.pxTranslateStep );
+            }
+            params.iShiftMax = params.pxTranslateMax / params.pxTranslateStep; // максимальное количество слайдов для смещения
+            console.log(params);
+            return params;
         }
 
-        function _shift(unit) { // на сколько элементов слайдера сместить
-            let pxTranslateNow = unit * opts.pxTranslateUnit;
-            if (unit >= opts.iShiftMax || pxTranslateNow >= opts.pxTranslateMax) {
-                pxTranslateNow = opts.pxTranslateMax;
+        function _shift(step) { // на сколько элементов слайдера сместить
+            let pxTranslateNow = step * params.pxTranslateStep;
+            if (step >= params.iShiftMax || pxTranslateNow >= params.pxTranslateMax) {
+                pxTranslateNow = params.pxTranslateMax;
             }
-            // pxTranslateNow = (pxTranslateNow < opts.pxTranslateMax) ? pxTranslateNow : opts.pxTranslateMax;
+            // pxTranslateNow = (pxTranslateNow < params.pxTranslateMax) ? pxTranslateNow : params.pxTranslateMax;
             $row.css('transform', `translateX(-${pxTranslateNow}px)`);
         }
     });
