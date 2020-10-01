@@ -1,29 +1,110 @@
 @import '../service/service'
 
 .footer
+    font-weight: 300
     padding-top: 110px
     padding-bottom: 50px
     color: color(white)
+    background-color: color(primary)
     background-image: linear-gradient(180deg, #00AEF1 -40.95%, #00203B 100%)
-    &__title
+    &__menu-title
         @include font(600, 18px)
-        margin-top: 18px
-    &__list
+        margin-bottom: 18px
+    &__menu-list
+        @include font(500, 14px)
         li
-            margin: 12px 0
-
-    &__to-subscribe 
-
+            margin-bottom: 13px
+    &__subscribe
+        margin-top: 100px
         &-offer
-
-        &-form
-
+            @include font(500, 16px)
+            margin-bottom: 6px
+        // &-form
+        .ui-input
+            margin-right: 25px
+        .ui-input,
+        .ui-button
+            @include font(300, 16px)
+            padding: 12px 30px
+        .ui-input
+            border-color: color(white)
+            color: color(white)
+            &::placeholder
+                color: color(white)
+            &::-moz-placeholder
+                color: color(white)
     hr
+        height: 1px
+        background-color: color(white)
         margin: 72px 0 25px
-    &__icons 
+    &__icons
+        display: flex
+        align-items: center
+        margin-bottom: 40px
 
-    &__socials 
+    &__socials
+        display: flex
+        align-items: center
+        li
+            padding-right: 30px
+            img
+                max-height: 30px
+                margin: auto
+    &__startup
+        margin: 0 0 0 auto
+        img
+            max-height: 36px
+    &__ps
+        @include font(100, 10px)
 
-    &__startup 
+@media (max-width: 991px)
+    .footer
+        padding-bottom: 100px
+        &__menu-list
+            margin-bottom: 57px
+        &__subscribe
+            margin-top: 5px
+        &__icons
+            margin-bottom: 50px
+        hr
+            margin: 130px 0 30px
 
-    &__ps 
+@media (max-width: 767px)
+    .footer
+        padding: 50px 0 60px
+        &__menu-list
+            margin-bottom: 30px
+        &__subscribe
+            margin-top: 25px
+        hr
+            margin: 60px 0 43px
+        &__icons
+            display: block
+            margin-bottom: 30px
+        &__socials
+            flex-wrap: wrap
+            justify-content: center
+            li
+                padding: 0 13px
+        &__startup img
+            margin: 27px auto auto
+
+@media (max-width: 575px)
+    .footer
+        &__subscribe
+            &-offer
+                margin-bottom: 0
+            .ui-input
+                margin: 0
+                margin-bottom: 18px
+        &__socials
+            justify-content: space-between
+            li
+                min-width: 23%
+                padding: 15px 0
+@media (max-width: 479px)
+    .footer
+        &__subscribe
+            .ui-button
+                width: 100%
+

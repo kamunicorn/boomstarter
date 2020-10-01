@@ -57,15 +57,19 @@
                 margin-left: 0.7em
 
     // модификации
-    &-button,
+    &-button._outlined
+        font-weight: 300
+        background-color: transparent
+        color: color(primary)
+        border: 1px solid
     &-input
-        &._outlined
-            padding: 9px 13px
-            font-weight: 300
+        font-weight: 300
+        background-color: transparent
+        color: color(black)
+        border: 1px solid color(primary)
+        &:hover
             background-color: transparent
-            color: color(primary)
-            border: 1px solid
-
+    
     // поле поиска
     &-search
         display: flex
