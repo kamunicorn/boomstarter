@@ -383,7 +383,7 @@ html {
 
 body {
   line-height: 1.1;
-  font-family: "Museo Sans Cyrl", sans-serif;
+  font-family: "Museo Sans Cyrl", Roboto, Arial, sans-serif;
   background-color: #F6F6F6;
 }
 
@@ -904,7 +904,7 @@ ul {
   }
 }
 
-.ui-button.has-emoji, .ui-input.has-emoji {
+.ui-button.has-image, .ui-input.has-image {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -921,12 +921,12 @@ ul {
 }
 
 @media (max-width: 575px) {
-  .ui-button.has-emoji, .ui-input.has-emoji {
+  .ui-button.has-image, .ui-input.has-image {
     padding: 8px 21px;
   }
 }
 
-.ui-button.has-emoji .emoji, .ui-input.has-emoji .emoji {
+.ui-button.has-image .emoji, .ui-input.has-image .emoji {
   margin-left: 0.7em;
 }
 
@@ -1694,7 +1694,6 @@ input:checked ~ .ui-checkbox__custom .icon-check {
   }
 }
 
-/* COLORS */
 .menu-bar {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1807,7 +1806,6 @@ nav:nth-child(2) {
   }
 }
 
-/* COLORS */
 .main {
   display: -ms-grid;
   display: grid;
@@ -1971,7 +1969,6 @@ nav:nth-child(2) {
   }
 }
 
-/* COLORS */
 .sm-cards {
   padding: 25px 0;
 }
@@ -2082,7 +2079,6 @@ nav:nth-child(2) {
   }
 }
 
-/* COLORS */
 .control-content {
   margin: 1.5625em 0 1.875em;
 }
@@ -2138,7 +2134,6 @@ nav:nth-child(2) {
   }
 }
 
-/* COLORS */
 .slider {
   position: relative;
 }
@@ -2176,7 +2171,6 @@ nav:nth-child(2) {
           transform: translateY(-50%) translateX(50%);
 }
 
-/* COLORS */
 .special {
   padding: 1.4375em 0 2.1875em;
 }
@@ -2381,7 +2375,6 @@ nav:nth-child(2) {
   }
 }
 
-/* COLORS */
 .banner {
   min-height: 340px;
   margin: 20px 0;
@@ -2515,7 +2508,6 @@ nav:nth-child(2) {
   }
 }
 
-/* COLORS */
 .card {
   -webkit-border-radius: 0.6875em;
           border-radius: 0.6875em;
@@ -3017,7 +3009,103 @@ nav:nth-child(2) {
   width: auto;
 }
 
-/* COLORS */
+.tlg-offer {
+  position: relative;
+  padding: 23px 15px 30px 80px;
+  margin: 50px 0 45px;
+  background-color: #0087F7;
+  background-image: -webkit-linear-gradient(352.56deg, #21DDB9 -6.41%, #0087F7 51.15%);
+  background-image: -o-linear-gradient(352.56deg, #21DDB9 -6.41%, #0087F7 51.15%);
+  background-image: linear-gradient(97.44deg, #21DDB9 -6.41%, #0087F7 51.15%);
+  color: #fff;
+  -webkit-border-radius: 0.9375em;
+          border-radius: 0.9375em;
+}
+
+.tlg-offer__info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.tlg-offer__title {
+  font-weight: 700;
+  font-style: normal;
+  font-size: 40px;
+}
+
+.tlg-offer__button {
+  margin-top: 47px;
+  margin-bottom: 10px;
+}
+
+.tlg-offer__button .ui-button {
+  color: #fff;
+  border-color: #fff;
+}
+
+.tlg-offer__button img {
+  position: relative;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  max-height: 10px;
+  max-width: 12px;
+  padding: 6px 5px;
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+.tlg-offer__button img:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: 2.5px solid #fff;
+  -webkit-border-radius: 50px;
+          border-radius: 50px;
+}
+
+.tlg-offer__icon {
+  position: absolute;
+  height: 140px;
+  width: 140px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #0087F7;
+  border: 1px solid #fff;
+  -webkit-border-radius: 100%;
+          border-radius: 100%;
+}
+
+.tlg-offer__icon img {
+  height: 64px;
+  width: 76px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .footer {
   font-weight: 300;
   padding-top: 110px;
