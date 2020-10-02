@@ -234,7 +234,7 @@ function initSlider(opts) {
         
         let params = {
             pxWidthWrapper: $row.closest('.js-slider').width(), // ширина зоны просмотра, в которой находятся элементы слайдера
-            pxWidthRow: $row.width(), // ширина всей строки со слайдами
+            // pxWidthRow: $row.width(), // ширина всей строки со слайдами
             // pxWidthWrapper: $row.parent().width(),
             // pxWidthRow: $row.outerWidth(),
             pxWidthItem: $items.first().outerWidth() // ширина элемента слайдера в px
@@ -242,13 +242,15 @@ function initSlider(opts) {
         params.pxGap = parseInt($row.css('column-gap'));
         params.pxGap = ( isNaN(params.pxGap) ) ? 0 : params.pxGap;
         params.pxTranslateStep = params.pxWidthItem + params.pxGap; // минимальная величина translateX для смещения
+        params.pxWidthRow = params.pxTranslateStep * $items.length - params.pxGap; // ширина всей строки со слайдами, без padding
         params.pxTranslateMax = params.pxWidthRow - params.pxWidthWrapper; // максимальная величина translateX для смещения
 
         params.iShiftStep = 1; // на сколько слайдов смещать за раз
         if (steps == 'max') {  // сколько слайдов влезает в окно просмотре, столько и мотать
             params.iShiftStep = Math.floor ( (params.pxWidthWrapper + params.pxGap) / params.pxTranslateStep );
         }
-        params.iShiftMax = params.pxTranslateMax / params.pxTranslateStep; // максимальное количество слайдов для смещения
+        params.iShiftMax = Math.ceil(params.pxTranslateMax / params.pxTranslateStep); // максимальное количество слайдов для смещения
+        console.log(params);
         return params;
     }
     // сдвиг с помощью translate строки $row со слайдами
