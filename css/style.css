@@ -2163,12 +2163,30 @@ nav:nth-child(2) {
           transform: translateY(-50%) translateX(-50%);
 }
 
+@media (max-width: 575px) {
+  .slider__controls .ui-arrow-left {
+    -webkit-transform: translateY(-50%) translateX(-25%);
+        -ms-transform: translateY(-50%) translateX(-25%);
+         -o-transform: translateY(-50%) translateX(-25%);
+            transform: translateY(-50%) translateX(-25%);
+  }
+}
+
 .slider__controls .ui-arrow-right {
   right: 0;
   -webkit-transform: translateY(-50%) translateX(50%);
       -ms-transform: translateY(-50%) translateX(50%);
        -o-transform: translateY(-50%) translateX(50%);
           transform: translateY(-50%) translateX(50%);
+}
+
+@media (max-width: 575px) {
+  .slider__controls .ui-arrow-right {
+    -webkit-transform: translateY(-50%) translateX(25%);
+        -ms-transform: translateY(-50%) translateX(25%);
+         -o-transform: translateY(-50%) translateX(25%);
+            transform: translateY(-50%) translateX(25%);
+  }
 }
 
 .special {

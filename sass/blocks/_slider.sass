@@ -15,7 +15,10 @@
         .ui-arrow-left
             left: 0
             transform: translateY(-50%) translateX(-50%)
+            @media (max-width: 575px)
+                transform: translateY(-50%) translateX(-25%)
         .ui-arrow-right
             right: 0
             transform: translateY(-50%) translateX(50%)
-
+            @media (max-width: 575px)
+                transform: translateY(-50%) translateX(25%)
