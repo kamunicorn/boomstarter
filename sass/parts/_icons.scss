@@ -25,37 +25,61 @@
 }
 
 .icon {
-  &-bookmark:before {
-    content: "\e900";
-  }
-  &-check:before {
-    content: "\e901";
-  }
-  &-heart:before {
-    content: "\e902";
-  }
-  &-search:before {
-    content: "\e903";
-  }
-  &-sound-off:before {
-    content: "\e904";
-  }
-  &-sound-on:before {
-    content: "\e905";
-  }
-  &-bookmark-filled:before {
-    content: "\e906";
-  }
   &-arrow-left:before {
-    content: "\e907";
-  }
-  &-arrow-right:before {
     content: "\e908";
   }
-  &-sorting:before {
+  &-arrow-right:before {
     content: "\e909";
   }
-  &-loading:before {
+  &-bookmark:before {
     content: "\e90a";
+  }
+  &-bookmark-filled:before {
+    content: "\e90b";
+  }
+  &-check:before {
+    content: "\e90c";
+  }
+  &-heart:before {
+    content: "\e90d";
+  }
+  &-loader:before {
+    content: "\e90e";
+  }
+  &-sorting:before {
+    content: "\e90f";
+  }
+  &-search:before {
+    content: "\e910";
+  }
+  &-sound-off:before {
+    content: "\e911";
+  }
+  &-sound-on:before {
+    content: "\e912";
+  }
+  &-facebook:before {
+    content: "\e900";
+  }
+  &-instagram:before {
+    content: "\e901";
+  }
+  &-telegram:before {
+    content: "\e902";
+  }
+  &-twitter:before {
+    content: "\e903";
+  }
+  &-vcru:before {
+    content: "\e904";
+  }
+  &-vkontakte:before {
+    content: "\e905";
+  }
+  &-youtube:before {
+    content: "\e906";
+  }
+  &-z:before {
+    content: "\e907";
   }
 }
