@@ -1,0 +1,47 @@
+.socials-row
+    display: flex
+    align-items: center
+    justify-content: center
+    li
+        padding: 0 0.6em
+        // padding-right: 0.7em
+        // min-width: 2em
+        // max-width: 3.4em
+        text-align: center
+        font-size: 28px
+    .icon
+        font-size: 1em
+        &.icon-vcru
+            font-size: 0.6em
+        &.icon-vkontakte
+            font-size: 0.7em
+        &.icon-twitter
+            font-size: 0.8em
+        &.icon-telegram
+            font-size: 0.9em
+
+// отдельный блок
+.socials-gradient
+    padding: 26px 0
+    li
+        text-align: center
+        font-size: 45px
+        .icon
+            color: color(primary)
+            background-image: linear-gradient(180deg, color(primary) 0%, color(cyan) 100%)
+            -webkit-background-clip: text
+            -webkit-text-fill-color: transparent
+
+@media (max-width: 767px)
+    .socials-row
+        flex-wrap: wrap
+        justify-content: center
+        li
+            padding: 0 1em
+    
+@media (max-width: 575px)
+    .socials-row
+        justify-content: space-between
+        li
+            min-width: 23%
+            padding: 0.5em 0
