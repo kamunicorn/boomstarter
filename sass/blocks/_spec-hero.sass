@@ -43,11 +43,11 @@
         flex-direction: column
         justify-content: space-between
         height: 100%
-
+        z-index: 8
     &__logo
         display: flex
         align-items: center
-        margin-top: 50px
+        padding-top: 50px
         &-huggies
             max-width: 100px
             max-height: 60px
@@ -65,19 +65,15 @@
     &__name
         color: color(red)
         @include font(900, 50px)
-
-
     &__subtitle
         color: color(grey-darker)
         @include font(500, 28px)
         letter-spacing: 0.015em
-
     &__button
         margin-bottom: 100px
     .ui-button
         @include font(700, 16px)
         background-color: color(red)
-
     &__image
         position: absolute
         top: 20px
@@ -89,16 +85,167 @@
     &__author
         position: absolute
         top: 45px
-        right: 20px
-        max-width: 150px
+        right: 7px
+        max-width: 140px
         color: color(grey-darker)
         font-family: $font-family-rotonda
+        z-index: 8
+        &-name
+            margin-bottom: 10px
+            @include font(700, 20px)
+        &-desc
+            @include font(400, 14px)
+            line-height: 18px
+    &__infographics
+        position: absolute
+        bottom: 0
+        left: 0
+        z-index: 6
+        padding-left: inherit
+        .container
+            // padding-right: 30px
+    .infographics
+        position: relative
+        width: fit-content
+        background-color: color(white)
+        &:before,
+        &:after
+            position: absolute
+            content: ''
+            top: 0
+        &:before
+            background-color: color(white)
+            left: -400px
+            width: 400px
+            height: 100%
+        &:after
+            width: 0
+            top: 0
+            right: -48px
+            border-top: 71px solid transparent
+            border-left: 49px solid color(white)
 
-    &__author-name
-        margin-bottom: 10px
-        @include font(700, 20px)
+@media (max-width: 1199px)
+    .spec-hero
+        &__image
+            // width: 350px
+            // height: 550px
+            height: 470px
+            width: 330px
+            left: 413px
+            // top: 2.7%
+            // right: 2.2%
+            left: 62%
+            // bottom: -20%
+        &__author
+            top: 30px
+            // right: 216px
+            // right: 25%
+            left: 56%
+            right: 28%
+        &__decor-ellipse-big
+            // top: 0
+            // left: 65%
+            height: 950px
+            width: 650px
+            top: 0%
+            left: 70%
+            // left: 31%
+            // right: -8%
+            // top: 121%
+            // bottom: -243%
+        &__decor-ellipse-small
+            left: 60%
+            right: -10%
+            top: 44%
+            bottom: -18%
 
-    &__author-desc
-        @include font(400, 14px)
-        line-height: 18px
+@media (max-width: 991px)
+    .spec-hero
+        height: 410px
+        &__decor-heart
+            width: 665px
+            height: 406px
+            bottom: -50%
+        .container
+            padding: 0 31px
+        &__logo
+            padding-top: 30px
+            &-huggies
+                width: 82px
+                height: 50px
+            &-modul
+                width: 164px
+                height: 30px
+        &__title
+        &__name
+            font-size: 42px
+        &__subtitle
+            font-size: 23px
+        &__author
+            margin-top: 0
+            &-name
+                font-size: 14px
+            &-desc
+                font-size: 12px
+        .ui-button
+            font-size: 13px
 
+@media (max-width: 767px)
+    .spec-hero
+        height: auto
+        height: 568px
+        .container
+            padding: 0 20px
+        &__logo
+            padding-top: 21px
+            // margin-bottom: 14px
+            justify-content: center
+            &-huggies
+                width: 67px
+                height: 41px
+            &-modul
+                width: 141px
+                height: 25px
+        &__info
+            display: block
+            height: auto
+        &__image
+            width: 275px
+            height: 390px
+            right: auto
+            top: 32%
+            left: 50%
+            transform: translatex(-50%)
+        &__title,
+        &__button
+            text-align: center
+        &__title
+            margin: 14px 0 16px
+        &__button
+            margin-bottom: 25px
+        &__name
+            font-size: 31px
+        &__subtitle
+            font-size: 13px
+        &__author
+            position: relative
+            left: auto
+            right: auto
+            top: 0
+            &-name
+                margin-bottom: 5px
+        .infographics
+            &::after
+                border-top-width: 150px
+
+        &__decor-heart
+            height: 445px
+            width: 519px
+            bottom: -29%
+            right: -75%
+        &__decor-ellipse-big
+            left: 25%
+            top: 33%
+            width: 464px
+            height: 710px
