@@ -8,6 +8,7 @@ $colors: (
     grey-light: #F6F6F6,
     grey-light-2: #E6E9ED,
     grey-dark: #8d8d8d,
+    grey-darker: #53565A,
 
     primary: #0087F7,
 
@@ -19,12 +20,16 @@ $colors: (
 
     peach: #FFC5B3,
     beige: #FFBE83,
-    pink: #FE7D90
+    pink: #FE7D90,
+
+    red: #E41E0A
+    
 );
 
 // font settings
 $base-font-size: 16px;
-$base-font-family: 'Museo Sans Cyrl';
+$base-font-family: 'Museo Sans Cyrl', 'Roboto', Arial, sans-serif;;
+$font-family-rotonda: 'Rotonda', 'Roboto', Arial, sans-serif;
 
 // for border-radius
 $radius-card: em(11);

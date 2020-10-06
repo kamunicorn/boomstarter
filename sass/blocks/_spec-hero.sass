@@ -1,0 +1,104 @@
+.spec-hero
+    position: relative
+    height: 480px
+    background-color: #FFEFE1
+    overflow: hidden
+    .container
+        position: relative
+        height: 100%
+
+    &__decor
+        &-heart,
+        &-ellipse-big,
+        &-ellipse-small
+            position: absolute
+            background-repeat: no-repeat
+            background-size: contain
+        &-heart
+            width: 947px
+            height: 578px
+            background-image: url(../img/spec-banner/huggies-transparent-decor.svg)
+            bottom: -350px
+            right: -330px
+            z-index: 4
+        &-ellipse-big
+            width: 847px
+            height: 1296px
+            top: -300px
+            left: 750px
+            border: 1px dashed color(red)
+            border-radius: 50%
+            transform: rotate(-61.4deg)
+        &-ellipse-small
+            width: 537px
+            height: 428px
+            left: 800px
+            top: 264px
+            border: 1px dashed color(red)
+            border-radius: 50%
+            transform: rotate(-3.94deg)
+
+    &__info
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        height: 100%
+
+    &__logo
+        display: flex
+        align-items: center
+        margin-top: 50px
+        &-huggies
+            max-width: 100px
+            max-height: 60px
+        &-modul
+            max-width: 195px
+            max-height: 35px
+        .plus
+            margin: 0 16px
+            font-family: $font-family-rotonda
+
+    &__title
+        margin: 50px 0 25px
+        display: flex
+        flex-direction: column-reverse
+    &__name
+        color: color(red)
+        @include font(900, 50px)
+
+
+    &__subtitle
+        color: color(grey-darker)
+        @include font(500, 28px)
+        letter-spacing: 0.015em
+
+    &__button
+        margin-bottom: 100px
+    .ui-button
+        @include font(700, 16px)
+        background-color: color(red)
+
+    &__image
+        position: absolute
+        top: 20px
+        left: 639px
+        width: 481px
+        height: 681px
+        object-fit: contain
+        z-index: 2
+    &__author
+        position: absolute
+        top: 45px
+        right: 20px
+        max-width: 150px
+        color: color(grey-darker)
+        font-family: $font-family-rotonda
+
+    &__author-name
+        margin-bottom: 10px
+        @include font(700, 20px)
+
+    &__author-desc
+        @include font(400, 14px)
+        line-height: 18px
+
