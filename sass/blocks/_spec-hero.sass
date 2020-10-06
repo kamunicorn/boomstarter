@@ -6,7 +6,6 @@
     .container
         position: relative
         height: 100%
-
     &__decor
         &-heart,
         &-ellipse-big,
@@ -37,7 +36,6 @@
             border: 1px dashed color(red)
             border-radius: 50%
             transform: rotate(-3.94deg)
-
     &__info
         display: flex
         flex-direction: column
@@ -57,7 +55,6 @@
         .plus
             margin: 0 16px
             font-family: $font-family-rotonda
-
     &__title
         margin: 50px 0 25px
         display: flex
@@ -74,6 +71,8 @@
     .ui-button
         @include font(700, 16px)
         background-color: color(red)
+        &:hover
+            background-color: lighten(color(red), 10%)
     &__image
         position: absolute
         top: 20px
@@ -86,7 +85,7 @@
         position: absolute
         top: 45px
         right: 7px
-        max-width: 140px
+        max-width: 130px
         color: color(grey-darker)
         font-family: $font-family-rotonda
         z-index: 8
@@ -102,8 +101,6 @@
         left: 0
         z-index: 6
         padding-left: inherit
-        .container
-            // padding-right: 30px
     .infographics
         position: relative
         width: fit-content
@@ -113,6 +110,7 @@
             position: absolute
             content: ''
             top: 0
+            bottom: 0
         &:before
             background-color: color(white)
             left: -400px
@@ -128,32 +126,19 @@
 @media (max-width: 1199px)
     .spec-hero
         &__image
-            // width: 350px
-            // height: 550px
             height: 470px
             width: 330px
-            left: 413px
-            // top: 2.7%
-            // right: 2.2%
+            // left: 413px
             left: 62%
-            // bottom: -20%
         &__author
             top: 30px
-            // right: 216px
-            // right: 25%
             left: 56%
             right: 28%
         &__decor-ellipse-big
-            // top: 0
-            // left: 65%
             height: 950px
             width: 650px
             top: 0%
             left: 70%
-            // left: 31%
-            // right: -8%
-            // top: 121%
-            // bottom: -243%
         &__decor-ellipse-small
             left: 60%
             right: -10%
@@ -177,7 +162,6 @@
             &-modul
                 width: 164px
                 height: 30px
-        &__title
         &__name
             font-size: 42px
         &__subtitle
@@ -199,7 +183,6 @@
             padding: 0 20px
         &__logo
             padding-top: 21px
-            // margin-bottom: 14px
             justify-content: center
             &-huggies
                 width: 67px
@@ -214,7 +197,7 @@
             width: 275px
             height: 390px
             right: auto
-            top: 32%
+            top: 34.5%
             left: 50%
             transform: translatex(-50%)
         &__title,
@@ -223,7 +206,7 @@
         &__title
             margin: 14px 0 16px
         &__button
-            margin-bottom: 25px
+            margin-bottom: 20px
         &__name
             font-size: 31px
         &__subtitle
@@ -238,7 +221,6 @@
         .infographics
             &::after
                 border-top-width: 150px
-
         &__decor-heart
             height: 445px
             width: 519px
@@ -249,3 +231,14 @@
             top: 33%
             width: 464px
             height: 710px
+
+@media (max-width: 575px)
+    .spec-hero
+        &__image
+            width: 265px
+            height: 370px
+        &__infographics,
+        .infographics
+            width: 100%
+            justify-content: center
+            padding-left: 0

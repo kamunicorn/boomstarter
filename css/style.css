@@ -493,6 +493,24 @@ ul {
   src: local("Museo Sans Cyrl 900 Italic"), local("MuseoSansCyrl-900Italic"), url("../fonts/MuseoSansCyrl-900Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/MuseoSansCyrl-900Italic.woff") format("woff"), url("../fonts/MuseoSansCyrl-900Italic.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: 'Rotonda';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/RotonBold.eot");
+  src: url("../fonts/RotonBold.eot?#iefix") format("embedded-opentype"), url("../fonts/RotonBold.woff") format("woff"), url("../fonts/RotonBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Rotonda';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/RotonReg.eot");
+  src: url("../fonts/RotonReg.eot?#iefix") format("embedded-opentype"), url("../fonts/RotonReg.woff") format("woff"), url("../fonts/RotonReg.ttf") format("truetype");
+}
+
 /* COLORS */
 @-webkit-keyframes rotation {
   0% {
@@ -758,6 +776,12 @@ ul {
   }
 }
 
+@media (hover: hover) {
+  .bg-red.ui-button:hover {
+    background-color: #f63e2b;
+  }
+}
+
 .bg-gradient-primary-cyan {
   background-color: #0087f7;
   background: -webkit-gradient(linear, left top, left bottom, from(#0087F7), to(#21DDB9));
@@ -786,7 +810,7 @@ ul {
   color: #000;
 }
 
-.bg-primary, .bg-gradient-primary-cyan {
+.bg-primary, .bg-gradient-primary-cyan, .bg-red {
   color: #fff;
 }
 
@@ -2279,6 +2303,10 @@ nav:nth-child(2) {
   background-color: #E41E0A;
 }
 
+.spec-hero .ui-button:hover {
+  background-color: #f63e2b;
+}
+
 .spec-hero__image {
   position: absolute;
   top: 20px;
@@ -2294,7 +2322,7 @@ nav:nth-child(2) {
   position: absolute;
   top: 45px;
   right: 7px;
-  max-width: 140px;
+  max-width: 130px;
   color: #53565A;
   font-family: "Rotonda", "Roboto", Arial, sans-serif;
   z-index: 8;
@@ -2334,6 +2362,7 @@ nav:nth-child(2) {
   position: absolute;
   content: '';
   top: 0;
+  bottom: 0;
 }
 
 .spec-hero .infographics:before {
@@ -2355,7 +2384,6 @@ nav:nth-child(2) {
   .spec-hero__image {
     height: 470px;
     width: 330px;
-    left: 413px;
     left: 62%;
   }
   .spec-hero__author {
@@ -2451,7 +2479,7 @@ nav:nth-child(2) {
     width: 275px;
     height: 390px;
     right: auto;
-    top: 32%;
+    top: 34.5%;
     left: 50%;
     -webkit-transform: translatex(-50%);
         -ms-transform: translatex(-50%);
@@ -2465,7 +2493,7 @@ nav:nth-child(2) {
     margin: 14px 0 16px;
   }
   .spec-hero__button {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
   .spec-hero__name {
     font-size: 31px;
@@ -2496,6 +2524,22 @@ nav:nth-child(2) {
     top: 33%;
     width: 464px;
     height: 710px;
+  }
+}
+
+@media (max-width: 575px) {
+  .spec-hero__image {
+    width: 265px;
+    height: 370px;
+  }
+  .spec-hero__infographics,
+  .spec-hero .infographics {
+    width: 100%;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-left: 0;
   }
 }
 

@@ -13,8 +13,11 @@
     @media (hover: hover)
         &:hover
             background-color: lighten(color(primary), 8%)
+.bg-red.ui-button
+    @media (hover: hover)
+        &:hover
+            background-color: lighten(color(red), 10%)
 
-    
 // градиенты
 .bg-gradient-primary-cyan
     @include bg-gradient(color(primary), color(cyan))
@@ -35,5 +38,6 @@
     &-gradient-yellow-light-yellow
         color: color(black)
     &-primary,
-    &-gradient-primary-cyan
+    &-gradient-primary-cyan,
+    &-red
         color: color(white)
