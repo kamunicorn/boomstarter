@@ -2,30 +2,33 @@
 
 .tlg-offer
     position: relative
-    padding: 23px 15px 30px 80px
+    height: 377px
     margin: 20px 0
     background-color: color(primary)
     background-image: linear-gradient(97.44deg, color(cyan) -6.41%, color(primary) 51.15%)
     color: color(white)
     border-radius: $radius-banner
+    .grid-row
+        height: inherit
     &__info
+        height: 100%
         display: flex
         flex-direction: column
         justify-content: center
-        
+        padding: 0px 15px 6px 80px
     &__title
-        @include font(700, 40px)
-
+        @include font(600, 40px)
+        line-height: 1.2
     &__button
         margin-top: 47px
-        margin-bottom: 10px
         .ui-button
+            @include font(600, 24px)
             color: color(white)
             border-color: color(white)
         .icon-telegram // in .ui-button
             margin-left: 10px
             margin-right: 5px
-            padding: 8px 7px 8px 5px
+            padding: 7px 7px 7px 5px
             font-size: 0.7em
             border: 3px solid color(white)
             border-radius: 50px
@@ -33,16 +36,61 @@
         position: absolute
         bottom: -20px
         right: -20px
-        height: 140px
-        width: 140px
-        font-size: 4.5em
+        height: 2.1875em
+        width: 2.1875em
+        font-size: 64px
         display: flex
         justify-content: center
         align-items: center
         background-color: color(primary)
         border: 1px solid color(white)
         border-radius: 100%
-        @media (max-width: 575px)
+        @media (max-width: 767px)
             display: none
         
     &__mockup
+
+@media (max-width: 1199px)
+    .tlg-offer
+        &__info
+            padding-left: 60px
+            // padding-bottom: 17px
+        &__title
+            font-size: 30px
+        &__button
+            margin-top: 40px
+            font-size: 16px
+
+@media (max-width: 991px)
+    .tlg-offer
+        height: 220px
+        &__info
+            padding-left: 45px
+            padding-bottom: 17px
+        &__title
+            font-size: 23px
+        &__button
+            margin-top: 34px
+            .ui-button
+                font-size: 16px
+        &__icon
+            font-size: 38px
+
+@media (max-width: 767px)
+    .tlg-offer
+        height: 306px
+        &__info
+            padding: 23px 15px 0 15px
+        &__title
+            font-size: 20px
+        &__button
+            margin-top: 30px
+            margin-bottom: 23px
+
+@media (max-width: 575px)
+    .tlg-offer
+        &__button .ui-button
+            width: 100%
+            max-width: 270px
+            font-size: 14px
+            padding: 6px 10px

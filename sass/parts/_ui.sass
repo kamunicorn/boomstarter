@@ -33,14 +33,17 @@
         min-width: 180px
         max-width: 100%
         padding: 16px 26px
-        color: color(white)
         background-color: color(primary)
         text-align: center
         @include font(500, 18px)
         border-radius: $radius-button
+        color: color(white)
         @media (hover: hover)
             &:hover
                 background-color: lighten(color(primary), 8%)
+        
+        @media (max-width: 991px)
+            padding: 14px 23px
         @media (max-width: 575px)
             padding: 12px 21px
             font-size: 14px
@@ -50,9 +53,11 @@
             display: flex
             justify-content: center
             align-items: center
-            padding: 12px 26px
+            padding: 10px 26px
+            @media (max-width: 991px)
+                padding: 8px 23px
             @media (max-width: 575px)
-                padding: 8px 21px
+                padding: 6px 21px
             .emoji
                 margin-left: 0.7em
 
