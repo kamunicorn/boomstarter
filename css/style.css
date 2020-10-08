@@ -3625,6 +3625,12 @@ nav:nth-child(2) {
           border-radius: 100%;
 }
 
+@media (max-width: 575px) {
+  .tlg-offer__icon {
+    display: none;
+  }
+}
+
 .socials-row {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3638,12 +3644,23 @@ nav:nth-child(2) {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 
 .socials-row li {
-  padding: 0 0.6em;
+  padding: 0 0.5em;
   text-align: center;
   font-size: 28px;
+}
+
+.socials-row li:first-child {
+  padding-left: 0;
+}
+
+.socials-row li:last-child {
+  padding-right: 0;
 }
 
 .socials-row .icon {
@@ -3667,12 +3684,37 @@ nav:nth-child(2) {
 }
 
 .socials-gradient {
-  padding: 26px 0;
+  padding: 26px 8px;
 }
 
 .socials-gradient li {
   text-align: center;
-  font-size: 45px;
+  font-size: 72px;
+}
+
+@media (max-width: 1199px) {
+  .socials-gradient li {
+    font-size: 55px;
+  }
+}
+
+@media (max-width: 991px) {
+  .socials-gradient li {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .socials-gradient li {
+    font-size: 33px;
+    padding: 0 0.4em;
+  }
+}
+
+@media (max-width: 575px) {
+  .socials-gradient li {
+    font-size: 40px;
+  }
 }
 
 .socials-gradient li .icon {
@@ -3685,21 +3727,6 @@ nav:nth-child(2) {
   -webkit-text-fill-color: transparent;
 }
 
-@media (max-width: 767px) {
-  .socials-row {
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .socials-row li {
-    padding: 0 1em;
-  }
-}
-
 @media (max-width: 575px) {
   .socials-row {
     -webkit-box-pack: justify;
@@ -3709,7 +3736,7 @@ nav:nth-child(2) {
   }
   .socials-row li {
     min-width: 23%;
-    padding: 0.5em 0;
+    padding: 0.3em 0;
   }
 }
 
@@ -3812,19 +3839,12 @@ nav:nth-child(2) {
   margin-bottom: 40px;
 }
 
-.footer .socials-row li:first-child {
-  padding-left: 0;
-}
-
-.footer .socials-row li:last-child {
-  padding-right: 0;
-}
-
 .footer__startup {
-  margin: 0 0 0 auto;
+  margin-left: auto;
 }
 
 .footer__startup img {
+  margin: auto;
   max-height: 36px;
 }
 
@@ -3869,12 +3889,8 @@ nav:nth-child(2) {
     display: block;
     margin-bottom: 30px;
   }
-  .footer .socials-row li {
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-  }
-  .footer__startup img {
-    margin: 27px auto auto;
+  .footer__startup {
+    margin-top: 22px;
   }
 }
 

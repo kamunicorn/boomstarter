@@ -41,29 +41,10 @@
         display: flex
         align-items: center
         margin-bottom: 40px
-    .socials-row li:first-child
-        padding-left: 0
-    .socials-row li:last-child
-        padding-right: 0
-    // &__socials
-    //     display: flex
-    //     align-items: center
-    //     li
-    //         padding-right: 30px
-    //         min-width: 50px
-    //         max-width: 100px
-    //         text-align: center
-    //         font-size: 32px
-    //     .icon
-    //         font-size: 1em
-    //         &.icon-vcru
-    //             font-size: 0.6em
-    //         &.icon-vkontakte,
-    //         &.icon-twitter
-    //             font-size: .8em
     &__startup
-        margin: 0 0 0 auto
+        margin-left: auto
         img
+            margin: auto
             max-height: 36px
     &__ps
         @include font(100, 10px)
@@ -92,12 +73,8 @@
         &__icons
             display: block
             margin-bottom: 30px
-        .socials-row
-            li
-                padding-left: 0.5em
-                padding-right: 0.5em
-        &__startup img
-            margin: 27px auto auto
+        &__startup
+            margin-top: 22px
 
 @media (max-width: 575px)
     .footer
@@ -107,11 +84,6 @@
             .ui-input
                 margin: 0
                 margin-bottom: 18px
-        // &__socials
-        //     justify-content: space-between
-        //     li
-        //         min-width: 23%
-        //         padding: 15px 0
 
 @media (max-width: 479px)
     .footer
