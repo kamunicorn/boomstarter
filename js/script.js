@@ -6,8 +6,8 @@ $(function() {
     initSubjectsMore();
     
     initSlider({steps: 'max'});
-        // steps: 1 // сколько слайдов прокручивать за раз
-        // steps: 'max' // максимальное количество слайдов (сколько влезает в контейнер, столько и прокручивать)
+        // step: 1 // сколько слайдов прокручивать за раз
+        // step: 'max' // максимальное количество слайдов (сколько влезает в контейнер, столько и прокручивать)
     
     initSoundSwitchers();
     initBookmarks();
@@ -234,6 +234,9 @@ function initSlider(opts) {
         
         let params = {
             pxWidthWrapper: $row.closest('.js-slider').width(), // ширина зоны просмотра, в которой находятся элементы слайдера
+            // pxWidthRow: $row.width(), // ширина всей строки со слайдами
+            // pxWidthWrapper: $row.parent().width(),
+            // pxWidthRow: $row.outerWidth(),
             pxWidthItem: $items.first().outerWidth() // ширина элемента слайдера в px
         };
         params.pxGap = parseInt($row.css('column-gap'));
