@@ -12,7 +12,6 @@
         .#{$size-name}-block
             display: block!important
 
-
 // главный контейнер для контента на странице
 .container
     width: 100%
@@ -44,7 +43,6 @@
         @for $i from 1 to 13
             .#{$size-name}-span-#{$i}
                 grid-column: span $i
-
 
 /* * * * Второй тип сеток - 4-х колоночная, адаптивная в стилях, на гридах! для блоков на странице * * * */
 .grid
@@ -97,3 +95,11 @@
     @media (max-width: 575px)
         grid-auto-columns: 185px
         grid-template-columns: 185px
+
+
+/* * * Сетки на флексах! * * */
+.d-flex
+    display: flex
+.jc-space-between
+    justify-content: space-between
+

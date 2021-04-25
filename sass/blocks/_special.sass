@@ -1,7 +1,7 @@
 // @import '../service/service'
 
 .special
-    padding: em(23) 0 em(35)
+    padding: em(23) 0 em(30)
     &__heading
         margin-bottom: 16px
         line-height: 1.2
@@ -17,6 +17,15 @@
         transition: transform 0.5s linear
     .slider__row
         display: flex
+    hr // разделительная полоса под заголовком
+        border-top: em(1) solid color(grey)
+        margin: em(10) 0 em(15)
+        
+// чтобы не обрезался эффект тени при наведении
+.special .slider 
+    .card,
+    .reward
+        margin-bottom: em(6)
 
 @media (max-width: $container-max-width - 1px)
     .special .slider
