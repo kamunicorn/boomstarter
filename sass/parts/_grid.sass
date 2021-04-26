@@ -77,8 +77,7 @@
     @media (max-width: 575px)
         grid-auto-rows: minmax(210px, auto)
 
-// .grid-cards
-
+// теперь special это синоним слайдера
 .grid-special
     grid-auto-columns: 280px
     grid-template-columns: 280px
@@ -90,12 +89,24 @@
     @media (max-width: 767px)
         grid-auto-columns: 238px
         grid-template-columns: 238px
-        // grid-auto-columns: 48.5%
-        // grid-template-columns: 48.5%
     @media (max-width: 575px)
         grid-auto-columns: 185px
         grid-template-columns: 185px
-
+// слайдер, в котором 3 колонки
+.grid-special-thirds
+    grid-auto-columns: 380px
+    grid-template-columns: 380px
+    grid-auto-flow: column
+    margin: 0
+    @media (max-width: 991px)
+        grid-auto-columns: 360px
+        grid-template-columns: 360px
+    @media (max-width: 767px)
+        grid-auto-columns: 340px
+        grid-template-columns: 340px
+    @media (max-width: 575px)
+        grid-auto-columns: 250px
+        grid-template-columns: 250px
 
 /* * * Сетки на флексах! * * */
 .d-flex

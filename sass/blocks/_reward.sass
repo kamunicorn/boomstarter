@@ -53,6 +53,8 @@
         margin: 23px 0 0
         text-transform: capitalize
         color: color(primary)
+    &__buy small
+        text-transform: none
 
 @media (max-width: 575px)
     .reward
@@ -73,6 +75,12 @@
 
 // подразделение на типы карточек
 .reward
+    // картинка больше в слайдере из 3-х колонок
+    &._img-bigger
+        grid-template-rows: em(240) auto
+        @media (max-width: 575px)
+            grid-template-rows: em(170) auto
+
     &._vertical-img
         grid-template-columns: 1fr 1fr
         grid-template-rows: 1fr

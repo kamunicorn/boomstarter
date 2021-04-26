@@ -5,6 +5,7 @@
     &__wrapper
         overflow: hidden
     &__row
+        display: flex
         grid-auto-flow: column
     &__controls
         [class*="ui-arrow-"]
@@ -22,3 +23,38 @@
             transform: translateY(-50%) translateX(50%)
             @media (max-width: 575px)
                 transform: translateY(-50%) translateX(25%)
+
+.slider
+    // чтобы не обрезался эффект тени при наведении
+    .card,
+    .reward
+        margin-bottom: em(6)
+    // плавная прокрутка
+    .grid
+        transition: transform 0.5s linear
+
+
+@media (max-width: $container-max-width - 1px)
+    .slider
+        &__wrapper
+            margin-left: -$container-padding
+            margin-right: -$container-padding
+        // .grid-special,
+        .grid
+            padding: 0 $container-padding
+
+@media (max-width: 575px)
+    .slider
+        &__wrapper
+            margin: 0px -14px
+        // .grid-special,
+        .grid
+            padding: 0 14px
+
+// не touch-устройства
+@media (hover: none)
+    .slider
+        &__row
+            overflow-x: auto
+        &__controls
+            display: none

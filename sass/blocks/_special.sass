@@ -13,42 +13,11 @@
         margin-right: 14px
     &__look-all
         color: color(primary)
-    .grid-special
-        transition: transform 0.5s linear
-    .slider__row
-        display: flex
-    hr // разделительная полоса под заголовком
+    // .slider__row
+        // display: flex
+    &__heading hr // разделительная полоса под заголовком
         border-top: em(1) solid color(grey)
         margin: em(10) 0 em(15)
-        
-// чтобы не обрезался эффект тени при наведении
-.special .slider 
-    .card,
-    .reward
-        margin-bottom: em(6)
-
-@media (max-width: $container-max-width - 1px)
-    .special .slider
-        &__wrapper
-            margin-left: -$container-padding
-            margin-right: -$container-padding
-        .grid-special
-            padding: 0 $container-padding
-
-@media (max-width: 575px)
-    .special .slider
-        &__wrapper
-            margin: 0px -14px
-        .grid-special
-            padding: 0 14px
-
-// не touch-устройства
-@media (hover: none)
-    .special .slider
-        &__row
-            overflow-x: auto
-        &__controls
-            display: none
 
 @media (max-width: 575px)
     .special .card
