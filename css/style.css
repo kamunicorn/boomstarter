@@ -3700,6 +3700,54 @@ nav:nth-child(2) {
   }
 }
 
+.spec-projects-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  margin-top: 1.5625em;
+}
+
+.spec-projects-list li {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 100px max-content;
+      grid-template-rows: 100px -webkit-max-content;
+      grid-template-rows: 100px max-content;
+  -ms-grid-rows: 5.625em max-content;
+      grid-template-rows: 5.625em -webkit-max-content;
+      grid-template-rows: 5.625em max-content;
+  max-width: 17.1875em;
+  text-align: center;
+  padding: 0 1.25em;
+  margin-bottom: 1.5625em;
+}
+
+.spec-projects-list p:first-child {
+  font-weight: 600;
+  font-style: normal;
+  font-size: 14px;
+  margin-bottom: 8px;
+  margin-top: 10px;
+}
+
+.spec-projects-list p + p {
+  font-weight: 300;
+}
+
+.spec-projects-list img {
+  display: block;
+  margin: auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+
 .tlg-offer {
   position: relative;
   height: 380px;
