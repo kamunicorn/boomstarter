@@ -1,0 +1,36 @@
+.possibilities
+    background-color: color(primary)
+    background-image: linear-gradient(180deg, color(cyan-light) -53%, color(primary) 148%)
+    padding: em(73) 0 em(53)
+    color: color(white)
+    &__slogan
+        @include font(600, 36px)
+        margin-left: 320px
+        margin-bottom: em(20)
+        margin-bottom: 20px
+        // line-height: 43px
+    &__list 
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-around
+        @include font(600, 16px)
+        li
+            display: grid
+            grid-template-rows: 100px max-content
+            grid-template-rows: em(100) max-content
+            max-width: em(220)
+            text-align: center
+            padding: 0 em(20)
+            margin-bottom: em(20)
+        img
+            display: block
+            margin: auto auto 11px
+            max-height: 100%
+            max-width: 100%
+
+@media (max-width: 991px)
+    .possibilities__slogan
+        margin-left: 25%
+@media (max-width: 575px)
+    .possibilities__slogan
+        margin-left: 0

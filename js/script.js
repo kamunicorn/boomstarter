@@ -247,7 +247,7 @@ function initSlider(opts) {
             params.iShiftStep = Math.floor ( (params.pxWidthWrapper + params.pxGap) / params.pxTranslateStep );
         }
         params.iShiftMax = Math.ceil(params.pxTranslateMax / params.pxTranslateStep); // максимальное количество слайдов для смещения
-        console.log(params);
+        // console.log(params);
         return params;
     }
     // сдвиг с помощью translate строки $row со слайдами
