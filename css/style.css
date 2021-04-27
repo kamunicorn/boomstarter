@@ -3675,10 +3675,9 @@ nav:nth-child(2) {
   -ms-grid-rows: 6.25em max-content;
       grid-template-rows: 6.25em -webkit-max-content;
       grid-template-rows: 6.25em max-content;
-  max-width: 13.75em;
+  width: 180px;
   text-align: center;
-  padding: 0 1.25em;
-  margin-bottom: 1.25em;
+  margin: 0 15px 20px;
 }
 
 .possibilities__list img {
@@ -3723,10 +3722,9 @@ nav:nth-child(2) {
   -ms-grid-rows: 5.625em max-content;
       grid-template-rows: 5.625em -webkit-max-content;
       grid-template-rows: 5.625em max-content;
-  max-width: 17.1875em;
+  width: 240px;
   text-align: center;
-  padding: 0 1.25em;
-  margin-bottom: 1.5625em;
+  margin: 0 15px 25px;
 }
 
 .spec-projects-list p:first-child {
