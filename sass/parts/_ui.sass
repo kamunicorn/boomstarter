@@ -272,6 +272,28 @@
                 color: color(primary)
                 background-color: color(grey-light)
 
+    &-category
+        width: 100%
+        max-width: 245px
+        display: flex
+        align-items: center
+        border: 1px dotted color(grey-dark)
+        padding: 5px 15px 5px 0
+        img
+            max-height: 35px
+            width: 68px
+        &:hover,
+        &:focus
+            border: 1px dotted color(primary)
+            border-radius: 5px
+            color: color(primary)
+        @media (max-width: 479px)
+            padding-right: 5px
+            img
+                max-height: 30px
+                width: 40px
+
+
 .has-dropdown
     position: relative
 // .has-dropdown.is-open,
