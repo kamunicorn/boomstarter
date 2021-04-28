@@ -2844,6 +2844,12 @@ nav:nth-child(2) {
   .slider .grid {
     padding: 0 14px;
   }
+  .slider .card__title {
+    font-size: 14px;
+  }
+  .slider .card__ps img {
+    font-size: 10px;
+  }
 }
 
 @media (hover: none) {
@@ -2879,18 +2885,34 @@ nav:nth-child(2) {
   color: #0087F7;
 }
 
-.special__heading hr {
-  border-top: 0.0625em solid #C4C4C4;
-  margin: 0.625em 0 0.9375em;
+.section {
+  margin: 3.125em 0 3.125em;
 }
 
-@media (max-width: 575px) {
-  .special .card__title {
-    font-size: 14px;
-  }
-  .special .card__ps img {
-    font-size: 10px;
-  }
+.section__heading {
+  margin-bottom: 1em;
+  line-height: 1.2;
+}
+
+.section__title, .section__look-all {
+  display: inline;
+  font-size: 1.25em;
+}
+
+.section__title {
+  font-weight: 500;
+  margin-right: 0.875em;
+}
+
+.section__look-all {
+  font-weight: 300;
+  color: #0087F7;
+  text-decoration: underline;
+}
+
+.section__heading hr {
+  border-top: 0.0625em solid #C4C4C4;
+  margin: 0.625em 0 1.25em;
 }
 
 .story {
