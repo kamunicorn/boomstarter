@@ -1881,6 +1881,12 @@ input:checked ~ .ui-checkbox__custom .icon-check {
           justify-content: space-between;
 }
 
+.jc-space-around {
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+}
+
 .menu-bar {
   display: -webkit-box;
   display: -webkit-flex;
@@ -3806,6 +3812,24 @@ nav:nth-child(2) {
   margin: auto;
   max-height: 100%;
   max-width: 100%;
+}
+
+.partners {
+  margin-left: -2.1875em;
+  margin-right: -2.1875em;
+}
+
+.partners__item {
+  margin: 1.875em 2.1875em 1.875em;
+}
+
+.partners__item a {
+  display: block;
+}
+
+.partners__item img {
+  max-height: 5.25em;
+  max-width: 24.625em;
 }
 
 .tlg-offer {
