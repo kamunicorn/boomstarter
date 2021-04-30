@@ -1,0 +1,41 @@
+// серая полоска относительно текста или логотипа и насколько пикселей?
+.media
+    &__item
+        padding-left: em(48)
+        a
+            display: block
+        
+        img
+            display: block
+            max-height: em(40)
+            max-width: em(130)
+            position: relative
+            &::after // серая полоска под картинкой
+                position: absolute
+                content: ''
+                left: 0
+                bottom: -10px
+                width: em(45)
+                height: 2.8px
+                background-color: color(grey-light-2)
+        p
+            @include font(300, 14px)
+            position: relative
+            &::before
+                position: absolute
+                content: '»'
+                top: 0
+                left: -48px
+                // @include font(400, em(47))
+                font-size: em(47)
+                // line-height: 88%
+                display: flex
+                align-items: center
+            
+
+    &__others
+        li
+        
+        a
+            display: block
+        img
