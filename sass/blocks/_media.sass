@@ -1,41 +1,56 @@
 // серая полоска относительно текста или логотипа и насколько пикселей?
 .media
+    margin-top: em(30)
+    margin-bottom: em(20)
+    &.grid-row
+        row-gap: em(35)
     &__item
         padding-left: em(48)
-        a
-            display: block
-        
+    &__img-box
+        display: flex
+        align-items: center
+        position: relative
+        height: em(27)
+        width: fit-content
+        margin-bottom: em(32)
+        &::before // серая полоска под картинкой
+            position: absolute
+            content: ''
+            left: 0
+            bottom: - em(20)
+            width: em(45)
+            height: 2.8px
+            background-color: color(grey-light-2)
+            pointer-events: none
         img
-            display: block
+            position: absolute
             max-height: em(40)
             max-width: em(130)
-            position: relative
-            &::after // серая полоска под картинкой
-                position: absolute
-                content: ''
-                left: 0
-                bottom: -10px
-                width: em(45)
-                height: 2.8px
-                background-color: color(grey-light-2)
-        p
-            @include font(300, 14px)
-            position: relative
-            &::before
-                position: absolute
-                content: '»'
-                top: 0
-                left: -48px
-                // @include font(400, em(47))
-                font-size: em(47)
-                // line-height: 88%
-                display: flex
-                align-items: center
-            
-
+    &__img-box + p
+        position: relative
+        &::after //кавычки
+            position: absolute
+            content: '»'
+            top: 0
+            left: - em(45, 47)
+            font-size: em(47)
+            line-height: 80%
+    &__item p
+        @include font(300, 14px)
+        margin-top: em(14)
     &__others
-        li
-        
-        a
-            display: block
+        margin-top: em(38)
+        align-items: center
+    &__others-row
+        align-items: center
+    &__others p
+        font-size: 18px
+        margin-right: em(32)
+        margin-bottom: em(18)
+    &__others-item
+        display: block
+        margin-right: em(32)
+        margin-bottom: em(18)
         img
+            max-width: em(136)
+            max-height: em(38)
