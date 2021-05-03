@@ -3730,43 +3730,26 @@ nav:nth-child(2) {
 .possibilities__slogan {
   font-weight: 600;
   font-style: normal;
-  font-size: 36px;
+  font-size: 2.25em;
   margin-left: 320px;
-  margin-bottom: 1.25em;
-  margin-bottom: 20px;
+  margin-bottom: 0.69444em;
 }
 
-.possibilities__list {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-  -webkit-justify-content: space-around;
-      -ms-flex-pack: distribute;
-          justify-content: space-around;
+.possibilities__item {
   font-weight: 600;
   font-style: normal;
   font-size: 16px;
-}
-
-.possibilities__list li {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 100px max-content;
-      grid-template-rows: 100px -webkit-max-content;
-      grid-template-rows: 100px max-content;
   -ms-grid-rows: 6.25em max-content;
       grid-template-rows: 6.25em -webkit-max-content;
       grid-template-rows: 6.25em max-content;
-  width: 180px;
+  width: 11.25em;
   text-align: center;
   margin: 0 15px 20px;
 }
 
-.possibilities__list img {
+.possibilities__item img {
   display: block;
   margin: auto auto 11px;
   max-height: 100%;
@@ -3989,10 +3972,10 @@ nav:nth-child(2) {
 .reviews__item::before {
   position: absolute;
   content: url("../img/svg/quotation-gradient.svg");
-  width: 63px;
-  height: 61px;
-  top: -39px;
-  right: 12px;
+  width: 3.9375em;
+  height: 3.8125em;
+  top: -2.4375em;
+  right: 0.75em;
 }
 
 .reviews__author {
