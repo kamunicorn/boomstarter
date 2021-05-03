@@ -1,0 +1,54 @@
+.reviews
+    &__item
+        display: grid
+        grid-template-columns: em(185) auto
+        column-gap: em(34)
+        margin-top: em(40)
+        padding: em(20) em(24) em(22) em(27)
+        border: 3px solid color(cyan-light)
+        border-radius: $radius-banner
+        position: relative
+        &::before
+            position: absolute
+            content: url('../img/svg/quotation-gradient.svg')
+            width: 63px
+            height: 61px
+            top: -39px
+            right: 12px
+
+    &__author
+        display: flex
+        flex-wrap: wrap
+        flex-direction: column
+        justify-content: center
+        img
+            width: 100%
+            height: em(185)
+            object-fit: cover
+            border-radius: $radius-banner
+
+    &__author-name
+        margin-top: 9px
+        @include font(400, 18px)
+        text-align: center
+    &__info
+        display: flex
+        flex-direction: column
+        p
+            margin: auto 0 1em
+            @include font(300, 16px)
+
+// статистика какой проект сколько собрал у автора
+.reviews-stat
+    margin-top: 16px
+    margin-top: auto
+    margin-bottom: 0
+    @include font(400, 14px)
+    display: flex
+    &__item:first-child
+        margin-right: em(40, 14)
+    &__item > *
+        display: block
+    &__item > *:first-child
+        color: color(grey-dark)
+
