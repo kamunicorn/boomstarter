@@ -1,15 +1,17 @@
 @import '../service/service'
 
-// идут с - вначале
+// идут с - вначале (отказалась от этого)
 
 .-fit-content
     width: fit-content
-.-link-default
+.link-default
     color: color(blue)
     text-decoration: underline
     &:hover
         text-decoration: none
-.-underlined
+
+// хелперы идут с h- вначале
+.h-underlined
     text-decoration: underline
 
 // или нет :(
@@ -17,6 +19,8 @@
     border: em(1) solid color(grey)
 
 // Paddings
+.no-padding
+    padding: 0
 .p-default
     padding: em(12)
     &-top

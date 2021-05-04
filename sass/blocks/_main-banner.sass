@@ -1,6 +1,4 @@
 .main-banner
-    display: flex
-    flex-wrap: nowrap
     border-radius: $radius-banner
     >.grid-row
         min-height: 100%
@@ -37,6 +35,30 @@
             background-position: bottom center
             background-size: contain
 
+// баннер, где вместо текстового содержания картинка
+.main-banner._img-only
+    a,
+    img
+        border-radius: inherit
+    img
+        width: 100%
+        height: auto
+        object-fit: cover
+// подписи под картинкой
+.main-banner
+    &__bottom-title
+        margin: 10px 0 10px
+        @include font(600, 24px)
+    &__bottom-desc
+        @include font(250, 16px)
+        margin-bottom: em(20)
+.main-banner
+    &._img-only a:hover + &__bottom-title,
+    &._img-only a:focus + &__bottom-title,
+    &__bottom-title a:hover,
+    &__bottom-title a:focus
+        color: color(primary)
+
 @media (max-width: 991px)
     .main-banner
         &__info
@@ -44,8 +66,6 @@
 
 @media (max-width: 767px)
     .main-banner
-        display: flex
-        flex-direction: column
         &__info
             padding-top: 25px
             padding-left: 20px

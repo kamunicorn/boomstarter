@@ -10,6 +10,10 @@
         grid-template-columns: 100%
         grid-template-rows: minmax(380px, auto)
         margin-top: 0
+.main.grid-row
+    // = .grid-row, 12-ти колоночная сетка
+    grid-template-columns: repeat(12, 1fr)
+    column-gap: $grid-gap
 
 @import 'main-banner'
 @import 'sm-cards'
