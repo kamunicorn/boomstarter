@@ -1,0 +1,62 @@
+.landing
+    height: 480px
+    background-color: #7FFEE6
+    background-image: linear-gradient(180deg, #7FFEE6 0%, #68EFEC 46.4%, #1EC0FF 94.77%)
+    .container,
+    .container > .grid-row
+        height: 100%
+    &__info
+        height: 100%
+        display: flex
+        flex-direction: column
+        justify-content: center
+    &__title
+        @include font(600, em(40))
+        margin-top: auto
+    &__title-desc
+        margin-top: 11px
+        @include font(300, em(16))
+
+    .ui-button
+        margin-top: em(40)
+
+    &__img // div container
+        height: 100%
+        display: flex
+        &-bg
+            width: 90%
+            height: 90%
+            margin: auto auto 0
+            background-repeat: no-repeat
+            background-position: bottom center
+            background-size: contain
+
+
+.landing-stat
+    margin: auto 0 em(60)
+    &__item
+        padding-left: em(25)
+        position: relative
+        &::before
+            position: absolute
+            content: ''
+            width: em(15)
+            height: em(15)
+            left: 0
+            top: 9px
+            background-color: color(white)
+            border-radius: 50%
+    &__item > *
+        display: block
+    &__item > *:first-child
+        @include font(600, 18px)
+    &__item > *:last-child
+        @include font(300, 14px)
+    &__item:not(:last-child)
+        margin-right: em(40)
+    // padding: 45px 20px 15px 40px
+    // &__button
+    //     margin-top: 60px
+    //     display: flex
+    //     align-items: center
+    

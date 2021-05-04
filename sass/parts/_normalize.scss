@@ -33,23 +33,6 @@ a {
 p {
     margin: 1em 0;
 }
-// TODO?: перенести в отдельный файл стилей со стилями для конкретных элементов?
-// Удаляем все анимации и переходы для людей, которые предпочитают их не использовать
-// устанавливается в найстройках быстродействия Windows. 
-// Максимальное быстродействие = запрет анимации, что не очень красиво
-/* @media (prefers-reduced-motion: reduce) {
-    *,
-    *:before,
-    *:after {
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-        animation-delay: -1ms !important;
-        animation-duration: 1ms !important;    
-        animation-iteration-count: 1 !important;
-        background-attachment: initial !important;
-        transition-delay: 0s !important;
-    }
-} */
 button {
     border: none;
     background-color: transparent;
@@ -87,7 +70,11 @@ fieldset {
     max-width: 100%; /* 1 */
 }
 
-h1, h2, h3, h4, h5, h6, p {font-weight: normal; margin: 0}
+h1, h2, h3, h4, h5, h6, p {
+    font-weight: normal;
+    margin: 0;
+    font-size: inherit;
+}
 
 /* 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS. */
