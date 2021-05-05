@@ -1,5 +1,3 @@
-// @import '../service/service'
-
 .reward
     border-radius: $radius-card
     display: grid
@@ -28,10 +26,6 @@
     &__title
         @include font(600, 20px)
         margin-bottom: 9px
-    @media (hover: hover)
-        &__title>a:hover,
-        &__img:hover ~ &__info &__title>a
-            color: color(primary)
     &__author,
     &__desc,
     &__timing
@@ -56,6 +50,16 @@
     &__buy small
         text-transform: none
 
+// эффекты наведения и фокуса
+@media (hover: hover)
+    .reward
+        &__title > a:hover,
+        &__img:hover ~ &__info &__title > a
+            color: color(primary)
+.reward
+    &__title > a:focus
+        color: color(primary)
+            
 @media (max-width: 575px)
     .reward
         &__info

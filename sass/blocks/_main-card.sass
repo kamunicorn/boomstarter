@@ -1,0 +1,30 @@
+// баннер, где вместо текстового содержания большая картинка с подписью внизу
+.main-card
+    border-radius: $radius-banner
+    &__img-box, // ссылка a
+    img
+        border-radius: inherit
+    img
+        width: 100%
+        height: auto
+        object-fit: cover
+// подписи под картинкой
+.main-card
+    margin-bottom: em(20)
+    @media (max-width: 991px)
+        margin-bottom: 0
+    &__bottom-title
+        margin: 10px 0 10px
+        @include font(600, em(24))
+    &__bottom-desc
+        @include font(250, em(16))
+
+// эффекты наведения и фокуса
+@media (hover: hover)
+    .main-card
+        &__img-box:hover + &__bottom-title,
+        &__bottom-title a:hover,
+            color: color(primary)
+.main-card
+    &__bottom-title a:focus
+        color: color(primary)

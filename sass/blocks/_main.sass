@@ -1,14 +1,10 @@
-// @import '../service/service'
-
 .main
     display: grid
     grid-template-columns: 2fr 1fr
-    grid-template-rows: minmax(400px, auto)
     grid-gap: 35px
     margin: 13px 0 20px
     @media (max-width: 1199px)
         grid-template-columns: 100%
-        grid-template-rows: minmax(380px, auto)
         margin-top: 0
 .main.grid-row
     // = .grid-row, 12-ти колоночная сетка
@@ -16,4 +12,5 @@
     column-gap: $grid-gap
 
 @import 'main-banner'
+@import 'main-card'
 @import 'sm-cards'
