@@ -1873,30 +1873,6 @@ input:checked ~ .ui-checkbox__custom .icon-check {
   }
 }
 
-/* * * Сетки на флексах! * * */
-.d-flex {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-}
-
-.jc-space-between {
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.jc-space-around {
-  -webkit-justify-content: space-around;
-      -ms-flex-pack: distribute;
-          justify-content: space-around;
-}
-
 .menu-bar {
   display: -webkit-box;
   display: -webkit-flex;
@@ -4088,6 +4064,10 @@ nav:nth-child(2) {
   max-height: 2.375em;
 }
 
+.reviews {
+  padding-bottom: 0.9375em;
+}
+
 .reviews__item {
   display: -ms-grid;
   display: grid;
@@ -4097,7 +4077,7 @@ nav:nth-child(2) {
      -moz-column-gap: 2.125em;
           column-gap: 2.125em;
   margin-top: 2.5em;
-  padding: 1.25em 1.5em 1.375em 1.6875em;
+  padding: 1.75em 1.5em 1.375em 1.6875em;
   border: 3px solid #7DDEDE;
   -webkit-border-radius: 0.9375em;
           border-radius: 0.9375em;
@@ -4106,7 +4086,7 @@ nav:nth-child(2) {
 
 .reviews__item::before {
   position: absolute;
-  content: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjIiIGhlaWdodD0iNTgiIHZpZXdCb3g9IjAgMCA2MiA1OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTU4LjQ0NzMgMzcuMTQzN0M1OS4zMTQ3IDMzLjU5NjQgNTkuNzQ2OSAyOS42MjIzIDU5Ljc0NjkgMjUuMzM5NlY2LjY2NjUzQzU5Ljc0NjkgNC4zNjMxMyA1Ny44NzggMi40OTUyMyA1NS41NzUgMi40OTUyM0gzNy4wOTlDMzQuNzk2IDIuNDk1MjMgMzIuOTI3MyA0LjM2MTc5IDMyLjkyNzMgNi42NjY1M1YyNS4zMzk1QzMyLjkyNzMgMjcuNjQyMyAzNC43OTUyIDI5LjUxMTIgMzcuMDk5IDI5LjUxMTJINDEuOTA1N0M0MS42NDA1IDMyLjYzMTggNDEuMDYzNyAzNC44NzMxIDQwLjI4MDkgMzYuMzQ3N0MzOS40MDQzIDM3Ljk5OTEgMzguMzY2OSAzOC41NjI1IDM3LjA5OSAzOC41NjI1QzM0Ljc5NTcgMzguNTYyNSAzMi45MjczIDQwLjQyOTQgMzIuOTI3MyA0Mi43MzQzVjUxLjU3NzZDMzIuOTI3MyA1My44ODA5IDM0Ljc5NDkgNTUuNzQ4NSAzNy4wOTY2IDU1Ljc1MDJIMzcuMDk4MUM0MC43NTI2IDU1Ljc1MDIgNDQuMTE1NSA1NC45NzA1IDQ3LjA1MDEgNTMuMzc4N0w0Ny4wNTEgNTMuMzc4MkM0OS45Mjk3IDUxLjgxNDggNTIuMzY4MSA0OS41Nzc4IDU0LjI5OCA0Ni43NjQzQzU2LjE2ODUgNDQuMDM1MyA1Ny41NTQyIDQwLjc4ODMgNTguNDQ3MyAzNy4xNDM3Wk0xNi44Njg4IDUzLjM3NjhDMTkuNzQ4OCA1MS44MTM3IDIyLjE4NzQgNDkuNTc4MiAyNC4xMTc2IDQ2Ljc2MkMyNS45ODkzIDQ0LjAzMjcgMjcuMzc0NSA0MC43ODYxIDI4LjI2NzUgMzcuMTRDMjkuMTM1NCAzMy41OTI0IDI5LjU2NjYgMjkuNjE4MyAyOS41NjY2IDI1LjMzNzhWNi42NjQ3MUMyOS41NjY2IDQuMzU5NiAyNy42OTY5IDIuNDkzNDEgMjUuMzk0OSAyLjQ5MzQxSDYuOTE4MjNDNC42MTQ0IDIuNDkzNDEgMi43NDY5MyA0LjM2MTg4IDIuNzQ2OTMgNi42NjQ3MVYyNS4zMzc4QzIuNzQ2OTMgMjcuNjQxMyA0LjYxNDMxIDI5LjUwOTUgNi45MTgyMyAyOS41MDk1SDExLjYyOTRDMTEuMzY3NiAzMi42MzQxIDEwLjc5ODMgMzQuODc5NiAxMC4wMjUgMzYuMzU3MkM5LjE1Nzg4IDM4LjAxNDIgOC4xNDEzMSAzOC41NjE4IDYuOTE4MjMgMzguNTYxOEM0LjYxNDc2IDM4LjU2MTggMi43NDY5MyA0MC40Mjk3IDIuNzQ2OTMgNDIuNzMyNlY1MS41Nzc3QzIuNzQ2OTMgNTMuODgxNiA0LjYxNTEzIDU1Ljc0ODYgNi45MTgyMyA1NS43NDg2QzEwLjU3MDkgNTUuNzQ4NiAxMy45MzU2IDU0Ljk2ODggMTYuODY4OCA1My4zNzY4WiIgZmlsbD0idXJsKCNwYWludDBfbGluZWFyKSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhciIgeDE9IjMxLjI0NjkiIHkxPSI0LjQ5MTciIHgyPSIzMS4yNDY5IiB5Mj0iNTMuNzQ4NSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjMjRFMEQ2Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzAwQUVGMSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=);
+  content: url("../img/svg/quotation-gradient.svg");
   width: 3.9375em;
   height: 3.8125em;
   top: -2.4375em;
@@ -4166,9 +4146,12 @@ nav:nth-child(2) {
   font-size: 16px;
 }
 
-.reviews-stat {
+.reviews__stat {
   margin-top: auto;
   margin-bottom: 0;
+}
+
+.reviews-stat {
   font-weight: 400;
   font-size: 14px;
   display: -webkit-box;
@@ -4177,20 +4160,80 @@ nav:nth-child(2) {
   display: flex;
 }
 
-.reviews-stat__item {
-  max-width: 60%;
-}
-
-.reviews-stat__item:first-child {
-  margin-right: 2.85714em;
-}
-
 .reviews-stat__item > * {
   display: block;
 }
 
 .reviews-stat__item > *:first-child {
   color: #8d8d8d;
+}
+
+@media (min-width: 576px) {
+  .reviews-stat__item {
+    max-width: 60%;
+  }
+  .reviews-stat__item:first-child {
+    margin-right: 2.85714em;
+  }
+}
+
+@media (max-width: 767px) {
+  .reviews__item {
+    -ms-grid-columns: 6.875em auto;
+        grid-template-columns: 6.875em auto;
+    -ms-grid-columns: 100px auto;
+        grid-template-columns: 100px auto;
+  }
+  .reviews__author img {
+    height: 6.875em;
+    height: 100px;
+  }
+}
+
+@media (max-width: 575px) {
+  .reviews__item {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    padding: 30px 15px;
+  }
+  .reviews__author {
+    -ms-grid-row: 2;
+    grid-row: 2;
+    margin-top: 30px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+    -webkit-justify-content: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+  .reviews__author img {
+    margin-right: 10px;
+    height: 55px;
+    width: 55px;
+    -webkit-border-radius: 50%;
+            border-radius: 50%;
+  }
+  .reviews__author-name {
+    margin-top: 0;
+  }
+  .reviews-stat {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .reviews-stat__item {
+    margin-top: 12px;
+  }
 }
 
 .tlg-offer {
@@ -4675,7 +4718,8 @@ nav:nth-child(2) {
 }
 
 /* COLORS */
-.-fit-content {
+.-fit-content,
+.fit-content {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -4689,7 +4733,7 @@ nav:nth-child(2) {
   text-decoration: none;
 }
 
-.h-underlined {
+.td-underline {
   text-decoration: underline;
 }
 
@@ -4719,4 +4763,28 @@ nav:nth-child(2) {
 
 .p-default-left {
   padding-left: 0.75em;
+}
+
+/* * * Сетки на флексах! * * */
+.d-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.jc-space-between {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.jc-space-around {
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
 }

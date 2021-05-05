@@ -2,16 +2,17 @@
 
 // идут с - вначале (отказалась от этого)
 
-.-fit-content
+.-fit-content,
+.fit-content
     width: fit-content
-.link-default
+.link-default // ?
     color: color(blue)
     text-decoration: underline
     &:hover
         text-decoration: none
 
 // хелперы идут с h- вначале
-.h-underlined
+.td-underline
     text-decoration: underline
 
 // или нет :(
@@ -31,4 +32,13 @@
         padding-bottom: em(12)
     &-left
         padding-left: em(12)
-    
+
+/* * * Сетки на флексах! * * */
+.d-flex
+    display: flex
+    flex-wrap: wrap
+.jc-space-between
+    justify-content: space-between
+.jc-space-around
+    justify-content: space-around
+
