@@ -14,14 +14,11 @@
         object-fit: cover
 // подписи под картинкой
 .main-card
-    margin-bottom: em(20)
-    @media (max-width: 991px)
-        margin-bottom: 0
     &__bottom-title
         margin: 10px 0 10px
-        @include font(600, em(24))
+        @include font(600, rem(24))
     &__bottom-desc
-        @include font(250, em(16))
+        @include font(250, rem(16))
 
 // эффекты наведения и фокуса
 @media (hover: hover)

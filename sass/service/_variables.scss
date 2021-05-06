@@ -34,15 +34,15 @@ $base-font-family: 'Museo Sans Cyrl', 'Roboto', Arial, sans-serif;;
 $font-family-rotonda: 'Rotonda', 'Roboto', Arial, sans-serif;
 
 // for border-radius
-$radius-card: em(11);
-$radius-button: em(40);
-$radius-banner: em(15);
+$radius-card: rem(11);
+$radius-button: rem(40);
+$radius-banner: rem(15);
 
 
 // grid variables
 $container-max-width: 1280px;
-$container-padding: em(50);
-$grid-gap: em(20);
+$container-padding: rem(50);
+$grid-gap: rem(20);
 
 
 // размеры ширины экрана

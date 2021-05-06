@@ -4,57 +4,57 @@
 
 // мы в СМИ
 .media
-    margin-top: em(30)
-    margin-bottom: em(20)
+    margin-top: rem(30)
+    margin-bottom: rem(20)
     &.grid-row
-        row-gap: em(35)
+        row-gap: rem(35)
     &__item
-        padding-left: em(48)
+        padding-left: rem(48)
     &__img-box
         display: flex
         align-items: center
         position: relative
-        height: em(27)
+        height: rem(27)
         width: fit-content
-        margin-bottom: em(32)
+        margin-bottom: rem(32)
         &::before // серая полоска под картинкой
             position: absolute
             content: ''
             left: 0
-            bottom: - em(20)
-            width: em(45)
+            bottom: - rem(20)
+            width: rem(45)
             height: 2.8px
             background-color: color(grey-light-2)
             pointer-events: none
         img
             position: absolute
-            max-height: em(40)
-            max-width: em(130)
+            max-height: rem(40)
+            max-width: rem(130)
     &__img-box + p
         position: relative
         &::after //кавычки
             position: absolute
             content: '»'
             top: 0
-            left: - em(45, 47)
-            font-size: em(47)
+            left: - rem(45)
+            font-size: rem(47)
             line-height: 80%
     &__item p
         @include font(300, 14px)
-        margin-top: em(14)
+        margin-top: rem(14)
     &__others
-        margin-top: em(38)
+        margin-top: rem(38)
         align-items: center
     &__others-row
         align-items: center
     &__others p
         font-size: 18px
-        margin-right: em(32)
-        margin-bottom: em(18)
+        margin-right: rem(32)
+        margin-bottom: rem(18)
     &__others-item
         display: block
-        margin-right: em(32)
-        margin-bottom: em(18)
+        margin-right: rem(32)
+        margin-bottom: rem(18)
         img
-            max-width: em(136)
-            max-height: em(38)
+            max-width: rem(136)
+            max-height: rem(38)

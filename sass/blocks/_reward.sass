@@ -6,7 +6,7 @@
     border-radius: $radius-card
     display: grid
     grid-template-columns: 1fr
-    grid-template-rows: em(173) auto
+    grid-template-rows: rem(173) auto
     background-color: color(white)
     @include card-box-shadow
     &__img
@@ -85,10 +85,10 @@
 .reward
     // картинка больше в слайдере из 3-х колонок
     &._img-bigger
-        grid-template-rows: em(240) auto
+        grid-template-rows: rem(240) auto
         @media (max-width: 575px)
-            grid-template-rows: em(170) auto
-
+            grid-template-rows: rem(170) auto
+    // карточка на 2 столбца, в половине карточки слева картинка
     &._vertical-img
         grid-template-columns: 1fr 1fr
         grid-template-rows: 1fr

@@ -1,6 +1,9 @@
 // исключения только здесь (что это значит?)
 // $baseFontSize: 16
 
+@function rem($pixels, $context: 16)
+    @return #{$pixels/$context}rem
+
 @function em($pixels, $context: 16)
     @return #{$pixels/$context}em
 

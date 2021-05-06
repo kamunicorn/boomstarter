@@ -5,7 +5,7 @@
 // первый экран
 .landing
     height: 480px
-    margin-bottom: em(50)
+    margin-bottom: rem(50)
     background-color: #7FFEE6
     background-image: linear-gradient(180deg, #7FFEE6 0%, #68EFEC 46.4%, #1EC0FF 94.77%)
     .container,
@@ -17,14 +17,14 @@
         flex-direction: column
         justify-content: center
     &__title
-        @include font(600, em(39))
+        @include font(600, rem(39))
         margin-top: auto
     &__title-desc
         margin-top: 11px
-        @include font(300, em(16))
+        @include font(300, rem(16))
 
     .ui-button
-        margin-top: em(40)
+        margin-top: rem(40)
 
     &__img // div container
         height: 100%
@@ -39,15 +39,15 @@
 
 
 .landing-stat
-    margin: auto 0 em(60)
+    margin: auto 0 rem(60)
     &__item
-        padding-left: em(25)
+        padding-left: rem(25)
         position: relative
         &::before
             position: absolute
             content: ''
-            width: em(15)
-            height: em(15)
+            width: rem(15)
+            height: rem(15)
             left: 0
             top: 9px
             background-color: color(white)
@@ -59,7 +59,7 @@
     &__item > *:last-child
         @include font(300, 14px)
     &__item:not(:last-child)
-        margin-right: em(40)
+        margin-right: rem(40)
     // padding: 45px 20px 15px 40px
     // &__button
     //     margin-top: 60px

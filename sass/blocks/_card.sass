@@ -6,7 +6,7 @@
     border-radius: $radius-card
     display: grid
     grid-template-columns: 1fr
-    grid-template-rows: em(173) 5px auto
+    grid-template-rows: rem(173) 5px auto
     background-color: color(white)
     @include card-box-shadow
     &__img
@@ -102,14 +102,14 @@
 @media (max-width: 575px)
     .card._vertical-img
         grid-template-columns: 1fr
-        grid-template-rows: em(173) auto
+        grid-template-rows: rem(173) auto
         .card__img
             border-radius: $radius-card $radius-card 0 0
 
 
 @media (max-width: 575px)
     .card
-        grid-template-rows: em(173) auto
+        grid-template-rows: rem(173) auto
         &__progress
             display: none
         &__info

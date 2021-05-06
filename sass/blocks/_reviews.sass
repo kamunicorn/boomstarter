@@ -4,23 +4,23 @@
 
 // отзывы авторов
 .reviews
-    padding-bottom: em(15)
+    padding-bottom: rem(15)
     &__item
         display: grid
-        grid-template-columns: em(185) auto
-        column-gap: em(34)
-        margin-top: em(40)
-        padding: em(28) em(24) em(22) em(27)
+        grid-template-columns: rem(185) auto
+        column-gap: rem(34)
+        margin-top: rem(40)
+        padding: rem(28) rem(24) rem(22) rem(27)
         border: 3px solid color(cyan-light)
         border-radius: $radius-banner
         position: relative
         &::before
             position: absolute
             content: url('../img/svg/quotation-gradient.svg')
-            width: em(63)
-            height: em(61)
-            top: - em(39)
-            right: em(12)
+            width: rem(63)
+            height: rem(61)
+            top: - rem(39)
+            right: rem(12)
 
     &__author
         display: flex
@@ -29,7 +29,7 @@
         justify-content: center
         img
             width: 100%
-            height: em(185)
+            height: rem(185)
             object-fit: cover
             border-radius: $radius-banner
     &__author-name
@@ -61,15 +61,15 @@
         &__item
             max-width: 60%
         &__item:first-child
-            margin-right: em(40, 14)
+            margin-right: rem(40)
 
 @media (max-width: 767px)
     .reviews
         &__item
-            grid-template-columns: em(110) auto
+            grid-template-columns: rem(110) auto
             grid-template-columns: 100px auto
         &__author img
-            height: em(110)
+            height: rem(110)
             height: 100px
 
 @media (max-width: 575px)
