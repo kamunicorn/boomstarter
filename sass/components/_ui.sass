@@ -1,5 +1,7 @@
 @import '../service/service'
 
+/* components/ui - элементы User Interface */
+
 // стилизация скролл-бара только компьютеров (на телефонах своя нормальная прокрутка)
 
 @media (hover: hover)
@@ -23,25 +25,19 @@
         background: color(grey-light-2)
         border-radius: 10px
 
-    
+
 .ui
-    // может быть кнопкой или ссылкой, выглядящей как кнопка
+    // .ui-button может быть кнопкой или ссылкой, выглядящей как кнопка
     &-button,
     &-input
+        @include font(500, 18px)
         display: inline-block
         width: 270px
         min-width: 180px
         max-width: 100%
         padding: 16px 26px
-        background-color: color(primary)
         text-align: center
-        @include font(500, 18px)
         border-radius: $radius-button
-        color: color(white)
-        @media (hover: hover)
-            &:hover
-                background-color: lighten(color(primary), 8%)
-        
         @media (max-width: 991px)
             padding: 14px 23px
         @media (max-width: 575px)
@@ -49,31 +45,38 @@
             font-size: 14px
         @media (max-width: 479px)
             width: 100%
-        &.has-image
-            display: flex
-            justify-content: center
-            align-items: center
-            padding: 10px 26px
-            @media (max-width: 991px)
-                padding: 8px 23px
-            @media (max-width: 575px)
-                padding: 6px 21px
-            .emoji
-                margin-left: 0.7em
 
     // модификации
+    &-button.has-image
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 10px 26px
+        @media (max-width: 991px)
+            padding: 8px 23px
+        @media (max-width: 575px)
+            padding: 6px 21px
+        .emoji
+            margin-left: 0.7em
     &-button._outlined
         font-weight: 300
         background-color: transparent
         color: color(primary)
         border: 1px solid
+    &-button
+        background-color: color(primary)
+        color: color(white)
+        @media (hover: hover)
+            &:hover
+                background-color: lighten(color(primary), 8%)
     &-input
         font-weight: 300
         background-color: transparent
         color: color(black)
         border: 1px solid color(primary)
-        &:hover
-            background-color: transparent
+        @media (hover: hover)
+            &:hover
+                background-color: transparent
     
     // поле поиска
     &-search
@@ -292,7 +295,6 @@
             img
                 max-height: 30px
                 width: 40px
-
 
 .has-dropdown
     position: relative

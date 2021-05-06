@@ -1,20 +1,25 @@
+// служебное - переменные, миксины, функции
 @import 'service/service'
 
+// базовые настройки и стили
 @import 'parts/base'
 @import 'parts/font-face'
 @import 'parts/animation'
 
-@import 'parts/colors'
-@import 'parts/icons'
-@import 'parts/emoji'
-@import 'parts/ui'
 @import 'parts/grid'
 
+// компоненты, потому что мизерные и могут быть только в блоке
+@import 'components/icons'
+@import 'components/ui'
+@import 'components/emoji'
+@import 'components/avatar'
+
+// блоки
 @import 'blocks/menu-bar'
 @import 'blocks/landing'
 @import 'blocks/main'
 
-// spec project huggies
+// спецпроект "дело в декрете" отс huggies
 @import 'blocks/spec-hero'
 @import 'blocks/infographics'
 
@@ -40,4 +45,6 @@
 @import 'blocks/socials'
 @import 'blocks/footer'
 
+// после всего, чтобы перебивать стили
+@import 'parts/colors'
 @import 'parts/helpers'

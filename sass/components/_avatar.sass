@@ -1,0 +1,44 @@
+@import '../service/service'
+
+/* components/avatar */
+
+.avatar
+    font-size: em(90)
+    width: 1em
+    height: 1em
+    border-radius: 50%
+    overflow: hidden
+    display: inline-flex
+    align-items: flex-end
+    justify-content: center
+    img
+        // width: 97%
+        // height: 98%
+        // object-fit: contain
+        width: 100%
+        height: 100%
+        object-fit: cover
+// модификации по размеру
+.avatar
+    &._x-small
+        font-size: em(50)
+    &._small
+        font-size: em(70)
+    /* normal
+        font-size: em(90) */
+    &._bigger
+        font-size: em(115)
+    &._medium
+        font-size: em(145)
+    &._large
+        font-size: em(180)
+    &._x-large
+        font-size: em(225)
+    &._great
+        font-size: em(260)
+// модификации по содержанию ?
+.avatar
+    &._cover img
+        width: 100%
+        height: 100%
+        object-fit: cover

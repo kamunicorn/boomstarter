@@ -1,13 +1,17 @@
-@import '../service/service'
+/* parts/colors */
 
+// фоновые цвета
 @each $color-name, $color-value in $colors
     .bg-#{$color-name},
         background-color: $color-value
-    .bg-#{$color-name}.ui-button
-        background-color: $color-value
-        @media (hover: hover)
-            &:hover
-                background-color: darken($color-value, 8%)
+    // переместила вызов colors в конец style и теперь не приходится перебивать тут
+    // .bg-#{$color-name}.ui-button
+    //     background-color: $color-value
+
+@media (hover: hover)
+    @each $color-name, $color-value in $colors
+        .bg-#{$color-name}.ui-button:hover
+            background-color: darken($color-value, 8%)
 
 .bg-primary.ui-button
     @media (hover: hover)
@@ -28,18 +32,22 @@
 .bg-gradient-yellow-light-beige
     @include bg-gradient(color(yellow-light), color(beige))
 
+// цвета текста
 .bg
     &-yellow,
     &-yellow-light,
     &-peach,
     &-beige,
     &-cyan,
+    &-cyan-light,
+    &-mastercard,
     &-gradient-peach-beige,
     &-gradient-yellow-light-yellow
         color: color(black)
     &-primary,
     &-gradient-primary-cyan,
-    &-red
+    &-red,
+    &-coral
         color: color(white)
 
 .font-white
