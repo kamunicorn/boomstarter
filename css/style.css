@@ -39,10 +39,6 @@ a {
   display: inline;
 }
 
-p {
-  margin: 1em 0;
-}
-
 button {
   border: none;
   background-color: transparent;
@@ -3926,6 +3922,10 @@ nav:nth-child(2) {
 }
 
 .partners {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-left: -2.1875em;
   margin-right: -2.1875em;
 }
@@ -4140,10 +4140,13 @@ nav:nth-child(2) {
           flex-direction: column;
 }
 
+.reviews__info p:first-child {
+  margin-top: auto;
+}
+
 .reviews__info p {
-  margin: auto 0 1em;
+  margin-bottom: 1em;
   font-weight: 300;
-  font-size: 16px;
 }
 
 .reviews__stat {
@@ -4158,10 +4161,6 @@ nav:nth-child(2) {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-.reviews-stat__item > * {
-  display: block;
 }
 
 .reviews-stat__item > *:first-child {
@@ -4434,6 +4433,21 @@ nav:nth-child(2) {
     font-size: 14px;
     padding: 6px 10px;
   }
+}
+
+.sponsorship {
+  margin-top: 10.3125em;
+  margin-bottom: 3.75em;
+  padding-top: 4.5625em;
+}
+
+.sponsorship__offer {
+  font-weight: 600;
+  font-size: 2.25em;
+}
+
+.sponsorship__button {
+  margin-top: 1.66667em;
 }
 
 .socials-row {
@@ -4718,8 +4732,7 @@ nav:nth-child(2) {
 }
 
 /* COLORS */
-.-fit-content,
-.fit-content {
+.-fit-content {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -4733,12 +4746,154 @@ nav:nth-child(2) {
   text-decoration: none;
 }
 
+.ta-center {
+  text-align: center;
+}
+
+.ta-left {
+  text-align: left;
+}
+
+.ta-right {
+  text-align: right;
+}
+
 .td-underline {
   text-decoration: underline;
 }
 
-.has-border {
-  border: 0.0625em solid #C4C4C4;
+.tt-uppercase {
+  text-transform: uppercase;
+}
+
+.fs-50 {
+  font-size: 50%;
+}
+
+.fs-55 {
+  font-size: 55%;
+}
+
+.fs-60 {
+  font-size: 60%;
+}
+
+.fs-65 {
+  font-size: 65%;
+}
+
+.fs-70 {
+  font-size: 70%;
+}
+
+.fs-75 {
+  font-size: 75%;
+}
+
+.fs-80 {
+  font-size: 80%;
+}
+
+.fs-85 {
+  font-size: 85%;
+}
+
+.fs-90 {
+  font-size: 90%;
+}
+
+.fs-95 {
+  font-size: 95%;
+}
+
+.fs-100 {
+  font-size: 100%;
+}
+
+.fs-105 {
+  font-size: 105%;
+}
+
+.fs-110 {
+  font-size: 110%;
+}
+
+.fs-115 {
+  font-size: 115%;
+}
+
+.fs-120 {
+  font-size: 120%;
+}
+
+.fs-125 {
+  font-size: 125%;
+}
+
+.fs-130 {
+  font-size: 130%;
+}
+
+.fs-135 {
+  font-size: 135%;
+}
+
+.fs-140 {
+  font-size: 140%;
+}
+
+.fs-145 {
+  font-size: 145%;
+}
+
+.fs-150 {
+  font-size: 150%;
+}
+
+.fs-155 {
+  font-size: 155%;
+}
+
+.fs-160 {
+  font-size: 160%;
+}
+
+.fs-165 {
+  font-size: 165%;
+}
+
+.fs-170 {
+  font-size: 170%;
+}
+
+.fs-175 {
+  font-size: 175%;
+}
+
+.fs-180 {
+  font-size: 180%;
+}
+
+.fs-185 {
+  font-size: 185%;
+}
+
+.fs-190 {
+  font-size: 190%;
+}
+
+.fs-195 {
+  font-size: 195%;
+}
+
+.fs-200 {
+  font-size: 200%;
+}
+
+.w-fit-content {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .no-padding {
@@ -4787,4 +4942,8 @@ nav:nth-child(2) {
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around;
+}
+
+.has-border {
+  border: 0.0625em solid #C4C4C4;
 }

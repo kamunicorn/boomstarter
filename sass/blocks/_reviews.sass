@@ -34,9 +34,11 @@
     &__info
         display: flex
         flex-direction: column
+        p:first-child
+            margin-top: auto
         p
-            margin: auto 0 1em
-            @include font(300, 16px)
+            margin-bottom: 1em
+            font-weight: 300
 
 // статистика какой проект сколько собрал у автора
 .reviews__stat
@@ -46,8 +48,6 @@
 .reviews-stat
     @include font(400, 14px)
     display: flex
-    &__item > *
-        display: block
     &__item > *:first-child
         color: color(grey-dark)
 

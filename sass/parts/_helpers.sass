@@ -1,9 +1,7 @@
 @import '../service/service'
 
-// идут с - вначале (отказалась от этого)
-
-.-fit-content,
-.fit-content
+// устарело
+.-fit-content
     width: fit-content
 .link-default // ?
     color: color(blue)
@@ -11,13 +9,33 @@
     &:hover
         text-decoration: none
 
-// хелперы идут с h- вначале
+// правильное написание: сокращенное свойство - значение свойства
+// форматирование текста - выравнивание, начертание, толщина, подчеркнутость
+.ta-center
+    text-align: center
+.ta-left
+    text-align: left
+.ta-right
+    text-align: right
+
 .td-underline
     text-decoration: underline
+.tt-uppercase
+    text-transform: uppercase
 
-// или нет :(
-.has-border
-    border: em(1) solid color(grey)
+// размеры шрифта font-size
+// min = 50% (fs-50), max = 200% (fs-200)
+// шаг 5%
+@for $i from 0 through 30
+    $sizeClass: 50 + 5 * $i
+    $fontSize: $sizeClass * 1%
+    .fs-#{$sizeClass}
+        font-size: #{$fontSize}
+    
+
+
+.w-fit-content
+    width: fit-content
 
 // Paddings
 .no-padding
@@ -42,3 +60,6 @@
 .jc-space-around
     justify-content: space-around
 
+// или нет :(
+.has-border
+    border: em(1) solid color(grey)
