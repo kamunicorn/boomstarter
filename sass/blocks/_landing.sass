@@ -6,8 +6,8 @@
 .landing
     height: 480px
     margin-bottom: rem(50)
-    background-color: #7FFEE6
-    background-image: linear-gradient(180deg, #7FFEE6 0%, #68EFEC 46.4%, #1EC0FF 94.77%)
+    // background-image: linear-gradient(180deg, #7FFEE6 0%, #68EFEC 46.4%, #1EC0FF 94.77%)
+    background-color: color(white)
     .container,
     .container > .grid-row
         height: 100%
@@ -20,12 +20,10 @@
         @include font(600, rem(39))
         margin-top: auto
     &__title-desc
-        margin-top: 11px
         @include font(300, rem(16))
-
-    .ui-button
+        margin-top: 11px
+    &__button
         margin-top: rem(40)
-
     &__img // div container
         height: 100%
         display: flex
@@ -37,32 +35,8 @@
             background-position: bottom center
             background-size: contain
 
-
-.landing-stat
+// статистика платформы
+.landing__stat
     margin: auto 0 rem(60)
-    &__item
-        padding-left: rem(25)
-        position: relative
-        &::before
-            position: absolute
-            content: ''
-            width: rem(15)
-            height: rem(15)
-            left: 0
-            top: 9px
-            background-color: color(white)
-            border-radius: 50%
-    &__item > *
-        display: block
-    &__item > *:first-child
-        @include font(600, 18px)
-    &__item > *:last-child
-        @include font(300, 14px)
-    &__item:not(:last-child)
-        margin-right: rem(40)
-    // padding: 45px 20px 15px 40px
-    // &__button
-    //     margin-top: 60px
-    //     display: flex
-    //     align-items: center
-    
+
+@import 'landing-stat'

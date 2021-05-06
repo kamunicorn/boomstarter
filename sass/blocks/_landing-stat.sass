@@ -1,0 +1,24 @@
+@import '../service/service'
+
+/* blocks/landing-stat */
+
+// статистика платформы
+.landing-stat
+    &__item
+        padding-left: rem(25)
+        position: relative
+        &::before
+            position: absolute
+            content: ''
+            width: rem(15)
+            height: rem(15)
+            left: 0
+            top: 9px
+            background-color: color(primary)
+            border-radius: 50%
+    &__item > *:first-child
+        @include font(600, 18px)
+    &__item > *:last-child
+        @include font(300, 14px)
+    &__item:not(:last-child)
+        margin-right: rem(40)

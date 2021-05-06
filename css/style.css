@@ -1777,11 +1777,7 @@ nav:nth-child(2) {
 .landing {
   height: 480px;
   margin-bottom: 3.125rem;
-  background-color: #7FFEE6;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#7FFEE6), color-stop(46.4%, #68EFEC), color-stop(94.77%, #1EC0FF));
-  background-image: -webkit-linear-gradient(top, #7FFEE6 0%, #68EFEC 46.4%, #1EC0FF 94.77%);
-  background-image: -o-linear-gradient(top, #7FFEE6 0%, #68EFEC 46.4%, #1EC0FF 94.77%);
-  background-image: linear-gradient(180deg, #7FFEE6 0%, #68EFEC 46.4%, #1EC0FF 94.77%);
+  background-color: #fff;
 }
 
 .landing .container,
@@ -1813,12 +1809,12 @@ nav:nth-child(2) {
 }
 
 .landing__title-desc {
-  margin-top: 11px;
   font-weight: 300;
   font-size: 1rem;
+  margin-top: 11px;
 }
 
-.landing .ui-button {
+.landing__button {
   margin-top: 2.5rem;
 }
 
@@ -1840,10 +1836,12 @@ nav:nth-child(2) {
           background-size: contain;
 }
 
-.landing-stat {
+.landing__stat {
   margin: auto 0 3.75rem;
 }
 
+/* COLORS */
+/* blocks/landing-stat */
 .landing-stat__item {
   padding-left: 1.5625rem;
   position: relative;
@@ -1856,13 +1854,9 @@ nav:nth-child(2) {
   height: 0.9375rem;
   left: 0;
   top: 9px;
-  background-color: #fff;
+  background-color: #0087F7;
   -webkit-border-radius: 50%;
           border-radius: 50%;
-}
-
-.landing-stat__item > * {
-  display: block;
 }
 
 .landing-stat__item > *:first-child {
@@ -3987,6 +3981,8 @@ nav:nth-child(2) {
   margin-bottom: 0;
 }
 
+/* COLORS */
+/* blocks/reviews-stat */
 .reviews-stat {
   font-weight: 400;
   font-size: 14px;
@@ -4006,6 +4002,19 @@ nav:nth-child(2) {
   }
   .reviews-stat__item:first-child {
     margin-right: 2.5rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .reviews-stat {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .reviews-stat__item {
+    margin-top: 12px;
   }
 }
 
@@ -4055,16 +4064,6 @@ nav:nth-child(2) {
   }
   .reviews__author-name {
     margin-top: 0;
-  }
-  .reviews-stat {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-    -webkit-flex-direction: column-reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-  }
-  .reviews-stat__item {
-    margin-top: 12px;
   }
 }
 

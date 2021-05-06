@@ -1,0 +1,23 @@
+@import '../service/service'
+
+/* blocks/reviews-stat */
+
+// статистика какой проект сколько собрал у автора
+.reviews-stat
+    @include font(400, 14px)
+    display: flex
+    &__item > *:first-child
+        color: color(grey-dark)
+
+@media (min-width: 576px)
+    .reviews-stat
+        &__item
+            max-width: 60%
+        &__item:first-child
+            margin-right: rem(40)
+
+@media (max-width: 575px)
+    .reviews-stat
+        flex-direction: column-reverse
+        &__item
+            margin-top: 12px
