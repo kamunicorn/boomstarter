@@ -4,39 +4,90 @@
 
 // первый экран
 .landing
-    height: 480px
+    min-height: rem(480)
     margin-bottom: rem(50)
     // background-image: linear-gradient(180deg, #7FFEE6 0%, #68EFEC 46.4%, #1EC0FF 94.77%)
     background-color: color(white)
-    .container,
-    .container > .grid-row
-        height: 100%
+    .container
+        min-height: inherit
+        position: relative
     &__info
+        position: relative
+        z-index: 2
+        width: rem(640)
         height: 100%
         display: flex
         flex-direction: column
-        justify-content: center
+        justify-content: flex-end
+        padding: 53px 0 rem(60)
     &__title
-        @include font(600, rem(39))
-        margin-top: auto
+        @include font(600, rem(40))
     &__title-desc
-        @include font(300, rem(16))
+        @include font(300, 16px)
         margin-top: 11px
     &__button
+        width: 224px
         margin-top: rem(40)
-    &__img // div container
+    // блок с фоновой картинкой
+    &__img
+        position: absolute
+        bottom: 0
+        right: rem(17)
+        z-index: 1
         height: 100%
+        width: 100%
+        max-width: 50%
+        overflow: hidden
         display: flex
         &-bg
-            width: 90%
-            height: 90%
-            margin: auto auto 0
+            position: absolute
+            right: 0
+            bottom: -30px
+            height: 413px
+            width: 565px
+            max-width: 100%
+            max-height: 100%
             background-repeat: no-repeat
-            background-position: bottom center
+            background-position: bottom right
             background-size: contain
+
+@media (max-width: 1199px)
+    .landing
+        &__info
+            max-width: 58%
+@media (max-width: 991px)
+    .landing
+        &__info
+            justify-content: start
+        &__img
+            max-width: 60%
+            right: 0
+        &__img-bg
+            right: -30px
+@media (max-width: 767px)
+    .landing
+        &__info
+            max-width: 100%
+
+@media (max-width: 575px)
+    .landing
+        min-height: 570px
+        &__title
+            font-size: 24px
+        &__img
+            max-width: 100%
+        &__img-bg
+            right: -148px
+            bottom: 0
+            max-width: initial
+            max-height: initial
+            height: 300px
+            width: 355px
 
 // статистика платформы
 .landing__stat
-    margin: auto 0 rem(60)
+    margin-top: rem(85)
+    @media (max-width: 991px)
+        margin-top: 40px
 
 @import 'landing-stat'

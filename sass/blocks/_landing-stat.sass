@@ -10,8 +10,8 @@
         &::before
             position: absolute
             content: ''
-            width: rem(15)
-            height: rem(15)
+            width: 15px
+            height: 15px
             left: 0
             top: 9px
             background-color: color(primary)
@@ -22,3 +22,20 @@
         @include font(300, 14px)
     &__item:not(:last-child)
         margin-right: rem(40)
+
+@media (max-width: 991px)
+    .landing-stat
+        flex-direction: column
+        &__item::before
+            width: 12px
+            height: 12px
+            top: 12px
+        &__item:not(:last-child)
+            margin-right: 0
+            margin-bottom: 20px
+@media (max-width: 575px)
+    .landing-stat
+        &__item
+            padding-left: 0
+        &__item::before
+            display: none
