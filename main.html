@@ -1019,62 +1019,58 @@
                         <a href="#" class="ui-button w-fit-content">Смотреть проекты</a>
                     </div>
                 </div>
-                <ul class="sponsorship__sponsors-cloud sponsors">
-                    <li class="sponsors__item">
-                        <div class="avatar bg-mastercard">
-                            <img src="img/avatar/default/princess-diadem.svg" alt="">
-                        </div>
-                        <div class="sponsors__item-desc">Анонимная принцесса <br>12 минут назад</div>
-                    </li>
-                    <li class="sponsors__item">
-                        <div class="avatar _x-small bg-primary">
-                            <img src="img/avatar/default/musician.svg" alt="">
-                        </div>
-                        <div class="sponsors__item-desc">Анонимный пользователь <br>25 минут назад</div>
-                    </li>
-                    <li class="sponsors__item">
-                        <div class="avatar _small bg-grey">
-                            <img src="img/avatar/default/king-monarch-full.svg" alt="">
-                        </div>
-                        <div class="sponsors__item-desc">Татьяна Равина <br>2 часа назад</div>
-                    </li>
-                    <li class="sponsors__item">
-                        <div class="avatar bg-yellow-light">
-                            <img src="img/avatar/default/princess-afro.svg" alt="">
-                        </div>
-                        <div class="sponsors__item-desc">Татьяна Ларина <br>2 часа назад</div>
-                    </li>
-                    <li class="sponsors__item">
-                        <div class="avatar _bigger bg-beige">
-                            <img src="img/avatar/user/person-2.png" alt="">
-                        </div>
-                        <div class="sponsors__item-desc">Игорь Алексеев <br>12 минут назад</div>
-                    </li>
-                    <li class="sponsors__item">
-                        <div class="avatar _medium bg-coral">
-                            <img src="img/avatar/default/chemist-woman.svg" alt="">
-                        </div>
-                        <div class="sponsors__item-desc">Анонимный пользователь <br>час назад</div>
-                    </li>
-                    <li class="sponsors__item">
-                        <div class="avatar _large bg-pink">
-                            <img src="img/avatar/default/dijey.svg" alt="">
-                        </div>
-                        <div class="sponsors__item-desc">Расторгуев Павел <br>25 минут назад</div>
-                    </li>
-                    <li class="sponsors__item">
-                        <div class="avatar _x-large bg-yellow-light">
-                            <img src="img/avatar/user/person-1.png" alt="">
-                        </div>
-                        <div class="sponsors__item-desc">Алексей Игоревич <br>2 часа назад</div>
-                    </li>
-                    <li class="sponsors__item">
-                        <div class="avatar _great bg-cyan">
-                            <img src="img/avatar/default/king-old-grey.svg" alt="">
-                        </div>
-                        <div class="sponsors__item-desc">Анонимный король <br>2 часа назад</div>
-                    </li>
-                </ul>
+                <div class="sponsorship__sponsors-box">
+                    <ul class="sponsorship__sponsors-cloud sponsors">
+                        <li class="sponsors__item">
+                            <div class="sponsors__item-avatar avatar bg-mastercard">
+                                <img src="img/avatar/default/princess-diadem.svg" alt="">
+                            </div>
+                            <div class="sponsors__item-desc">Анонимная принцесса <br>12 минут назад</div>
+                        </li>
+                        <li class="sponsors__item">
+                            <div class="sponsors__item-avatar avatar bg-primary">
+                                <img src="img/avatar/default/musician.svg" alt="">
+                            </div>
+                            <div class="sponsors__item-desc">Анонимный пользователь <br>25 минут назад</div>
+                        </li>
+                        <li class="sponsors__item">
+                            <div class="sponsors__item-avatar avatar bg-yellow-light">
+                                <img src="img/avatar/user/person-1.png" alt="">
+                            </div>
+                            <div class="sponsors__item-desc">Алексей Игоревич <br>2 часа назад</div>
+                        </li>
+                        <li class="sponsors__item">
+                            <div class="sponsors__item-avatar avatar bg-yellow-light">
+                                <img src="img/avatar/default/princess-afro.svg" alt="">
+                            </div>
+                            <div class="sponsors__item-desc">Татьяна Ларина <br>2 часа назад</div>
+                        </li>
+                        <li class="sponsors__item">
+                            <div class="sponsors__item-avatar avatar bg-beige">
+                                <img src="img/avatar/user/person-2.png" alt="">
+                            </div>
+                            <div class="sponsors__item-desc">Игорь Алексеев <br>12 минут назад</div>
+                        </li>
+                        <li class="sponsors__item">
+                            <div class="sponsors__item-avatar avatar bg-coral">
+                                <img src="img/avatar/default/chemist-woman.svg" alt="">
+                            </div>
+                            <div class="sponsors__item-desc">Анонимный пользователь <br>час назад</div>
+                        </li>
+                        <li class="sponsors__item">
+                            <div class="sponsors__item-avatar avatar bg-pink">
+                                <img src="img/avatar/default/dijey.svg" alt="">
+                            </div>
+                            <div class="sponsors__item-desc">Расторгуев Павел <br>25 минут назад</div>
+                        </li>
+                        <li class="sponsors__item">
+                            <div class="sponsors__item-avatar avatar bg-grey">
+                                <img src="img/avatar/default/king-monarch-full.svg" alt="">
+                            </div>
+                            <div class="sponsors__item-desc">Татьяна Равина <br>2 часа назад</div>
+                        </li>
+                    </ul>
+                </div>
             </section>
         </main>
         
@@ -1172,6 +1168,27 @@
 
         <script src="js/jquery-3.5.1.min.js"></script>
         <script src="js/script.js"></script>
+        <script>
+            let sponsorsBox = $('.sponsorship__sponsors-box'),
+                sponsorsCloud = sponsorsBox.find('.sponsorship__sponsors-cloud'),
+                moveCoef = 0.4; // коэфициент сдвига: 1 сдвиг равный смещению по оси Y, 0 без сдвига
+
+            window.addEventListener('scroll', moveSponsorsCloud);
+            window.addEventListener('resize', moveSponsorsCloud);
+            moveSponsorsCloud();
+
+            function moveSponsorsCloud() {
+                /* размер ограничивающего прямоугольника паралакса относительно окна (фрейма) */
+                let dimCloudBox = sponsorsBox[0].getBoundingClientRect(),
+                    /* центр паралакса */
+                    paralaxCenterY = dimCloudBox.y + dimCloudBox.height / 2,
+                    /* центр экрана */
+                    scrollCenterY = window.innerHeight / 2,
+                    /* Вычисляем смещение */
+                    move = (paralaxCenterY - scrollCenterY) * moveCoef + 50;
+                sponsorsCloud.css('top', move + 'px');
+            }
+        </script>
         
     </body>
 </html>

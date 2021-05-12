@@ -1554,7 +1554,14 @@ input:checked ~ .ui-checkbox__custom .icon-check {
   width: 68px;
 }
 
-.ui-category:hover, .ui-category:focus {
+@media (hover: hover) {
+  .ui-category:hover {
+    border-color: #0087F7;
+    color: #0087F7;
+  }
+}
+
+.ui-category:focus {
   border-color: #0087F7;
   color: #0087F7;
 }
@@ -1649,13 +1656,6 @@ input:checked ~ .ui-checkbox__custom .icon-check {
 
 .avatar._great {
   font-size: 16.25rem;
-}
-
-.avatar._cover img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 /* COLORS variable */
@@ -4369,18 +4369,40 @@ nav:nth-child(2) {
 /* COLORS variable */
 /* blocks/sponsorship */
 .sponsorship {
-  margin-top: 10.3125rem;
-  margin-bottom: 3.75rem;
-  padding-top: 4.5625rem;
+  margin-top: 3.4375rem;
+  margin-bottom: 0;
+  padding-top: 9.375rem;
+  padding-bottom: 3.75rem;
+  overflow: hidden;
 }
 
 .sponsorship__offer {
   font-weight: 600;
   font-size: 2.25rem;
+  z-index: 10;
 }
 
 .sponsorship__button {
   margin-top: 1.875rem;
+}
+
+.sponsorship__sponsors-box {
+  position: relative;
+  height: 31.25rem;
+  margin-top: -5rem;
+}
+
+.sponsorship__sponsors-cloud {
+  height: 28.125rem;
+  height: 450px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.sponsors {
+  position: absolute;
 }
 
 .sponsors__item {
@@ -4390,6 +4412,149 @@ nav:nth-child(2) {
 .sponsors__item-desc {
   font-weight: 300;
   font-size: 14px;
+}
+
+.sponsors__item {
+  z-index: 1;
+  position: absolute;
+  -webkit-transform: translateX(-20%);
+      -ms-transform: translateX(-20%);
+       -o-transform: translateX(-20%);
+          transform: translateX(-20%);
+}
+
+.sponsors__item:nth-child(1) {
+  top: 40%;
+  left: 4%;
+}
+
+.sponsors__item:nth-child(1) .sponsors__item-avatar {
+  font-size: 3.25rem;
+}
+
+.sponsors__item:nth-child(2) {
+  bottom: -20%;
+  left: 10%;
+}
+
+.sponsors__item:nth-child(2) .sponsors__item-avatar {
+  font-size: 6.875rem;
+}
+
+.sponsors__item:nth-child(3) {
+  top: -10%;
+  left: 15%;
+}
+
+.sponsors__item:nth-child(3) .sponsors__item-avatar {
+  font-size: 5.625rem;
+}
+
+.sponsors__item:nth-child(4) {
+  top: 25%;
+  left: 35%;
+}
+
+.sponsors__item:nth-child(4) .sponsors__item-avatar {
+  font-size: 6.25rem;
+}
+
+.sponsors__item:nth-child(5) {
+  top: 70%;
+  left: 45%;
+}
+
+.sponsors__item:nth-child(5) .sponsors__item-avatar {
+  font-size: 12.5rem;
+}
+
+.sponsors__item:nth-child(6) {
+  top: 35%;
+  left: 65%;
+}
+
+.sponsors__item:nth-child(6) .sponsors__item-avatar {
+  font-size: 5.625rem;
+}
+
+.sponsors__item:nth-child(7) {
+  top: -5%;
+  left: 75%;
+}
+
+.sponsors__item:nth-child(7) .sponsors__item-avatar {
+  font-size: 4.375rem;
+}
+
+.sponsors__item:nth-child(8) {
+  top: 56%;
+  left: 87%;
+}
+
+.sponsors__item:nth-child(8) .sponsors__item-avatar {
+  font-size: 15rem;
+}
+
+@media (max-width: 575px) {
+  .sponsors__item-desc {
+    display: none;
+  }
+  .sponsors__item:nth-child(1) {
+    top: 45%;
+    left: 4%;
+  }
+  .sponsors__item:nth-child(1) .sponsors__item-avatar {
+    font-size: 3.125rem;
+  }
+  .sponsors__item:nth-child(2) {
+    bottom: 0;
+    left: 10%;
+  }
+  .sponsors__item:nth-child(2) .sponsors__item-avatar {
+    font-size: 6.25rem;
+  }
+  .sponsors__item:nth-child(3) {
+    top: 10%;
+    left: 10%;
+  }
+  .sponsors__item:nth-child(3) .sponsors__item-avatar {
+    font-size: 5rem;
+  }
+  .sponsors__item:nth-child(4) {
+    top: 30%;
+    left: 35%;
+  }
+  .sponsors__item:nth-child(4) .sponsors__item-avatar {
+    font-size: 5.625rem;
+  }
+  .sponsors__item:nth-child(5) {
+    top: 63%;
+    left: 40%;
+  }
+  .sponsors__item:nth-child(5) .sponsors__item-avatar {
+    font-size: 8.75rem;
+  }
+  .sponsors__item:nth-child(6) {
+    top: 43%;
+    left: 70%;
+  }
+  .sponsors__item:nth-child(6) .sponsors__item-avatar {
+    font-size: 5rem;
+  }
+  .sponsors__item:nth-child(7) {
+    top: 10%;
+    left: 80%;
+  }
+  .sponsors__item:nth-child(7) .sponsors__item-avatar {
+    font-size: 4.375rem;
+  }
+  .sponsors__item:nth-child(8) {
+    top: 90%;
+    left: 65%;
+  }
+  .sponsors__item:nth-child(8) .sponsors__item-avatar {
+    font-size: 9.375rem;
+  }
 }
 
 /* COLORS variable */

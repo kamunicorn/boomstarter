@@ -286,7 +286,10 @@
         img
             max-height: 35px
             width: 68px
-        &:hover,
+        @media (hover: hover)
+            &:hover
+                border-color: color(primary)
+                color: color(primary)
         &:focus
             border-color: color(primary)
             color: color(primary)
