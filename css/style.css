@@ -1625,6 +1625,13 @@ input:checked ~ .ui-checkbox__custom .icon-check {
      object-fit: cover;
 }
 
+.avatar img[src$=".svg"] {
+  height: 90%;
+  width: 90%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 .avatar {
   /* normal
         font-size: rem(90) */
@@ -1700,6 +1707,12 @@ input:checked ~ .ui-checkbox__custom .icon-check {
           align-items: center;
   overflow-x: auto;
   white-space: nowrap;
+}
+
+.menu-bar._mobile .menu-bar__item > a {
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: 16px;
 }
 
 .menu-bar__item._open-search, .menu-bar__item._search, .menu-bar__item._bookmark {
@@ -1789,7 +1802,7 @@ nav:nth-child(2) {
   position: relative;
   z-index: 2;
   width: 40rem;
-  height: 100%;
+  min-height: inherit;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3034,6 +3047,10 @@ nav:nth-child(2) {
   margin-bottom: 15px;
 }
 
+.story__title:first-child {
+  margin-top: auto;
+}
+
 .story__desc {
   font-weight: 300;
   font-size: 20px;
@@ -3574,6 +3591,11 @@ nav:nth-child(2) {
   color: #0087F7;
 }
 
+.reward__author + .reward__buy {
+  margin-top: auto;
+  padding-top: 14px;
+}
+
 .reward__buy small {
   text-transform: none;
 }
@@ -3750,6 +3772,7 @@ nav:nth-child(2) {
   background-image: -webkit-linear-gradient(top, #7DDEDE -53%, #0087F7 148%);
   background-image: -o-linear-gradient(top, #7DDEDE -53%, #0087F7 148%);
   background-image: linear-gradient(180deg, #7DDEDE -53%, #0087F7 148%);
+  margin: 6.25rem 0 6.25rem;
   padding: 4.5625rem 0 3.3125rem;
   color: #fff;
 }
@@ -3757,7 +3780,7 @@ nav:nth-child(2) {
 .possibilities__slogan {
   font-weight: 600;
   font-size: 2.25rem;
-  margin-left: 320px;
+  text-align: center;
   margin-bottom: 1.5625rem;
 }
 
@@ -3781,18 +3804,6 @@ nav:nth-child(2) {
   max-width: 100%;
 }
 
-@media (max-width: 991px) {
-  .possibilities__slogan {
-    margin-left: 25%;
-  }
-}
-
-@media (max-width: 575px) {
-  .possibilities__slogan {
-    margin-left: 0;
-  }
-}
-
 /* COLORS variable */
 /* blocks/spec-projects */
 .spec-projects {
@@ -3813,7 +3824,10 @@ nav:nth-child(2) {
 }
 
 .spec-projects__item a {
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: 100%;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -3836,6 +3850,7 @@ nav:nth-child(2) {
   display: block;
   margin: auto;
   max-height: 100%;
+  min-height: 85%;
   width: auto;
 }
 
@@ -4048,7 +4063,7 @@ nav:nth-child(2) {
 .reviews__author-name {
   margin-top: 9px;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 1.125rem;
   text-align: center;
 }
 
@@ -5197,19 +5212,19 @@ nav:nth-child(2) {
   padding: 0.75em;
 }
 
-.p-default-top {
+.pt-default {
   padding-top: 0.75em;
 }
 
-.p-default-right {
+.pr-default {
   padding-right: 0.75em;
 }
 
-.p-default-bottom {
+.pb-default {
   padding-bottom: 0.75em;
 }
 
-.p-default-left {
+.pl-default {
   padding-left: 0.75em;
 }
 

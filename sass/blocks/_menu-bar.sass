@@ -16,6 +16,11 @@
         align-items: center
         overflow-x: auto
         white-space: nowrap
+    // чтобы левая ссылка прилипала к левому краю
+    &._mobile &__item > a
+        padding-left: 0
+        padding-right: 0
+        margin-right: 16px
     &__item
         &._open-search,
         &._search,

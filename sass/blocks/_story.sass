@@ -38,6 +38,9 @@
     &__title
         @include font(700, 24px)
         margin-bottom: 15px
+    // когда нет ссылки на Бум-блог
+    &__title:first-child
+        margin-top: auto
     &__desc
         @include font(300, 20px)
     &__button

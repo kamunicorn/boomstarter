@@ -5,11 +5,12 @@
 .possibilities
     background-color: color(primary)
     background-image: linear-gradient(180deg, color(cyan-light) -53%, color(primary) 148%)
+    margin: rem(100) 0 rem(100)
     padding: rem(73) 0 rem(53)
     color: color(white)
     &__slogan
         @include font(600, rem(36))
-        margin-left: 320px
+        text-align: center
         margin-bottom: rem(25)
     &__item
         @include font(600, 16px)
@@ -23,10 +24,3 @@
             margin: auto auto 11px
             max-height: 100%
             max-width: 100%
-
-@media (max-width: 991px)
-    .possibilities__slogan
-        margin-left: 25%
-@media (max-width: 575px)
-    .possibilities__slogan
-        margin-left: 0
