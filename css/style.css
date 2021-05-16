@@ -2815,6 +2815,14 @@ nav:nth-child(2) {
   position: relative;
 }
 
+.slider .grid {
+  -webkit-transition: -webkit-transform 0.5s linear;
+  transition: -webkit-transform 0.5s linear;
+  -o-transition: -o-transform 0.5s linear;
+  transition: transform 0.5s linear;
+  transition: transform 0.5s linear, -webkit-transform 0.5s linear, -o-transform 0.5s linear;
+}
+
 .slider__wrapper {
   overflow: hidden;
 }
@@ -2825,6 +2833,7 @@ nav:nth-child(2) {
   display: -ms-flexbox;
   display: flex;
   grid-auto-flow: column;
+  padding-bottom: 10px;
 }
 
 .slider__controls [class*="ui-arrow-"] {
@@ -2870,19 +2879,6 @@ nav:nth-child(2) {
   }
 }
 
-.slider .card,
-.slider .reward {
-  margin-bottom: 0.375rem;
-}
-
-.slider .grid {
-  -webkit-transition: -webkit-transform 0.5s linear;
-  transition: -webkit-transform 0.5s linear;
-  -o-transition: -o-transform 0.5s linear;
-  transition: transform 0.5s linear;
-  transition: transform 0.5s linear, -webkit-transform 0.5s linear, -o-transform 0.5s linear;
-}
-
 @media (max-width: 1279px) {
   .slider__wrapper {
     margin-left: -3.125rem;
@@ -2911,6 +2907,7 @@ nav:nth-child(2) {
 @media (hover: none) {
   .slider__row {
     overflow-x: auto;
+    overflow-y: hidden;
   }
   .slider__controls {
     display: none;
@@ -3959,12 +3956,12 @@ nav:nth-child(2) {
 /* COLORS variable */
 /* blocks/landing */
 .media {
-  margin-top: 1.875rem;
-  margin-bottom: 1.25rem;
+  margin: 1.875rem 0 1.25rem;
 }
 
-.media.grid-row {
-  row-gap: 2.1875rem;
+.media .slider__row {
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .media__item {
@@ -4001,7 +3998,7 @@ nav:nth-child(2) {
 
 .media__img-box img {
   position: absolute;
-  max-height: 2.5rem;
+  max-height: 100%;
   max-width: 8.125rem;
 }
 
@@ -4052,8 +4049,8 @@ nav:nth-child(2) {
 }
 
 .media__others-item img {
-  max-width: 8.5rem;
-  max-height: 2.375rem;
+  max-width: 8.125rem;
+  max-height: 1.875rem;
 }
 
 /* COLORS variable */
@@ -4463,11 +4460,8 @@ nav:nth-child(2) {
 }
 
 .sponsorship__sponsors-cloud {
-  height: 28.125rem;
-  height: 450px;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  height: inherit;
+  width: 100%;
 }
 
 .sponsors {
@@ -4570,14 +4564,16 @@ nav:nth-child(2) {
   }
   .sponsorship__sponsors-box {
     position: initial;
+    height: initial;
     margin-top: 2rem;
   }
   .sponsors {
     display: -ms-grid;
     display: grid;
     row-gap: 1rem;
+    position: initial;
   }
-  .sponsors, .sponsors__item {
+  .sponsors__item {
     position: initial;
   }
   .sponsors__item {

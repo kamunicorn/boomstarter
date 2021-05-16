@@ -4,10 +4,10 @@
 
 // мы в СМИ
 .media
-    margin-top: rem(30)
-    margin-bottom: rem(20)
-    &.grid-row
-        row-gap: rem(35)
+    margin: rem(30) 0 rem(20)
+    .slider__row
+        overflow-x: auto
+        overflow-y: hidden
     &__item
         padding-left: rem(48)
     &__img-box
@@ -28,7 +28,8 @@
             pointer-events: none
         img
             position: absolute
-            max-height: rem(40)
+            // max-height: rem(40)
+            max-height: 100%
             max-width: rem(130)
     &__img-box + p
         position: relative
@@ -56,5 +57,5 @@
         margin-right: rem(32)
         margin-bottom: rem(18)
         img
-            max-width: rem(136)
-            max-height: rem(38)
+            max-width: rem(130)
+            max-height: rem(30)

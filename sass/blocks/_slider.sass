@@ -4,11 +4,16 @@
 
 .slider
     position: relative
+    .grid
+        // плавная прокрутка
+        transition: transform 0.5s linear
     &__wrapper
         overflow: hidden
     &__row
         display: flex
         grid-auto-flow: column
+        // чтобы не обрезался эффект тени при наведениии и полоса прокрутки появлялась ниже
+        padding-bottom: 10px
     &__controls
         [class*="ui-arrow-"]
             position: absolute
@@ -26,22 +31,12 @@
             @media (max-width: 575px)
                 transform: translateY(-50%) translateX(25%)
 
-.slider
-    .card,
-    .reward
-        // чтобы не обрезался эффект тени при наведении
-        margin-bottom: rem(6)
-    .grid
-        // плавная прокрутка
-        transition: transform 0.5s linear
-
 
 @media (max-width: $container-max-width - 1px)
     .slider
         &__wrapper
             margin-left: -$container-padding
             margin-right: -$container-padding
-        // .grid-special,
         .grid
             padding: 0 $container-padding
 
@@ -49,7 +44,6 @@
     .slider
         &__wrapper
             margin: 0px -14px
-        // .grid-special,
         .grid
             padding: 0 14px
         .card
@@ -58,10 +52,11 @@
             &__ps img
                 font-size: 10px
 
-// не touch-устройства
+// touch-устройства (без мышки)
 @media (hover: none)
     .slider
         &__row
             overflow-x: auto
+            overflow-y: hidden
         &__controls
             display: none
