@@ -1,0 +1,80 @@
+
+// Оранжевый вариант
+
+.bg-animated-orange {
+    background: linear-gradient(156deg, color(peach), color(beige), color(violet));
+    background-size: 600% 600%;
+
+    -moz-animation: Orange 10s ease infinite;
+    animation: Orange 10s ease infinite;
+}
+@-moz-keyframes Orange {
+    0%    { background-position: 0% 60% }
+    50%   { background-position: 100% 41% }
+    100%  { background-position: 0% 60% }
+}
+@keyframes Orange {
+    0%    { background-position: 0% 60% }
+    50%   { background-position: 100% 41% }
+    100%  { background-position: 0% 60% }
+}
+
+// Оранжевый + зелёный
+.bg-animated-blue-beige {
+    background: linear-gradient(156deg, #7ffee6, color(beige), color(violet));
+    background: linear-gradient(156deg, color(cyan-light), color(beige), color(violet));
+    background-size: 600% 600%;
+
+    -moz-animation: Blue-beige 10s ease infinite;
+    animation: Blue-beige 10s ease infinite;
+}
+@-moz-keyframes Blue-beige {
+    0%    {background-position: 0% 60% }
+    50%   {background-position: 100% 41% }
+    100%  {background-position: 0% 60% }
+}
+@keyframes Blue-beige {
+    0%    {background-position: 0% 60% }
+    50%   {background-position: 100% 41% }
+    100%  {background-position: 0% 60% }
+}
+
+// Голубо–фиолетовый
+.bg-animated-cyan-violet {
+    background: linear-gradient(156deg, #7ffee6, #68efec, color(violet));
+    background-size: 600% 600%;
+
+    -moz-animation: Cyan-violet 10s ease infinite;
+    animation: Cyan-violet 10s ease infinite;
+}
+
+@-moz-keyframes Cyan-violet {
+    0%    { background-position: 0% 60% }
+    50%   { background-position: 100% 41% }
+    100%  { background-position: 0% 60% }
+}
+@keyframes Cyan-violet {
+    0%    { background-position: 0% 60% }
+    50%   { background-position: 100% 41% }
+    100%  { background-position: 0% 60% }
+}
+
+// Синий
+.bg-animated-blue-cyan {
+    background: linear-gradient(156deg, #7ffee6, #68efec, color(primary));
+    background-size: 600% 600%;
+
+    -moz-animation: Blue-cyan 10s ease infinite;
+    animation: Blue-cyan 10s ease infinite;
+}
+
+@-moz-keyframes Blue-cyan {
+    0%    { background-position: 0% 60% }
+    50%   { background-position: 100% 41% }
+    100%  { background-position: 0% 60% }
+}
+@keyframes Blue-cyan {
+    0%    { background-position: 0% 60% }
+    50%   { background-position: 100% 41% }
+    100%  { background-position: 0% 60% }
+}

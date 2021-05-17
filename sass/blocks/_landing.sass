@@ -68,12 +68,16 @@
     .landing
         &__info
             max-width: 100%
+        &__img-bg
+            max-height: 78%
 
 @media (max-width: 575px)
     .landing
-        min-height: 570px
         &__title
             font-size: 24px
+@media (max-width: 479px)
+    .landing
+        min-height: 570px
         &__img
             max-width: 100%
         &__img-bg
