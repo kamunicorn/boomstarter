@@ -1160,6 +1160,10 @@ button:focus {
   }
 }
 
+.ui-button:focus, .ui-input:focus {
+  outline: none;
+}
+
 .ui-button.has-image {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1210,6 +1214,11 @@ button:focus {
   }
 }
 
+.ui-button:focus {
+  -webkit-box-shadow: 0 0 2px 2px rgba(0, 135, 247, 0.95);
+          box-shadow: 0 0 2px 2px rgba(0, 135, 247, 0.95);
+}
+
 .ui-input {
   font-weight: 300;
   background-color: transparent;
@@ -1221,6 +1230,11 @@ button:focus {
   .ui-input:hover {
     background-color: transparent;
   }
+}
+
+.ui-input:focus {
+  -webkit-box-shadow: 0 0 2px 1px rgba(0, 135, 247, 0.95);
+          box-shadow: 0 0 2px 1px rgba(0, 135, 247, 0.95);
 }
 
 .ui-search {
@@ -1252,6 +1266,12 @@ button:focus {
 
 .ui-search input::-webkit-textfield-decoration-container {
   background-color: #F6F6F6;
+}
+
+.ui-search:focus, .ui-search:focus-within {
+  outline: none;
+  -webkit-box-shadow: 0 0 2px 1px rgba(0, 135, 247, 0.95);
+          box-shadow: 0 0 2px 1px rgba(0, 135, 247, 0.95);
 }
 
 .ui-icon-button {
@@ -1309,6 +1329,12 @@ button:focus {
   .ui-arrow-left:hover, .ui-arrow-right:hover {
     color: #21DDB9;
   }
+}
+
+.ui-arrow-left:focus, .ui-arrow-right:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 2px 1px rgba(0, 135, 247, 0.95);
+          box-shadow: 0 0 2px 1px rgba(0, 135, 247, 0.95);
 }
 
 .ui-loading {
@@ -1470,6 +1496,11 @@ input:checked ~ .ui-checkbox__custom .icon-check {
   display: block;
 }
 
+input:focus + .ui-checkbox__custom {
+  -webkit-box-shadow: 0 0 2px 1px rgba(0, 135, 247, 0.1);
+          box-shadow: 0 0 2px 1px rgba(0, 135, 247, 0.1);
+}
+
 .ui-sorting {
   font-weight: 300;
 }
@@ -1567,6 +1598,12 @@ input:checked ~ .ui-checkbox__custom .icon-check {
     border-color: #0087F7;
     color: #0087F7;
   }
+}
+
+.ui-category:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 2px 1px rgba(0, 135, 247, 0.95);
+          box-shadow: 0 0 2px 1px rgba(0, 135, 247, 0.95);
 }
 
 @media (max-width: 479px) {
@@ -4001,6 +4038,15 @@ nav:nth-child(2) {
   position: absolute;
   max-height: 100%;
   max-width: 8.125rem;
+}
+
+.media__img-box:focus {
+  outline: none;
+}
+
+.media__img-box:focus img {
+  -webkit-box-shadow: 0 0 2px 1px rgba(0, 135, 247, 0.7);
+          box-shadow: 0 0 2px 1px rgba(0, 135, 247, 0.7);
 }
 
 .media__img-box + p {

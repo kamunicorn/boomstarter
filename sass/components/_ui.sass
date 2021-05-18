@@ -45,6 +45,8 @@
             font-size: 14px
         @media (max-width: 479px)
             width: 100%
+        &:focus
+            outline: none
 
     // модификации
     &-button.has-image
@@ -69,6 +71,8 @@
         @media (hover: hover)
             &:hover
                 background-color: lighten(color(primary), 8%)
+        &:focus
+            box-shadow: 0 0 2px 2px transparentize(color(primary), 0.05)
     &-input
         font-weight: 300
         background-color: transparent
@@ -77,6 +81,8 @@
         @media (hover: hover)
             &:hover
                 background-color: transparent
+        &:focus
+            box-shadow: 0 0 2px 1px transparentize(color(primary), 0.05)
     
     // поле поиска
     &-search
@@ -94,11 +100,18 @@
             border: none
         input::-webkit-textfield-decoration-container
             background-color: color(grey-light)
+        &:focus,
+        &:focus-within
+            outline: none
+            box-shadow: 0 0 2px 1px transparentize(color(primary), 0.05)
 
     // кнопки с иконками внутри
     &-icon-button
         padding: 5px 8px
         line-height: 1
+        &:focus
+            // outline: none
+            // box-shadow: 0 0 2px 1px transparentize(color(primary), 0.05)
         
     // кнопка включения/выключения звука
     &-icon-button._turn-sound
@@ -138,6 +151,9 @@
         @media (hover: hover)
             &:hover
                 color: color(cyan)
+        &:focus
+            outline: none
+            box-shadow: 0 0 2px 1px transparentize(color(primary), 0.05)
 
     &-loading
         display: flex
@@ -226,6 +242,8 @@
                 display: none
         input:checked ~ &__custom .icon-check
             display: block
+        input:focus + &__custom
+            box-shadow: 0 0 2px 1px transparentize(color(primary), 0.9)
 
     // TODO
     // сортировка по
@@ -291,6 +309,8 @@
                 border-color: color(primary)
                 color: color(primary)
         &:focus
+            outline: none
+            box-shadow: 0 0 2px 1px transparentize(color(primary), 0.05)
         @media (max-width: 479px)
             padding-right: 5px
             img
