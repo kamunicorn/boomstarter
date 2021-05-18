@@ -37,20 +37,45 @@
 
 .w-fit-content
     width: fit-content
-
+.no-margin
+    margin: 0
 // Paddings
 .no-padding
     padding: 0
 .p-default
-    padding: em(12)
+    padding: 12px
 .pt-default
-    padding-top: em(12)
+    padding-top: 12px
 .pr-default
-    padding-right: em(12)
+    padding-right: 12px
 .pb-default
-    padding-bottom: em(12)
+    padding-bottom: 12px
 .pl-default
-    padding-left: em(12)
+    padding-left: 12px
+
+@for $i from 1 to 21
+    $px: $i * 5
+    .p-#{$px}
+        padding: $px * 1px
+    .pt-#{$px}
+        padding-top: $px * 1px
+    .pr-#{$px}
+        padding-right: $px * 1px
+    .pb-#{$px}
+        padding-bottom: $px * 1px
+    .pl-#{$px}
+        padding-left: $px * 1px
+    .m-#{$px}
+        margin: $px * 1px
+    .mt-#{$px}
+        margin-top: $px * 1px
+    .mr-#{$px}
+        margin-right: $px * 1px
+    .mb-#{$px}
+        margin-bottom: $px * 1px
+    .ml-#{$px}
+        margin-left: $px * 1px
+        
 
 /* * * Сетки на флексах! * * */
 .d-flex
