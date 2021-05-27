@@ -36,15 +36,27 @@
         min-width: 180px
         max-width: 100%
         padding: 16px 26px
+<<<<<<< HEAD:sass/components/_ui.sass
+=======
+        color: color(white)
+        background-color: color(primary)
+>>>>>>> c229a3856098f24e3e89f193b9a0f97ef9c2129d:sass/parts/_ui.sass
         text-align: center
         border-radius: $radius-button
+<<<<<<< HEAD:sass/components/_ui.sass
         @media (max-width: 991px)
             padding: 14px 23px
+=======
+        @media (hover: hover)
+            &:hover
+                background-color: lighten(color(primary), 8%)
+>>>>>>> c229a3856098f24e3e89f193b9a0f97ef9c2129d:sass/parts/_ui.sass
         @media (max-width: 575px)
             padding: 12px 21px
             font-size: 14px
         @media (max-width: 479px)
             width: 100%
+<<<<<<< HEAD:sass/components/_ui.sass
         &:focus
             outline: none
 
@@ -66,6 +78,17 @@
                 background-color: transparent
         &:focus
             box-shadow: 0 0 2px 1px color(primary)
+=======
+        &.has-image
+            display: flex
+            justify-content: center
+            align-items: center
+            padding: 12px 26px
+            @media (max-width: 575px)
+                padding: 8px 21px
+            .emoji
+                margin-left: 0.7em
+>>>>>>> c229a3856098f24e3e89f193b9a0f97ef9c2129d:sass/parts/_ui.sass
 
     // модификации
     &-button.has-image
