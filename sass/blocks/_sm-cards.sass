@@ -33,6 +33,10 @@
         margin-bottom: 7px
         // для проставления ... если название слишком длинное
         @include line-limit(2)
+        a:focus
+            outline: none
+            text-decoration: underline
+            color: color(primary)
     &__author
         font-weight: 100
 

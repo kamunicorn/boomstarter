@@ -16,6 +16,7 @@
         position: relative
         height: rem(27)
         width: fit-content
+        margin-top: 2px
         margin-bottom: rem(32)
         &::before // серая полоска под картинкой
             position: absolute
@@ -34,7 +35,7 @@
     &__img-box:focus
         outline: none
         img
-            box-shadow: 0 0 2px 1px transparentize(color(primary), 0.3)
+            box-shadow: 0 0 2px 1px color(primary)
     &__img-box + p
         position: relative
         &::after //кавычки

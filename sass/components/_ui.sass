@@ -48,6 +48,25 @@
         &:focus
             outline: none
 
+    &-button
+        background-color: color(primary)
+        color: color(white)
+        @media (hover: hover)
+            &:hover
+                background-color: lighten(color(primary), 8%)
+        &:focus
+            box-shadow: 0 6px 25px 0px rgba(0, 0, 0, 0.4)
+    &-input
+        font-weight: 300
+        background-color: transparent
+        color: color(black)
+        border: 1px solid color(primary)
+        @media (hover: hover)
+            &:hover
+                background-color: transparent
+        &:focus
+            box-shadow: 0 0 2px 1px color(primary)
+
     // модификации
     &-button.has-image
         display: flex
@@ -65,24 +84,9 @@
         background-color: transparent
         color: color(primary)
         border: 1px solid
-    &-button
-        background-color: color(primary)
-        color: color(white)
-        @media (hover: hover)
-            &:hover
-                background-color: lighten(color(primary), 8%)
-        &:focus
-            box-shadow: 0 0 2px 2px transparentize(color(primary), 0.05)
-    &-input
-        font-weight: 300
-        background-color: transparent
-        color: color(black)
-        border: 1px solid color(primary)
         @media (hover: hover)
             &:hover
                 background-color: transparent
-        &:focus
-            box-shadow: 0 0 2px 1px transparentize(color(primary), 0.05)
     
     // поле поиска
     &-search
@@ -103,7 +107,7 @@
         &:focus,
         &:focus-within
             outline: none
-            box-shadow: 0 0 2px 1px transparentize(color(primary), 0.05)
+            box-shadow: 0 0 2px 1px color(primary)
 
     // кнопки с иконками внутри
     &-icon-button
@@ -153,7 +157,7 @@
                 color: color(cyan)
         &:focus
             outline: none
-            box-shadow: 0 0 2px 1px transparentize(color(primary), 0.05)
+            box-shadow: 0 0 6px 1px color(primary)
 
     &-loading
         display: flex
@@ -242,8 +246,9 @@
                 display: none
         input:checked ~ &__custom .icon-check
             display: block
-        input:focus + &__custom
-            box-shadow: 0 0 2px 1px transparentize(color(primary), 0.9)
+        input:focus ~ &__custom
+            // outline: 2px solid color(primary)
+            box-shadow: 0 0 2px 2px color(primary)
 
     // TODO
     // сортировка по
@@ -310,7 +315,7 @@
                 color: color(primary)
         &:focus
             outline: none
-            box-shadow: 0 0 2px 1px transparentize(color(primary), 0.05)
+            box-shadow: 0 0 4px 2px color(primary)
         @media (max-width: 479px)
             padding-right: 5px
             img
