@@ -34,9 +34,6 @@ function initSubjectsMore() {
     let $subjectsMoreWrappers = $('.js-subjects-more'),
         $options = $subjectsMoreWrappers.find('.ui-dropdown__item');
 
-    // console.log($subjectsMoreWrappers);
-    // console.log($options);
-
     $subjectsMoreWrappers.each( function(i, elem) {
         let $wrapper = $(elem),
             $dropdown = $wrapper.find('.ui-dropdown');
@@ -85,7 +82,6 @@ function initBookmarks() {
 
         $bookmark.click(function() {
             let projectId = $bookmark.data('project'),
-                // action = ($bookmark.hasClass('is-filled')) ? 'delete' : 'add',
                 action = ($bookmark.hasClass('is-filled')) ? 'delete-bookmark' : 'add-bookmark',
                 request = {
                     'action': action,
@@ -99,9 +95,7 @@ function initBookmarks() {
                 data: request,
                 success: function(response) {
                     // console.log(response);
-                    // let processedProjectId = response.projectId,
                     let processedProject = projectId,
-                        // $processedBookmark = $bookmark,
                         $processedBookmark = $(`.js-add-bookmark[data-project="${processedProject}"]`);
                     
                     $processedBookmark.toggleClass('is-filled');

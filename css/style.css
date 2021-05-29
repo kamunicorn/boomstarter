@@ -4020,16 +4020,9 @@ nav:nth-child(2) {
 }
 
 .media__img-box {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: block;
   position: relative;
-  height: 1.6875rem;
+  height: 2.5rem;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -4049,18 +4042,12 @@ nav:nth-child(2) {
 }
 
 .media__img-box img {
-  position: absolute;
   max-height: 100%;
   max-width: 8.125rem;
 }
 
 .media__img-box:focus {
-  outline: none;
-}
-
-.media__img-box:focus img {
-  -webkit-box-shadow: 0 0 2px 1px #0087F7;
-          box-shadow: 0 0 2px 1px #0087F7;
+  outline: 2px solid rgba(0, 135, 247, 0.75);
 }
 
 .media__img-box + p {
@@ -4620,6 +4607,9 @@ nav:nth-child(2) {
 }
 
 @media (max-width: 575px) {
+  .sponsorship__offer {
+    font-size: 24px;
+  }
   .sponsorship__sponsors-cloud {
     padding: 0 14px;
   }
