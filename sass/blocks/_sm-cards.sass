@@ -4,10 +4,21 @@
 
 .sm-cards
     padding: 25px 0
+    &,
+    &__row
+        height: 100%
+        @media (max-width: 1199px)
+            height: initial
     &__grid
-        display: grid
+        min-height: 100%
+        display: flex
+        flex-direction: column
+        justify-content: space-between
         grid-template-rows: minmax(77px, auto)
-        grid-gap: 16px
+        grid-gap: 14px
+        @media (max-width: 1199px)
+            display: grid
+            min-height: initial
     &__item
         position: relative
         display: grid
@@ -42,8 +53,6 @@
 
 @media (min-width: 992px)
     ._increased-cards.sm-cards
-        .sm-cards__grid
-            grid-gap: 23px
         .sm-cards__item
             grid-template-columns: 85px auto
             grid-gap: 16px
@@ -55,7 +64,6 @@
 @media (max-width: 1199px)
     .sm-cards
         padding: 0
-        margin-bottom: 20px
         &__grid
             grid-template-columns: 1fr 1fr
 

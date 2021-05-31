@@ -4,18 +4,19 @@
 
 // баннер, где вместо текстового содержания большая картинка с подписью внизу
 .main-card
-    border-radius: $radius-banner
-    &__img-box, // ссылка a
-    img
-        border-radius: inherit
-    img
+    &__img-box // ссылка a
+    &__img-box img
+        border-radius: $radius-banner
         width: 100%
         height: auto
         object-fit: cover
-// подписи под картинкой
-.main-card
+    // подписи под картинкой
+    &__bottom
+        grid-row: 2/3
+        @media (max-width: 1199px)
+            margin-bottom: rem(20)
     &__bottom-title
-        margin: 10px 0 10px
+        margin-bottom: 10px
         @include font(600, rem(24))
     &__bottom-desc
         @include font(250, rem(16))

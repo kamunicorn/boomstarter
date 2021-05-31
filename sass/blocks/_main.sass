@@ -1,6 +1,6 @@
 @import '../service/service'
 
-/* blocks/landing */
+/* blocks/main */
 
 // второй экран
 .main
@@ -11,17 +11,11 @@
     @media (max-width: 1199px)
         grid-template-columns: 100%
         margin-top: 0
-    &__card-image
-        margin-bottom: rem(20)
-        @media (max-width: 991px)
-            margin-bottom: 0
-    &__cards-small
-    
     
 .main.grid-row
     // = .grid-row, 12-ти колоночная сетка
     grid-template-columns: repeat(12, 1fr)
-    column-gap: $grid-gap
+    grid-gap: $grid-gap
 
 @import 'main-banner'
 @import 'main-card'
