@@ -101,7 +101,16 @@ function initBookmarks() {
                     $processedBookmark.toggleClass('is-filled');
                 }
             });
-
+$.ajax({
+        url: 'api/insert-content.html',
+        method: 'GET',
+        data: formData,
+        success: function(response) {
+            $('#js-render-container').html(response);
+            initSoundSwitchers();
+            initBookmarks();
+        }
+    });
         });
     });
 }
